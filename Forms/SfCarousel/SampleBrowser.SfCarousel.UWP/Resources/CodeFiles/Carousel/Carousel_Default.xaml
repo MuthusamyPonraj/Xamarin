@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+    xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms" 
+     xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="SampleBrowser.SfCarousel.Carousel_Default">
+	<local:SampleView.Resources>
+    <ResourceDictionary>
+      <DataTemplate x:Key="itemTemplate">
+        <Image Source="{Binding Image}" Aspect="AspectFit"/>
+      </DataTemplate>
+    </ResourceDictionary>
+  </local:SampleView.Resources>
+
+  <local:SampleView.Content>
+    <StackLayout x:Name="carouselLayout">
+      <carousel:SfCarousel x:Name="carousel" ScaleOffset="1"  ItemTemplate="{StaticResource itemTemplate}"   SelectedIndex="2" />
+    </StackLayout>
+  </local:SampleView.Content>
+  <local:SampleView.PropertyView>
+    <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="FillAndExpand" x:Name="optionLayout" >
+      <Grid Padding="0,0,0,30"  HorizontalOptions="StartAndExpand">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="2*"/>
+          <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Label  TextColor="Gray" FontSize="20" Text="Offset" VerticalOptions="Center"  x:Name="offsetLabel" HorizontalOptions="Start" Grid.Column="0"/>
+                <numeric:SfNumericUpDown x:Name="offset" IsEditable="false" Minimum="20" Maximum="80" StepValue="5" Value="60" WidthRequest="150" HeightRequest="40" Grid.Column="1"/>
+            </Grid>
+      <Grid Padding="0,0,0,30" HorizontalOptions="StartAndExpand">
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="2*"/>
+          <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Label  TextColor="Gray" FontSize="20"  x:Name="scaleLabel" VerticalOptions="Center" Text="Scale Offset" HorizontalOptions="Start" Grid.Column="0"/>
+
+                <numeric:SfNumericUpDown x:Name="scale" Value="0.8" IsEditable="false" Minimum="0.1" Maximum="1" WidthRequest="150" StepValue="0.1" HeightRequest="40" Grid.Column="1"/>
+      </Grid>
+      <Grid Padding="0,0,0,30"  HorizontalOptions="StartAndExpand">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="2*"/>
+          <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Label  TextColor="Gray" FontSize="20"  x:Name="rotateLabel" Text="Rotation Angle" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0"/>
+       
+                <numeric:SfNumericUpDown x:Name="rotateangle" Value="45" IsEditable="false" Minimum="1" Maximum="360" StepValue="5" WidthRequest="150" HeightRequest="40" Grid.Column="1"/>
+      </Grid>
+      <StackLayout Orientation="Vertical" Grid.Row="0">
+        <Label Text="Visual Mode"   TextColor="Gray" FontSize="20"  VerticalOptions="Center" HorizontalOptions="Start"  HeightRequest= "35" />
+        <Picker x:Name="viewmodePicker" HeightRequest="40" VerticalOptions="Start"   />
+      </StackLayout>
+    </StackLayout>
+  </local:SampleView.PropertyView>
+</local:SampleView>
+
+

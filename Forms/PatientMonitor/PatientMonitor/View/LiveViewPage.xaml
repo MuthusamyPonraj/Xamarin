@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+xmlns:local="clr-namespace:PatientMonitor;assembly=PatientMonitor"
+x:Class="PatientMonitor.LiveViewPage" Title="Patient Monitor">
+	<ContentPage.Content>
+	<Grid x:Name="sampleLayout" RowSpacing="0" ColumnSpacing="1">
+  	<Grid.RowDefinitions>
+  		<RowDefinition Height="0.1*"/>
+  		<RowDefinition Height="0.05*"/>
+  		<RowDefinition Height="0.25*"/>
+  		<RowDefinition Height="0.05*"/>
+  		<RowDefinition Height="0.25*"/>
+  		<RowDefinition Height="0.05*"/>
+  		<RowDefinition Height="0.25*"/>
+  	</Grid.RowDefinitions>
+  	 <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="0.4*"/>
+         <ColumnDefinition Width="0.6*"/>
+       </Grid.ColumnDefinitions>
+
+    <Grid x:Name="HeaserGrid" BackgroundColor="#B51110" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.ColumnSpan="2" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.9*"/>
+        <ColumnDefinition Width="0.1*"/>
+      </Grid.ColumnDefinitions>
+      <StackLayout Orientation="Horizontal" >
+        <Label WidthRequest="15"/>
+        <Label  Text="Live View" FontSize="30" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" Grid.Column="1" >
+        <Button BackgroundColor="#B51110"  x:Name="historyButton"></Button>
+      </StackLayout>      
+    </Grid>
+   
+  	<StackLayout Orientation="Horizontal" Grid.Row="1"  Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" BackgroundColor="#f5f6f7">
+      <Label WidthRequest="10"/>
+  		<Label x:Name="BPLabel" Text="BP" FontSize="17" TextColor="#808080" Grid.Row="1" VerticalOptions = "Center" HorizontalOptions = "Start" />
+      <Label WidthRequest="20"/>
+  		<Label x:Name="BPLabel1"  FontSize="17" Grid.Row="1" TextColor="#41bf74" VerticalOptions = "Center" HorizontalOptions = "End" />
+  	</StackLayout>
+
+  	<StackLayout Grid.ColumnSpan="2" VerticalOptions = "FillAndExpand"  Grid.Row="2">
+  		<chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+  	 	<chart:SfChart.PrimaryAxis>
+       		<chart:DateTimeAxis IsVisible="false" ShowMajorGridLines="false"/>
+     	</chart:SfChart.PrimaryAxis>
+
+      	<chart:SfChart.SecondaryAxis>
+        	<chart:NumericalAxis IsVisible="false" ShowMajorGridLines="false"/>
+      	</chart:SfChart.SecondaryAxis>
+
+      	<chart:SfChart.Series>
+     
+        <chart:LineSeries StrokeWidth="3" Color="#41bf74"  ItemsSource="{Binding LiveObservations}" XBindingPath="DateTime" YBindingPath="BP" Label="Germany" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True"/>         
+      </chart:SfChart.Series>
+    </chart:SfChart>
+
+  	</StackLayout>
+      
+       <!--<StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" BackgroundColor="#E5E7E9">
+         <Label WidthRequest="10"/>
+         	    <Label x:Name="SatLabel" Text="Sat" FontSize="15"  TextColor="#808080"   VerticalOptions="Center" HorizontalOptions = "Start" />
+         <Label WidthRequest="20"/>
+         	    <Label x:Name="SatValueLabel" Text="95%" FontSize="15"  TextColor="#f7931e"     VerticalOptions="Center" HorizontalOptions = "End" />
+       </StackLayout>-->
+    
+       	<StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" BackgroundColor="#f5f6f7">
+          <Label WidthRequest="10"/>
+       		<Label x:Name="RRLabel" Text="RR" FontSize="17" TextColor="#808080"  VerticalOptions="Center"  HorizontalOptions = "Start" />
+          <Label WidthRequest="20"/>
+  	  		<Label x:Name="RRValueLabel"  FontSize="17" TextColor="#f7931e"   VerticalOptions="Center"  HorizontalOptions = "End" />  
+       	</StackLayout> 
+  	<StackLayout VerticalOptions = "FillAndExpand" Grid.ColumnSpan="2" Grid.Row="4">
+  	<chart:SfChart x:Name="Chart1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+  	 <chart:SfChart.PrimaryAxis>
+       <chart:DateTimeAxis IsVisible="false" ShowMajorGridLines="false"/>
+     </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis IsVisible="false" ShowMajorGridLines="false"/>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Series>
+        
+        <chart:LineSeries StrokeWidth="3" Color="#f7931e" ItemsSource="{Binding LiveObservations}" XBindingPath="DateTime" YBindingPath="RR" Label="Germany" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True"/>         
+      </chart:SfChart.Series>
+    </chart:SfChart>
+
+  	</StackLayout>
+  
+       <!--<StackLayout Grid.Row="5" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" BackgroundColor="#f5f6f7">
+         <Label WidthRequest="10"/>
+  	  	<Label x:Name="HRLabel" Text="HR" FontSize="15" TextColor="#808080"  VerticalOptions = "Center" HorizontalOptions = "Start" />
+         <Label WidthRequest="20"/>
+  	  	<Label x:Name="HRValueLabel" Text="122" FontSize="15"  TextColor="#278cfc" VerticalOptions = "Center" HorizontalOptions = "End" />
+       </StackLayout>-->
+       	<StackLayout Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" BackgroundColor="#f5f6f7">
+          <Label WidthRequest="10"/>
+  	  	<Label x:Name="TempLabel" Text="Temp" FontSize="17"  TextColor="#808080" VerticalOptions = "Center" HorizontalOptions = "Start" />
+          <Label WidthRequest="20"/>
+  	  	<Label x:Name="TempValueLabel"  FontSize="17" TextColor="#278cfc"  VerticalOptions = "Center" HorizontalOptions = "End" />
+       	</StackLayout>   
+  	
+  	<StackLayout VerticalOptions = "FillAndExpand" Grid.ColumnSpan="2" Grid.Row="6">
+  	<chart:SfChart x:Name="Chart2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+  	 <chart:SfChart.PrimaryAxis>
+       <chart:DateTimeAxis IsVisible="false" ShowMajorGridLines="false"/>
+     </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis IsVisible="false" ShowMajorGridLines="false"/>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Series>
+        
+        <chart:LineSeries StrokeWidth="3" Color="#278cfc" ItemsSource="{Binding LiveObservations}" XBindingPath="DateTime" YBindingPath="Temp" Label="Germany" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True"/>         
+      </chart:SfChart.Series>
+    </chart:SfChart>
+
+  	</StackLayout>
+  	</Grid>
+	</ContentPage.Content>
+</ContentPage>

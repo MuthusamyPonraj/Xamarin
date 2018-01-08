@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Samples>
+  <Sample Title="Organization Chart" Category="Types" Icon ="Diagram/OrganizationalLayout.png" Name="OrganizationChart"  Description="This sample demonstates creating a simple chart layout using diagram control" IsNew="True"/>
+  <Sample Title="Flow Diagram"  Name="FlowDiagram" Icon ="Diagram/FlowDiagram.png" Category="Types"  Description="This sample demonstates creating a simple flow diagam using diagram control" IsNew="True"/>
+  <Sample Title="Node Customization"  Name="NodeContent" Category="Types" Icon ="Diagram/NodeAnnotation.png"  Description="This sample demonstates creating a node with different type content" IsNew="True"/>
+</Samples>

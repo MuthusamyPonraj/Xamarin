@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.StackedArea100Chart"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">	
+	<local:SampleView.Content>
+		 <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+       <chart:SfChart.Margin>
+         <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,0,15,0" />
+       </chart:SfChart.Margin>
+       
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Annual Temperature Comparison" Font="15"/>
+      </chart:SfChart.Title>
+
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:StackedArea100SeriesViewModel />
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:CategoryAxis EdgeLabelsDrawingMode="Shift">
+          <chart:CategoryAxis.Title>
+            <chart:ChartAxisTitle Text="Year">
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,10,0,0" iOS="0,0,0,10"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:CategoryAxis.Title>
+        </chart:CategoryAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis Maximum="0" Minimum="100" Interval="10">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Temperature (%)">
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness" Android="0,0,10,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Legend>
+        <chart:ChartLegend ToggleSeriesVisibility="True" DockPosition="Bottom"/>
+      </chart:SfChart.Legend>
+
+      <chart:SfChart.Series>
+            <chart:StackingArea100Series ItemsSource="{Binding StackedArea100Data1}" XBindingPath="Name" YBindingPath="Value"  Opacity="0.5" Label="USA" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True"/>
+            <chart:StackingArea100Series ItemsSource="{Binding StackedArea100Data2}" XBindingPath="Name" YBindingPath="Value"  Opacity="0.5" Label="India" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True"/>
+            <chart:StackingArea100Series ItemsSource="{Binding StackedArea100Data3}" XBindingPath="Name" YBindingPath="Value"  Opacity="0.5" Label="Canada" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True"/>
+            <chart:StackingArea100Series ItemsSource="{Binding StackedArea100Data4}" XBindingPath="Name" YBindingPath="Value"  Opacity="0.5" Label="China" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True"/>
+      </chart:SfChart.Series>
+    </chart:SfChart>
+	</local:SampleView.Content>
+</local:SampleView>

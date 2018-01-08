@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.StripLines"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+	<local:SampleView.Content>
+    <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+      <chart:SfChart.Margin>
+        <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,0,15,0" />
+      </chart:SfChart.Margin>
+
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Average temperature for the year 2014" Margin="15" Font="15"/>
+      </chart:SfChart.Title>
+      
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:StripLinesViewModel />
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:CategoryAxis LabelPlacement="BetweenTicks">
+          <chart:CategoryAxis.Title>
+            <chart:ChartAxisTitle Text ="Month">
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,10,0,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:CategoryAxis.Title>
+        </chart:CategoryAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis >
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text ="Temperature in celsius">
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,0,10,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+          <chart:NumericalAxis.StripLines>
+            <chart:NumericalStripLine Start="28" Width ="8" Text="Low Temperature" FillColor="#C8D16D"></chart:NumericalStripLine>
+            <chart:NumericalStripLine Start="36" Width ="8" Text="Average Temperature" FillColor="#F4C762"></chart:NumericalStripLine>
+            <chart:NumericalStripLine Start="44" Width ="8" Text="High Temperature" FillColor="#EF7878"></chart:NumericalStripLine>
+          </chart:NumericalAxis.StripLines>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Series>
+        <chart:SplineSeries ItemsSource="{Binding StripLineData}"   StrokeWidth = "3"  Color = "#2F4F4F"
+                          XBindingPath="Name" YBindingPath="Value"/>
+      </chart:SfChart.Series>
+
+    </chart:SfChart>
+	</local:SampleView.Content>
+</local:SampleView>

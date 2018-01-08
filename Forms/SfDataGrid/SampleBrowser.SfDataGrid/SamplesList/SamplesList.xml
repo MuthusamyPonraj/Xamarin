@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<Samples>
+<Group Title="DataGrid" ImageId="AllControlls/DataGrid.png" IsUpdated="true" SearchTags="grid,datagrid,list,table,group,filter,sort,pager,cell,export,excel,swipe,pulltorefresh,dragdrop,binding,column,row"
+     Description="Full-featured grid control with advanced features like grouping, sorting, filtering and export to excel.">
+    <Sample Icon = "AllControlls/DataGrid/GettingStarted.jpg" Title = "Getting Started" Name = "GridGettingStarted"
+                Description = "This sample showcases the DataGrid with ObservableCollection as the data source." />
+    <Sample Icon = "AllControlls/DataGrid/Sorting.jpg" Title = "Sorting" Name = "Sorting" IsUpdated="true"
+                Description = "This sample showcases the sorting capabilities of data in DataGrid that allows you to sort against one or more columns and also provides tri-state sorting functionality." />
+    <Sample Icon = "AllControlls/DataGrid/CustomSorting.jpg" Title = "Custom Sorting" Name = "CustomSorting"
+                Description = "This sample showcases the custom sorting capabilities in DataGrid that enables you to implement custom sorting logic." />
+    <Sample Icon = "AllControlls/DataGrid/Filtering.jpg" Title = "Filtering" Name = "Filtering"
+                Description = "This sample showcases the filtering capabilities of data in DataGrid." />
+    <Sample Icon = "AllControlls/DataGrid/FrozenRow.jpg" Title = "Frozen Row" Name = "FrozenRow"
+                Description = "This sample showcases the freeze panes capability of DataGrid which provides support to freeze rows at the top." />
+    <Sample Icon = "AllControlls/DataGrid/CellTemplate.jpg" Title = "Cell Template" Name = "CellTemplate"
+                Description = "This sample showcases the template column feature of DataGrid which provides support for loading templates to the column." />
+    <Sample Icon = "AllControlls/DataGrid/Grouping.jpg" Title = "Grouping" Name = "Grouping" IsUpdated="true"
+                Description = "This sample showcases the grouping capability of data in DataGrid." />
+    <Sample Icon = "AllControlls/DataGrid/CustomGrouping.jpg" Title = "Custom Grouping" Name = "CustomGrouping"
+                Description = "This sample showcases the custom grouping capabilities in DataGrid which enables you to implement custom grouping logic." />
+    <Sample Icon = "AllControlls/DataGrid/Selection.jpg" Title = "Selection" Name = "Selection"
+            Description = "This sample showcases the selection capability of DataGrid which provides selection mode options like single, multiple, single-deselect and none." />
+    <Sample Icon = "AllControlls/DataGrid/Editing.jpg" Title = "Editing" Name = "Editing"
+                Description = "This sample showcases the editing capabilities of DataGrid which provides support to edit GridTextColumn, GridNumericColumn, GridPickerColumn and GridDateTimeColumn." />
+    <Sample Icon = "AllControlls/DataGrid/Resizing.jpg" Title = "Resizing" Name = "Resizing"
+                Description = "This sample showcases the resizing capabilities of DataGrid which provides resizing mode options like on-moved and on-touch-up." />
+    <Sample Icon = "AllControlls/DataGrid/GridColumns.jpg" Title = "Grid Columns" Name = "GridColumns"
+                Description = "This sample showcases the columns capability of DataGrid which provides support for text, image and switch columns." />
+    <Sample Icon = "AllControlls/DataGrid/DragAndDrop.jpg" Title = "Drag And Drop" Name = "DragAndDrop"
+                Description = "This sample showcases the column and row drag and drop capabilities of DataGrid which provide user flexibility when interacting with the grid rows and grid columns." />
+    <Sample Icon = "AllControlls/DataGrid/UnboundColumn.jpg" Title = "Unbound Column" Name = "UnBoundColumn"
+                Description = "This sample showcases the unbound column capability of DataGrid. Unbound columns are extra columns that do not belong to the data source." />
+    <Sample Icon = "AllControlls/DataGrid/ConditionalStyle.jpg" Title = "Conditional Styling" Name = "ConditionalFormatting" IsUpdated="true"
+                Description = "The data grid control for Xamarin is a high-performance grid component that is used to display the data in a tabular format." />
+    <Sample Icon = "AllControlls/DataGrid/Styles.jpg" Title = "Styles" Name = "DataGridStyles"
+                Description = "This sample showcases the styling capabilities of DataGrid. Styling allows you to change the visual appearance of the DataGrid and its inner elements." />
+    <Sample Icon = "AllControlls/DataGrid/AutoRowHeight.jpg" Title = "Auto Row Height" Name = "AutoRowHeight"
+                Description = "This sample showcases the auto row height feature of DataGrid which renders grid rows based on its content to improve the readability and occurs on-demand basis." />
+    <Sample Icon = "AllControlls/DataGrid/DiagonalScrolling.jpg" Title = "Diagonal Scrolling" Name = "DiagonalScrolling"
+        Description = "This sample showcases the diagonal scrolling feature of DataGrid which enables to scroll the grid diagonally." />
+    <Sample Icon = "AllControlls/DataGrid/LoadMore.jpg" Title = "Load More" Name = "LoadMore"
+                Description = "This sample showcases the load more capability of DataGrid that allows you to load a subset of data to the bound data source using built-in UI." />
+    <Sample Icon = "AllControlls/DataGrid/PullToRefreshInGrid.jpg" Title = "Pull To Refresh" Name = "PullToRefresh" IsUpdated="true"
+                Description = "This sample showcases the pull-to-refresh capability of DataGrid which allows you to refresh the data source upon pull-to-refresh action." />
+    <Sample Icon = "AllControlls/DataGrid/Paging.jpg" Title = "Paging" Name = "Paging" IsUpdated="true" 
+                Description = "This sample showcases the paging capabilities of DataGrid using SfDataPager which allows you to load the data from the data source in an efficient way." />
+    <Sample Icon = "AllControlls/DataGrid/Swiping.jpg" Title = "Swiping" Name = "Swiping"
+                Description = "This sample showcases the swiping capabilities of DataGrid which allow you to load swipe views and associate them with custom actions." />
+    <Sample Icon = "AllControlls/DataGrid/RenderingDynamicData.jpg" Title = "Rendering Dynamic Data" Name = "RenderingDynamicData"
+                Description = "This sample illustrates the frequent updates that occur in random cells across the Grid while keeping processor usage to a minimum in the DataGrid." />
+    <Sample Icon = "AllControlls/DataGrid/Exporting.jpg" Title = "Exporting" Name = "Exporting"
+                Description = "This sample showcases the excel and pdf exporting capabilities of DataGrid. DataGrid also provides you various customization options for exporting." />
+  </Group>
+  </Samples>

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sample:SampleView x:Class="SampleBrowser.SfDataGrid.FrozenRow"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:SampleBrowser.SfDataGrid;assembly=SampleBrowser.SfDataGrid"
+                  xmlns:sample="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+                  xmlns:sfgrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms">
+
+  <sample:SampleView.BindingContext>
+        <local:FrozenRowViewModel x:Name="viewModel" />
+    </sample:SampleView.BindingContext>
+
+  <sample:SampleView.Behaviors>
+    <local:FrozenRowBehavior/>
+  </sample:SampleView.Behaviors>
+
+  <sample:SampleView.Content>
+        <RelativeLayout x:Name="relative">
+            <sfgrid:SfDataGrid x:Name="dataGrid"
+                               ItemsSource="{Binding Products}"
+                               AutoGenerateColumns="false"
+                               ColumnSizer="Star"
+                               FrozenRowsCount="2"
+                               GridStyle="{local:DefaultStyle}"
+                               HeaderRowHeight="52"
+                               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                      Property=Height,
+                                                                                      Factor=1,
+                                                                                      Constant=0}"
+                               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                     Property=Width,
+                                                                                     Factor=1,
+                                                                                     Constant=0}"
+                               RowHeight="48"
+                               SelectionMode="Single"
+                               VerticalOverScrollMode="None">
+
+                <sfgrid:SfDataGrid.Columns>
+                    <sfgrid:GridTextColumn HeaderFontAttribute="Bold"
+                                           HeaderText="ID"
+                                           HeaderTextAlignment="Center"
+                                           LineBreakMode="TailTruncation"
+                                           MappingName="SupplierID"
+                                           Padding="5,0,5,0"
+                                           TextAlignment="End">
+                        <sfgrid:GridTextColumn.HeaderCellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                        <sfgrid:GridTextColumn.HeaderText>
+                            <OnIdiom x:TypeArguments="x:String"
+                                     Phone="ID"
+                                     Tablet="Supplier ID" />
+                        </sfgrid:GridTextColumn.HeaderText>
+
+
+                        <sfgrid:GridTextColumn.CellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.CellTextSize>
+                    </sfgrid:GridTextColumn>
+                    <sfgrid:GridTextColumn HeaderFontAttribute="Bold"
+                                           HeaderText="Product ID"
+                                           HeaderTextAlignment="Start"
+                                           LineBreakMode="TailTruncation"
+                                           MappingName="ProductID"
+                                           Padding="5,0,5,0"
+                                           TextAlignment="End">
+                        <sfgrid:GridTextColumn.HeaderCellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                        <sfgrid:GridTextColumn.Width>
+                            <OnIdiom x:TypeArguments="x:Double"
+                                     Phone="0"
+                                     Tablet="NaN" />
+                        </sfgrid:GridTextColumn.Width>
+
+
+                        <sfgrid:GridTextColumn.CellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.CellTextSize>
+                    </sfgrid:GridTextColumn>
+                    <sfgrid:GridTextColumn HeaderFontAttribute="Bold"
+                                           HeaderText="Product"
+                                           HeaderTextAlignment="Start"
+                                           LineBreakMode="TailTruncation"
+                                           MappingName="ProductName"
+                                           Padding="5,0,0,0"
+                                           TextAlignment="Start">
+                        <sfgrid:GridTextColumn.HeaderCellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                        <sfgrid:GridTextColumn.HeaderText>
+                            <OnIdiom x:TypeArguments="x:String"
+                                     Phone="Product"
+                                     Tablet="Product Name" />
+                        </sfgrid:GridTextColumn.HeaderText>
+
+
+                        <sfgrid:GridTextColumn.CellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.CellTextSize>
+                    </sfgrid:GridTextColumn>
+                    <sfgrid:GridTextColumn HeaderFontAttribute="Bold"
+                                           HeaderText="Quantity"
+                                           HeaderTextAlignment="Start"
+                                           LineBreakMode="TailTruncation"
+                                           MappingName="Quantity"
+                                           Padding="5,0,5,0"
+                                           TextAlignment="End">
+                        <sfgrid:GridTextColumn.HeaderCellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+
+                        <sfgrid:GridTextColumn.CellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.CellTextSize>
+                    </sfgrid:GridTextColumn>
+                    <sfgrid:GridTextColumn Format="C"
+                                           HeaderFontAttribute="Bold"
+                                           HeaderText="Unit Price"
+                                           HeaderTextAlignment="Start"
+                                           LineBreakMode="TailTruncation"
+                                           MappingName="UnitPrice"
+                                           Padding="5,0,5,0"
+                                           TextAlignment="End">
+                        <sfgrid:GridTextColumn.HeaderCellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                        <sfgrid:GridTextColumn.CellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.CellTextSize>
+                    </sfgrid:GridTextColumn>
+                </sfgrid:SfDataGrid.Columns>
+
+            </sfgrid:SfDataGrid>
+        </RelativeLayout>
+    </sample:SampleView.Content>
+
+</sample:SampleView>

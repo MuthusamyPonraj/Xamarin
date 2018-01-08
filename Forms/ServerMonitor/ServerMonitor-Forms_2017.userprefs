@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{4578E03C-BCDF-46C5-87AD-AA393EAE6F39}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ServerMonitor.iOS/AppDelegate.cs">
+    <Files>
+      <File FileName="ServerMonitor/Views/CPUView.xaml.cs" Line="8" Column="7" />
+      <File FileName="ServerMonitor.iOS/AppDelegate.cs" Line="26" Column="13" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ServerMonitor-Forms_2017" expanded="True">
+            <Node name="ServerMonitor.iOS_2017" expanded="True" />
+            <Node name="ServerMonitor_2017" expanded="True">
+              <Node name="Packages" expanded="True">
+                <Node name="Xamarin.Forms" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ServerMonitor.iOS__2017 PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.CA827009-5BCA-441F-BE0C-46D6FFFDB7B5" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.ServerMonitor.Android__2017 PreferredExecutionTarget="Android.ZX1B34MH6C" />
+</Properties>

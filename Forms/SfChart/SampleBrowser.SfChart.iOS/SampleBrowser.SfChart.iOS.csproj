@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{407A6BB7-298A-43F4-BF48-27A14A611A34}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SampleBrowser.SfChart.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>SampleBrowser.SfChart.iOS</AssemblyName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <BuildIpa>True</BuildIpa>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SampleBrowser.Core">
+      <HintPath>..\packages\SampleBrowser.Core.15.4.0.20\lib\Xamarin.iOS10\SampleBrowser.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.Core.iOS">
+      <HintPath>..\packages\SampleBrowser.Core.15.4.0.20\lib\Xamarin.iOS10\SampleBrowser.Core.iOS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.15.4.0.20\lib\Xamarin.iOS10\Syncfusion.SfChart.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.XForms.iOS">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.15.4.0.20\lib\Xamarin.iOS10\Syncfusion.SfChart.XForms.iOS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfListView.15.4.0.20\lib\Xamarin.iOS10\Syncfusion.SfListView.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.XForms.iOS">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfListView.15.4.0.20\lib\Xamarin.iOS10\Syncfusion.SfListView.XForms.iOS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Syncfusion.GridCommon.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.GridCommon.15.4.0.20\lib\Xamarin.iOS10\Syncfusion.GridCommon.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DataSource.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.DataSource.15.4.0.20\lib\Xamarin.iOS10\Syncfusion.DataSource.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.Core.15.4.0.20\lib\Xamarin.iOS10\Syncfusion.Core.XForms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleBrowser.SfChart\SampleBrowser.SfChart.csproj">
+      <Project>{37DAE521-CD07-448D-866A-81CD7D0AFB0D}</Project>
+      <Name>SampleBrowser.SfChart</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Area.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Area_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AutoScrolling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Bar_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Bubble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Bubble_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Candle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Candle_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CategoryAxis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Column.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Column_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataMaker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DataPointSelection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DatetimeAxis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Doughnut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Doughnut_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Funnel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Funnel_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Hun_centStackedArea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Hun_centStackedArea_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Hun_centStackedBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Hun_centStackedBar_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Hun_centStackedColumn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Hun_centStackedColumn_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Line_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LiveUpdates.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LogarithmicAxis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MultipleAxes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\NumericalAxis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\OHLC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\OHLC_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Pie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Pie_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Polar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Polar_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Pyramid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Pyramid_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Radar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Radar_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\RangeArea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\RangeArea_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\RangeColumn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\RangeColumn_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Scatter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Scatter_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SemiDoughnut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SemiDoughnut_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SemiPie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SemiPie_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Spline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Spline_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SplineArea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SplineArea_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StackedArea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StackedArea_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StackedBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StackedBar_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StackedColumn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StackedColumn_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StepArea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StepArea_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StepLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StepLine_selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\StripLines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TechnicalIndicator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Tooltip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Trackball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\VerticalChart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Zooming.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\grain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AxisCrossing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ChartAnnotation.png" />
+  </ItemGroup>
+  <ItemGroup>
+     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon_58x58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon_87x87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon_80x80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon_29x29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon_76x76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon_152x152.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.targets')" />
+  <PropertyGroup>
+    <PrepareResourceNamesDependsOn>
+      IncludeFilesInResources;
+      $(PrepareResourceNamesDependsOn)
+    </PrepareResourceNamesDependsOn>
+  </PropertyGroup>
+  <Target Name="IncludeFilesInResources">
+    <ItemGroup>
+      <FilesToDelete Include="Resources\CodeFiles\**\*" />
+    </ItemGroup>
+    <Delete Files="@(FilesToDelete)" />
+    <RemoveDir Directories="Resources\CodeFiles\" />
+    <ItemGroup>
+      <SourceResourceFiles Include="..\SampleBrowser.SfChart\Samples\**\*">
+        <RelativeOutputDirectory>Resources\CodeFiles\</RelativeOutputDirectory>
+      </SourceResourceFiles>
+    </ItemGroup>
+    <Copy SourceFiles="@(SourceResourceFiles)" DestinationFolder="%(RelativeOutputDirectory)\%(RecursiveDir)" />
+    <ItemGroup>
+      <EmbeddedResource Include="%(SourceResourceFiles.RelativeOutputDirectory)\**\*" />
+    </ItemGroup>
+  </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.targets')" />
+</Project>

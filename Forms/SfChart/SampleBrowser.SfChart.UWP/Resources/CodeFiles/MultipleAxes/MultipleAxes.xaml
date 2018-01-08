@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.MultipleAxes"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+	<local:SampleView.Content>
+
+
+    <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Multiple Axes" Font="15"/>
+      </chart:SfChart.Title>
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:MultipleAxesViewModel />
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.Legend>
+        <chart:ChartLegend ToggleSeriesVisibility = "true"/>
+      </chart:SfChart.Legend>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:CategoryAxis LabelPlacement ="BetweenTicks">
+          <chart:CategoryAxis.Title>
+            <chart:ChartAxisTitle Text ="Year">
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,10,0,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:CategoryAxis.Title>
+        </chart:CategoryAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis ShowMajorGridLines = "false">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text ="Revenue (in millions)">
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,0,10,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+          <chart:NumericalAxis.LabelStyle>
+            <chart:ChartAxisLabelStyle LabelFormat = "$####"/>
+          </chart:NumericalAxis.LabelStyle>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Series>
+        <chart:ColumnSeries ItemsSource="{Binding MultipleAxesData}" Label = "Revenue" XBindingPath="Name" YBindingPath="Value"  EnableTooltip="True" EnableAnimation="True"/>
+        <chart:FastLineSeries ItemsSource="{Binding datas1}"  Label = "Customers" XBindingPath="Name" YBindingPath="Value"  EnableTooltip="True" EnableAnimation="True">
+          <chart:FastLineSeries.YAxis>
+            <chart:NumericalAxis  ShowMajorGridLines = "false">
+              <chart:NumericalAxis.Title>
+                <chart:ChartAxisTitle Text ="Number of Customers"/>
+              </chart:NumericalAxis.Title>
+            </chart:NumericalAxis>
+          </chart:FastLineSeries.YAxis>
+        </chart:FastLineSeries>
+      </chart:SfChart.Series>
+
+    </chart:SfChart>
+	</local:SampleView.Content>
+</local:SampleView>

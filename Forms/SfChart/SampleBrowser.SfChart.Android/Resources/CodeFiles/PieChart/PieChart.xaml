@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.PieChart"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">	
+
+  <local:SampleView.BindingContext>
+    <sampleBrowser:PieSeriesViewModel />
+  </local:SampleView.BindingContext>
+	
+	<local:SampleView.Content>
+
+    <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Expenditures" Font="15"/>
+      </chart:SfChart.Title>
+
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:PieSeriesViewModel />
+      </chart:SfChart.BindingContext>
+      
+      <chart:SfChart.Legend>
+        <chart:ChartLegend/>
+      </chart:SfChart.Legend>
+      
+      <chart:SfChart.Series>
+        <chart:PieSeries ItemsSource="{Binding PieSeriesData}" XBindingPath="Name" YBindingPath="Value" StartAngle="55"  EnableAnimation="True" CircularCoefficient="0.65"
+                         EndAngle ="415" EnableSmartLabels="True" ConnectorLineType = "Bezier" DataMarkerPosition = "OutsideExtended" LegendIcon="Rectangle" StrokeWidth="1" StrokeColor="White">
+          <chart:PieSeries.DataMarker>
+            <chart:ChartDataMarker x:Name="dataMarker" LabelContent="Percentage" ShowLabel="True">
+             </chart:ChartDataMarker>
+          </chart:PieSeries.DataMarker>
+        </chart:PieSeries>
+      </chart:SfChart.Series>
+
+    </chart:SfChart>
+	</local:SampleView.Content>
+ 
+</local:SampleView>

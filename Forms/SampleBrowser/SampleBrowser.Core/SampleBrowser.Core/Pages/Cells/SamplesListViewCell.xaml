@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+	x:Class="SampleBrowser.Core.SamplesListViewCell" >
+    <Grid RowSpacing="0" HeightRequest="85" WidthRequest="300" Margin="5,5,5,0" BackgroundColor="White" >
+        <Grid.RowDefinitions>
+      <RowDefinition Height="85" />
+    </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image x:Name="samplesImage" Source="{Binding Icon}" HeightRequest="85"
+          Margin="3,5,0,0" WidthRequest="75" Grid.Row="0" Grid.Column="0"
+            VerticalOptions="Center" HorizontalOptions="Center"  Aspect="AspectFit" />
+    <Grid x:Name="ControlsGrid" BackgroundColor="White" Grid.Row="0" Margin="0" RowSpacing="0" Padding="0" Grid.Column="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Label FontSize="18" Margin="0,3,0,0" HorizontalOptions="StartAndExpand" TextColor="Black" Text="{Binding Title}" Grid.Row="0" Grid.Column="0"
+          HorizontalTextAlignment="Start" VerticalTextAlignment="Center" LineBreakMode="TailTruncation" />
+      <Image x:Name="controlsUpdateTypeImage"  Aspect="AspectFit" Grid.Row="0" Grid.Column="0" HorizontalOptions="EndAndExpand" Source="{Binding UpdateType}" />
+      <Label FontSize="11" Margin="0" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap" TextColor="Black" Text="{Binding Description}" Grid.Row="1" Grid.Column="0"
+              HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+    </Grid>
+  </Grid>
+</ViewCell>

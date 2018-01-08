@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleBrowser.SfNavigationDrawer.Archive_Default">
+    <ContentView.Content>
+        <Grid x:Name="headingGrid" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid BackgroundColor="#00a0e1" >
+                <Image x:Name="headerGradiant" HeightRequest="50" Aspect="AspectFill" />
+                <StackLayout Orientation="Horizontal">
+                    <Button FontSize="20" x:Name="btn" HeightRequest="28" Clicked="Btn_Clicked" HorizontalOptions="Start" WidthRequest="28" />
+                    <Label x:Name="headerLabel" FontSize="20" HorizontalTextAlignment="Center" XAlign="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HeightRequest="50" TextColor="White" />
+                </StackLayout>
+            </Grid>
+            <StackLayout Grid.Row="1" Padding="0,-5,0,0" BackgroundColor="#f0f0f0">
+                <ListView x:Name="listView" ItemTapped="Handle_ItemTapped" ItemsSource="{Binding ViewCollection}" BackgroundColor="#f0f0f0" SeparatorVisibility="None" HasUnevenRows="true" RowHeight="80">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Margin="5,5,5,0" BackgroundColor="White">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="23" />
+                                        <RowDefinition Height="18" />
+                                        <RowDefinition Height="16" />
+                                    </Grid.RowDefinitions>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="7*" />
+                                            <ColumnDefinition Width="3*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="nameLabel" Grid.Column="0" Margin="5,0,0,0" Text="{Binding Sender}" FontSize="15" HorizontalTextAlignment="Start" HorizontalOptions="Start" />
+                                        <Label x:Name="dateLabel" Grid.Column="1" Margin="0,0,5,0" YAlign="Start" FontSize="12" Text="{Binding Date}" TextColor="#006bcd" XAlign="End" HorizontalOptions="End" HorizontalTextAlignment="End" />
+                                    </Grid>
+                                    <Label x:Name="subjectLabel" Margin="5,0,0,0" Grid.Row="1" Text="{Binding Subject}" FontSize="13" HorizontalTextAlignment="Start" />
+                                    <Label x:Name="descriptionLabel" Margin="5,0,0,0" Grid.Row="2" Text="{Binding Content}" FontSize="12" HorizontalTextAlignment="Start" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

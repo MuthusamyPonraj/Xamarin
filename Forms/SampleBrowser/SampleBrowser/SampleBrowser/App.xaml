@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+	x:Class="SampleBrowser.App">
+  <Application.Resources>
+    <ResourceDictionary>
+	  <local:ImageSelector x:Key="imageSelector"/>
+      <local:LabelColorSelector x:Key="Labelcolorselector" />
+      <local:UpdateTypeImage x:Key="updateTypeImage" />
+	  <local:CodeLabelSelector x:Key="codelLabelSelector" />
+      <local:SamplesCountConverter x:Key="sampleCountConverter" />
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

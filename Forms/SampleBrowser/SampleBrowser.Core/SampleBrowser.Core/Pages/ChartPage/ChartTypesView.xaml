@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="SampleBrowser.Core.ChartTypesView"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+		xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+		HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+  <local:SampleView.Resources>
+    <ResourceDictionary>
+      <local:ImageSelector x:Key="Imageselector"/>
+      <local:LabelColorSelector x:Key="Labelcolorselector"/>
+    </ResourceDictionary>
+  </local:SampleView.Resources>
+  <local:SampleView.Content>
+    <AbsoluteLayout x:Name="absoluteLay" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+      <Grid x:Name="chartTypesGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"  >
+        <Grid.RowDefinitions>
+          <RowDefinition x:Name="typesSampleRow" />
+          <RowDefinition x:Name="typesListRow" />
+        </Grid.RowDefinitions>
+        <ActivityIndicator x:Name="indicator" Color="Red" IsRunning="False"  />
+        <listView:SfListView x:Name="chartTypesListView"
+               ItemSpacing="0" SelectionBackgroundColor="Transparent" IsScrollBarVisible="False"
+              SelectionMode="Single" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+              Margin="0" Orientation="Horizontal" BackgroundColor="#2B3337" RowSpacing="0" ColumnSpacing="0"
+            ItemTemplate="{StaticResource Imageselector}">
+          <listView:SfListView.ItemSize>
+            <OnPlatform x:TypeArguments="x:Double" iOS="90" Android="90" WinPhone="100" />
+          </listView:SfListView.ItemSize>
+        </listView:SfListView>
+      </Grid>
+      <ContentView  x:Name="propertiesView" BackgroundColor="White" AbsoluteLayout.LayoutFlags="All">
+        <AbsoluteLayout.LayoutBounds>
+          <OnIdiom x:TypeArguments="Rectangle">
+            <OnIdiom.Tablet>1,2,1,0.5</OnIdiom.Tablet>
+            <OnIdiom.Phone>1,2,1,0.5</OnIdiom.Phone>
+          </OnIdiom>
+        </AbsoluteLayout.LayoutBounds>
+        <Grid>
+          <Grid.BackgroundColor>
+            <OnPlatform x:TypeArguments="Color">
+              <On Platform="UWP">
+                <OnIdiom x:TypeArguments="Color" Desktop="#007DE6" />
+              </On>
+            </OnPlatform>
+          </Grid.BackgroundColor>
+
+          <Grid.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+              <On Platform="UWP">
+                <OnIdiom x:TypeArguments="Thickness" Desktop="0.5,0,0,0" />
+              </On>
+            </OnPlatform>
+          </Grid.Padding>
+              
+          <Grid x:Name="propertiesGrid" RowSpacing="5" ColumnSpacing="0" >
+            <Grid.BackgroundColor>
+              <OnPlatform x:TypeArguments="Color" WinPhone="#F4F6F6"/>
+            </Grid.BackgroundColor>
+
+            <Grid.RowDefinitions>
+              <RowDefinition x:Name="propertiesHeaderRow" />
+              <RowDefinition x:Name="propertiesContentRow" />
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition x:Name="titleCol" />
+              <ColumnDefinition x:Name="closeButtonCol" />
+            </Grid.ColumnDefinitions>
+            
+            <StackLayout x:Name="stackLayout" Orientation="Horizontal" BackgroundColor="#2B3337"
+                         Spacing="0" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand">
+              <StackLayout Orientation="Vertical"  HorizontalOptions="StartAndExpand">
+                <Label FontAttributes="Bold" Text="    PROPERTIES" TextColor="White" HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontSize="18" />
+              </StackLayout>
+                            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand"  HorizontalOptions="EndAndExpand">
+                                <Button x:Name="closeButton" Image="closeicon.png" Grid.Row="0" Grid.Column="1" Clicked="PropertiesClosebutton_Clicked" 
+                                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                                    <Button.Margin>
+                                        <OnPlatform x:TypeArguments="Thickness" Android="-5,0,5,0" iOS="0,0,15,0" WinPhone="0,0,15,0" />
+                                    </Button.Margin>                                    
+                                </Button>
+                            </StackLayout>
+                            </StackLayout>            
+            <ScrollView x:Name="propertiesContent" IsClippedToBounds="true" Padding="20,5" Grid.Row="1" >
+                <ScrollView.Orientation>
+                   <OnPlatform x:TypeArguments="ScrollOrientation">
+                        <On Platform="iOS">
+                            <OnIdiom x:TypeArguments="ScrollOrientation" Tablet="Vertical" Phone="Vertical" />
+                        </On>
+                        <On Platform="Android">
+                            <OnIdiom x:TypeArguments="ScrollOrientation" Tablet="Vertical" Phone="Vertical" />
+                        </On>
+                       <On Platform="UWP">
+                            <OnIdiom x:TypeArguments="ScrollOrientation" Tablet="Vertical" Phone="Vertical" Desktop="Both" />
+                        </On>
+                    </OnPlatform>
+                </ScrollView.Orientation>
+            </ScrollView>
+          </Grid>
+        </Grid>
+      </ContentView>
+    </AbsoluteLayout>
+  </local:SampleView.Content>
+</local:SampleView>

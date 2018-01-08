@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Samples>
+  <Sample  Title = "Getting Started" Name = "GettingStarted" Icon = "AllControlls/Presentation/GettingStartedPresentation.png" Category="Types" Description ="This sample demonstrates how to create a PowerPoint presentation by adding text with simple text formatting." />
+    <Sample  Title = "Slides" Name = "Slides" Icon = "AllControlls/Presentation/SlidesPresentation.png" Category="Types" Description ="This sample demonstrates how to create a slide with predefined layouts, like Microsoft PowerPoint." />
+    <Sample  Title = "Charts" Name = "Charts" Icon = "AllControlls/Presentation/ChartsPresentation.png" Category="Types" Description ="This sample demonstrates how to create a pie chart in PowerPoint presentation." />
+    <Sample  Title = "Tables" Name = "Tables" Icon = "AllControlls/Presentation/TablesPresentation.png" Category="Types" Description ="This sample demonstrates how to create a table with specified number of rows and columns in PowerPoint presentation for displaying tabular data." />
+    <Sample  Title = "Images" Name = "Images" Icon = "AllControlls/Presentation/ImagesPresentation.png" Category="Types" Description ="This sample demonstrates how to add an image in PowerPoint presentation." />
+    <Sample  Title = "Comments" Name = "Comments" Icon = "AllControlls/Presentation/CommentsPresentation.png" Category="Types" Description ="This sample demonstrates how to add comments in PowerPoint presentation for reviewing and updating feedbacks." />
+  </Samples>

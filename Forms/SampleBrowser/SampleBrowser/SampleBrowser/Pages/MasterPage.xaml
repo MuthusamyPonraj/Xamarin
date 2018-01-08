@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="SampleBrowser.MasterPage"
+		xmlns:local="clr-namespace:SampleBrowser;assembly=SampleBrowser"
+		xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+		 Title="Syncfusion Xamarin Samples" Padding="0">
+  <ContentPage.BindingContext>
+    <local:MasterPageViewModel x:Name="viewModel" />
+  </ContentPage.BindingContext>
+  <ContentPage.Content>
+    <StackLayout x:Name="navigationDrawer" BackgroundColor="#FF4F3F" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+      <Grid x:Name="navigationHeader" Padding="20,0,20,0" ColumnSpacing="0" RowSpacing="0" HorizontalOptions="FillAndExpand" >
+        <Grid.RowDefinitions>
+          <RowDefinition x:Name="appLogoRow" />
+          <RowDefinition x:Name="borderRow" />
+          <RowDefinition x:Name="appDescRow" />
+          <RowDefinition x:Name="appVersRow" />
+        </Grid.RowDefinitions>
+        <Image x:Name="appLogo" Aspect="AspectFit" Grid.Row="0"  HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"/>
+        <BoxView x:Name="borderBox"  Grid.Row="1" Color="#FFC445" HorizontalOptions="FillAndExpand" HeightRequest="4" />
+        <Label x:Name="appDescription" Grid.Row="2"  TextColor="White" Margin="0,20,0,0"
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                VerticalTextAlignment="Start" HorizontalTextAlignment="Start"
+                Text="This toolkit contains all the popular components that are required for building line-of-business applications using Xamarin.Forms">
+          <Label.FontSize>
+             <OnPlatform x:TypeArguments="x:Double">
+                 <On Platform="iOS">
+                    <OnIdiom x:TypeArguments="x:Double" Tablet="25" Phone="14" />
+                </On>
+                <On Platform="Android">
+                    <OnIdiom x:TypeArguments="x:Double" Tablet="25" Phone="14" />
+                 </On>
+                 <On Platform="UWP">
+                    <OnIdiom x:TypeArguments="x:Double" Tablet="20" Phone="14" Desktop="18" />
+                </On>
+             </OnPlatform>                            
+          </Label.FontSize>                    
+        </Label>
+        <Label x:Name="appVersion" Grid.Row="3" Text="{Binding AppVersion}" TextColor="White"
+          VerticalTextAlignment="Center" HorizontalTextAlignment="End"
+          VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+          <Label.FontSize>
+             <OnPlatform x:TypeArguments="x:Double">                        
+                <On Platform="iOS">
+                    <OnIdiom x:TypeArguments="x:Double" Tablet="16" Phone="12" />
+                </On>
+                <On Platform="Android">
+                    <OnIdiom x:TypeArguments="x:Double" Tablet="16" Phone="12" />
+                </On>
+                <On Platform="UWP">
+                    <OnIdiom x:TypeArguments="x:Double" Tablet="16" Phone="12" Desktop="16" />
+                </On>
+             </OnPlatform>
+          </Label.FontSize>
+         </Label>           
+      </Grid>
+      <sync:SfListView x:Name="listView" Padding="0,20,0,0" BackgroundColor="White" SelectionBackgroundColor="#D9D9D9"
+            VerticalOptions="FillAndExpand" Margin="0" ItemSpacing="0,5,0,5">
+        <sync:SfListView.ItemTemplate>
+          <DataTemplate>
+            <Grid Margin="20,5,0,5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Image Grid.Row="0" Grid.Column="0"  Aspect="AspectFit" Source="{Binding LinkIcons}" WidthRequest="20" HeightRequest="20"  Margin="0,3,0,0"/>
+              <Label x:Name="navigatorLinksLabel"  Grid.Row="0" Grid.Column="1" TextColor="#969DA0" Text="{Binding LinkText}" Margin="20,2,0,0" FontSize="16" />
+            </Grid>
+          </DataTemplate>
+        </sync:SfListView.ItemTemplate>
+      </sync:SfListView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

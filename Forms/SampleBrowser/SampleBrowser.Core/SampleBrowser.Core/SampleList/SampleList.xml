@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Samples>
+  <Group Title="Chart" ImageId="AllControlls/Chart.png" IsUpdated="false" Description="Plot over 20 chart types ranging from line charts to specialized financial charts." SearchTags="chart,data visualization,graph,financial Chart, line, spline, data marker, zooming, step line, bar, column, area, step area, pie, doughnut, pyramid, funnel, bubble, scatter, range column, range area, candle, ohlc, polar, radar, stacked column, stacked bar, 100% stacked column, 100% stacked bar, stacked area, 100% stacked area, trackball, live data, axis, numerical axis, log axis, datetime axis, strip line, data selection, zooming, tooltip,data marker, technical indicator" >
+    <Sample  Title = "Line" Name = "LineChart" Category="Types" ImageSelected = "AllControlls/Chart/Line_selected.png" Icon = "AllControlls/Chart/Line.png" />
+    <Sample  Title = "Step Line" Name = "StepLineChart" Category="Types" Icon = "AllControlls/Chart/StepLine.png" ImageSelected = "AllControlls/Chart/StepLine_selected.png" />
+    <Sample  Title = "Bar" Name = "BarChart" Category="Types" Icon = "AllControlls/Chart/Bar.png" ImageSelected = "AllControlls/Chart/Bar_selected.png" />
+    <Sample  Title = "Area" Name = "AreaChart" Category="Types" Icon = "Area.png" ImageSelected = "AllControlls/Chart/Area_selected.png"/>
+    <Sample  Title = "Spline" Name = "SplineChart" Category="Types" Icon = "AllControlls/Chart/Spline.png" ImageSelected = "AllControlls/Chart/Spline_selected.png"/>
+    <Sample  Title = "Column" Name = "ColumnChart" Category="Types" Icon = "AllControlls/Chart/Column.png" ImageSelected = "AllControlls/Chart/Column_selected.png" />
+    <Sample  Title = "Step Area" Name = "StepAreaChart" Category="Types" Icon = "AllControlls/Chart/StepArea.png" ImageSelected = "AllControlls/Chart/StepArea_selected.png" />
+    <Sample  Title = "Spline Area" Name = "SplineAreaChart" Category="Types" Icon = "AllControlls/Chart/SplineArea.png" ImageSelected = "AllControlls/Chart/SplineArea_selected.png" />
+    <Sample  Title = "Pie" Name = "PieChart" Category="Types" Icon = "AllControlls/Chart/Pie.png" ImageSelected = "AllControlls/Chart/Pie_selected.png" />
+    <Sample  Title = "Semi Pie" Name = "SemiPieChart" Category="Types" Icon = "AllControlls/Chart/SemiPie.png" ImageSelected = "AllControlls/Chart/SemiPie_selected.png" />
+    <Sample  Title = "Doughnut" Name = "DoughnutChart" Category="Types" Icon = "AllControlls/Chart/Doughnut.png" ImageSelected = "AllControlls/Chart/Doughnut_selected.png" />
+    <Sample  Title = "Semi Doughnut" Name = "SemiDoughnutChart" Category="Types" Icon = "AllControlls/Chart/SemiDoughnut.png" ImageSelected = "AllControlls/Chart/SemiDoughnut_selected.png" />
+    <Sample  Title = "Pyramid" Name = "PyramidChart" Category="Types" Icon = "AllControlls/Chart/Pyramid.png" ImageSelected = "AllControlls/Chart/Pyramid_selected.png" />
+    <Sample  Title = "Funnel" Name = "FunnelChart" Category="Types" Icon = "AllControlls/Chart/Funnel.png" ImageSelected = "AllControlls/Chart/Funnel_selected.png" />
+    <Sample  Title = "Bubble" Name = "BubbleChart" Category="Types" Icon = "AllControlls/Chart/Bubble.png" ImageSelected = "AllControlls/Chart/Bubble_selected.png" />
+    <Sample  Title = "Scatter" Name = "ScatterChart" Category="Types" Icon = "AllControlls/Chart/Scatter.png" ImageSelected = "AllControlls/Chart/Scatter_selected.png" />
+    <Sample  Title = "Range Column" Name = "RangeColumnChart" Category="Types" Icon = "AllControlls/Chart/RangeColumn.png" ImageSelected = "AllControlls/Chart/RangeColumn_selected.png" />
+    <Sample  Title = "Range Area" Name = "RangeAreaChart" Category="Types" Icon = "AllControlls/Chart/RangeArea.png" ImageSelected = "AllControlls/Chart/RangeArea_selected.png" />
+    <Sample  Title = "Candle" Name = "CandleChart" Category="Types" Icon = "AllControlls/Chart/Candle.png" ImageSelected = "AllControlls/Chart/Candle_selected.png"/>
+    <Sample  Title = "OHLC" Name = "OHLCChart" Category="Types" Icon = "AllControlls/Chart/OHLC.png" ImageSelected = "AllControlls/Chart/OHLC_selected.png" />
+    <Sample  Title = "Polar" Name = "PolarChart" Category="Types" Icon = "AllControlls/Chart/Polar.png" ImageSelected = "AllControlls/Chart/Polar_selected.png" />
+    <Sample  Title = "Radar" Name = "RadarChart" Category="Types" Icon = "AllControlls/Chart/Radar.png" ImageSelected = "AllControlls/Chart/Radar_selected.png" />
+    <Sample  Title = "Stacked Column" Name = "StackedColumnChart" Category="Types" Icon = "AllControlls/Chart/StackedColumn.png" ImageSelected = "AllControlls/Chart/StackedColumn_selected.png" />
+    <Sample  Title = "100% Stacked Column" Name = "StackedColumn100Chart" Category="Types" Icon = "AllControlls/Chart/Hun_centStackedColumn.png" ImageSelected = "AllControlls/Chart/Hun_centStackedColumn_selected.png" />
+    <Sample  Title = "Stacked Bar" Name = "StackedBarChart" Category="Types" Icon = "AllControlls/Chart/StackedBar.png" ImageSelected = "AllControlls/Chart/StackedBar_selected.png" />
+    <Sample  Title = "100% Stacked Bar" Name = "StackedBar100Chart" Category="Types" Icon = "AllControlls/Chart/Hun_centStackedBar.png" ImageSelected = "AllControlls/Chart/Hun_centStackedBar_selected.png" />
+    <Sample  Title = "Stacked Area" Name = "StackedAreaChart" Category="Types" Icon = "AllControlls/Chart/StackedArea.png" ImageSelected = "AllControlls/Chart/StackedArea_selected.png" />
+    <Sample  Title = "100% Stacked Area" Name = "StackedArea100Chart" Category="Types" Icon = "AllControlls/Chart/Hun_centStackedArea.png" ImageSelected = "AllControlls/Chart/Hun_centStackedArea_selected.png" />
+
+    <Sample Icon = "AllControlls/Chart/Trackball.png" Category="Features" Name = "Trackball" Description = "This sample showcases the trackball feature. Trackball displays the tooltip for the data points that are closer to the point where you touch on the chart area."
+            Title = "Trackball"  />
+    <Sample Icon = "AllControlls/Chart/LiveUpdates.png" Category="Features"  Name = "LiveUpdate"  Description = "This Sample illustrates the performance of SfChart in real time update scenario."
+         Title = "Live Update" />
+    <Sample Icon = "AllControlls/Chart/CategoryAxis.png" Category="Features"  Name = "CategoryAxis"  Description = "This sample showcases the use of category axis in chart.Category Axis is an indexed based axis that plots values based on its index in the data source."
+         Title = "Category Axis" />
+    <Sample Icon = "AllControlls/Chart/NumericalAxis.png" Category="Features"  Name = "NumericAxis"  Description = "This sample showcases the use of numerical axis in chart. Numerical axis is used to plot numeric values."
+         Title = "Numerical Axis" />
+    <Sample Icon = "AllControlls/Chart/LogarithmicAxis.png" Category="Features"  Name = "LogarithmicAxis"  Description = "This sample showcases the use of logarithmic axis in chart."
+          Title = "Logarithmic Axis" />
+            <Sample Icon = "AllControlls/Chart/DatetimeAxis.png" Category="Features" Name = "DateTimeAxis" Description = "This sample showcases the use of date time axis"
+            Title = "DateTime Axis"  />
+    <Sample Icon = "AllControlls/Chart/StripLines.png" Category="Features"  Name = "StripLines"  Description = "Strip lines are used to highlight specific range in the chart. They can be horizontal or vertical and also be made to optionally repeat at specific intervals."
+          Title = "Strip Lines" />
+    <Sample Icon = "AllControlls/Chart/MultipleAxes.png" Category="Features"  Name = "MultipleAxes"  Description = "This sample showcases the use of multiple axes in chart."
+          Title = "Multiple Axes" />
+    <Sample Icon = "AllControlls/Chart/DataPointSelection.png" Category="Features"  Name = "DataPointSelection"  Description = "Selection aloows you to highlight a data point. You can select a data point by tapping on it."
+          Title = "Data Point Selection" />
+    <Sample Icon = "AllControlls/Chart/Zooming.png" Category="Features"  Name = "ZoomingAndPanning"  Description = "This sample showcases the zooming and panning capablities of chart."
+         Title = "Zooming and panning" />
+    <Sample Icon = "AllControlls/Chart/VerticalChart.png" Category="Features"  Name = "VerticalChart"  Description = "This sample showcases the vertical charts feature."
+         Title = "Vertical Chart" />
+    <Sample Icon = "AllControlls/Chart/Tooltip.png" Category="Features"  Name = "Tooltip"  Description = "This sample showcases the tooltip capablities in chart. Tooltip feature is used to show information about the segment when you tap on the segment."
+         Title = "Tooltip" />
+    <Sample Icon = "DataMaker.png"
+       Name = "DataMarkerCustomization" Category="Features"  Description = "This sample showcases the customization of data markers. Data markers are used to provide information about the data points to the user."
+          Title = "Data Marker" />
+    <Sample Icon = "AllControlls/Chart/AutoScrolling.png" Category="Features"  Name = "AutoScrolling"  Description = "This sample demonstrates the automatic scrolling of axis during real time updates."
+         Title = "Auto Scrolling" />
+    <Sample Icon = "tech.png" Category="Features"  Name = "TechnicalIndicator"  Description = "Technical indicators are the base for technical analysis which is used to determine the future of financial stock or economic trends."
+         Title = "Technical Indicator" />
+  </Group>
+  
+  <Group Title="DataGrid" ImageId="AllControlls/DataGrid.png" SearchTags="grid,datagrid,list,table,group,filter,sort,pager,cell,export,excel,swipe,pulltorefresh,dragdrop,binding,column,row"
+     Description="Full-featured grid control with advanced features like grouping, sorting, filtering and export to excel.">
+    <Sample Icon = "AllControlls/DataGrid/GettingStarted.png" Title = "Getting Started" Name = "GridGettingStarted"
+                Description = "This sample showcases the DataGrid with ObservableCollection as the data source." />
+    <Sample Icon = "AllControlls/DataGrid/Sorting.png" Title = "Sorting" Name = "Sorting"
+                Description = "This sample showcases the sorting capabilities of data in DataGrid that allows you to sort against one or more columns and also provides tri-state sorting functionality." />
+    <Sample Icon = "AllControlls/DataGrid/CustomSorting.png" Title = "Custom Sorting" Name = "CustomSorting"
+                Description = "This sample showcases the custom sorting capabilities in DataGrid that enables you to implement custom sorting logic." />
+    <Sample Icon = "AllControlls/DataGrid/Filtering.png" Title = "Filtering" Name = "Filtering"
+                Description = "This sample showcases the filtering capabilities of data in DataGrid." />
+    <Sample Icon = "AllControlls/DataGrid/FrozenRow.png" Title = "Frozen Row" Name = "FrozenRow"
+                Description = "This sample showcases the freeze panes capability of DataGrid which provides support to freeze rows at the top." />
+    <Sample Icon = "AllControlls/DataGrid/CellTemplate.png" Title = "Cell Template" Name = "CellTemplate"
+                Description = "This sample showcases the template column feature of DataGrid which provides support for loading templates to the column." />
+    <Sample Icon = "AllControlls/DataGrid/Grouping.png" Title = "Grouping" Name = "Grouping" 
+                Description = "This sample showcases the grouping capability of data in DataGrid." />
+    <Sample Icon = "AllControlls/DataGrid/CustomGrouping.png" Title = "Custom Grouping" Name = "CustomGrouping" 
+                Description = "This sample showcases the custom grouping capabilities in DataGrid which enables you to implement custom grouping logic." />
+    <Sample Icon = "AllControlls/DataGrid/Selection.png" Title = "Selection" Name = "Selection"
+            Description = "This sample showcases the selection capability of DataGrid which provides selection mode options like single, multiple, single-deselect and none." />
+    <Sample Icon = "AllControlls/DataGrid/Editing.png" Title = "Editing" Name = "Editing"
+                Description = "This sample showcases the editing capabilities of DataGrid which provides support to edit GridTextColumn, GridNumericColumn, GridPickerColumn and GridDateTimeColumn." />
+    <Sample Icon = "AllControlls/DataGrid/Resizing.png" Title = "Resizing" Name = "Resizing"
+                Description = "This sample showcases the resizing capabilities of DataGrid which provides resizing mode options like on-moved and on-touch-up." />
+    <Sample Icon = "AllControlls/DataGrid/GridColumns.png" Title = "Grid Columns" Name = "GridColumns"
+                Description = "This sample showcases the columns capability of DataGrid which provides support for text, image and switch columns." />
+    <Sample Icon = "AllControlls/DataGrid/DragAndDrop.png" Title = "Drag And Drop" Name = "DragAndDrop"
+                Description = "This sample showcases the column and row drag and drop capabilities of DataGrid which provide user flexibility when interacting with the grid rows and grid columns." />
+    <Sample Icon = "AllControlls/DataGrid/UnboundColumn.png" Title = "Unbound Column" Name = "UnBoundColumn"
+                Description = "This sample showcases the unbound column capability of DataGrid. Unbound columns are extra columns that do not belong to the data source." />
+    <Sample Icon = "AllControlls/DataGrid/ConditionalStyle.png" Title = "Conditional Styling" Name = "ConditionalFormatting"
+                Description = "The data grid control for Xamarin is a high-performance grid component that is used to display the data in a tabular format." />
+    <Sample Icon = "AllControlls/DataGrid/Styles.png" Title = "Styles" Name = "DataGridStyles"
+                Description = "This sample showcases the styling capabilities of DataGrid. Styling allows you to change the visual appearance of the DataGrid and its inner elements." />
+    <Sample Icon = "AllControlls/DataGrid/AutoRowHeight.png" Title = "Auto Row Height" Name = "AutoRowHeight"
+                Description = "This sample showcases the auto row height feature of DataGrid which renders grid rows based on its content to improve the readability and occurs on-demand basis." />
+    <Sample Icon = "AllControlls/DataGrid/DiagonalScrolling.png" Title = "Diagonal Scrolling" Name = "DiagonalScrolling"
+        Description = "This sample showcases the diagonal scrolling feature of DataGrid which enables to scroll the grid diagonally." />
+    <Sample Icon = "AllControlls/DataGrid/LoadMore.png" Title = "Load More" Name = "LoadMore"
+                Description = "This sample showcases the load more capability of DataGrid that allows you to load a subset of data to the bound data source using built-in UI." />
+    <Sample Icon = "AllControlls/DataGrid/PullToRefreshInGrid.png" Title = "Pull To Refresh" Name = "PullToRefresh"
+                Description = "This sample showcases the pull-to-refresh capability of DataGrid which allows you to refresh the data source upon pull-to-refresh action." />
+    <Sample Icon = "AllControlls/DataGrid/Paging.png" Title = "Paging" Name = "Paging"
+                Description = "This sample showcases the paging capabilities of DataGrid using SfDataPager which allows you to load the data from the data source in an efficient way." />
+    <Sample Icon = "AllControlls/DataGrid/Swiping.png" Title = "Swiping" Name = "Swiping"
+                Description = "This sample showcases the swiping capabilities of DataGrid which allow you to load swipe views and associate them with custom actions." />
+    <Sample Icon = "AllControlls/DataGrid/RenderingDynamicData.png" Title = "Rendering Dynamic Data" Name = "RenderingDynamicData"
+                Description = "This sample illustrates the frequent updates that occur in random cells across the Grid while keeping processor usage to a minimum in the DataGrid." />
+    <Sample Icon = "AllControlls/DataGrid/Exporting.png" Title = "Exporting" Name = "Exporting"
+                Description = "This sample showcases the excel and pdf exporting capabilities of DataGrid. DataGrid also provides you various customization options for exporting." />
+
+  </Group>
+
+  <Group ImageId = "AllControlls/ListView.png" Title = "ListView" IsUpdated="true" SearchTags=" listview,table,grid,horizontal,group,sort,filter,swipe,pulltorefresh,binding,layout,list,orientation"
+           Description = "Advanced ListView component with features like grid layout, grouping, pull-to-refresh and filtering." >
+    <Sample Icon = "AllControlls/ListView/ListGettingStarted.png" Title = "Getting Started" Name = "ListViewGettingStarted"
+            Description = "This sample illustrates about getting started with ListView by loading a set of data items with predefined template." />
+    <Sample Icon = "AllControlls/ListView/ListGridLayout.png" Title = "Grid Layout" Name = "ListViewGridLayout"
+            Description = "This sample showcases the grid layout which arranges the items in a predefined number of columns." />
+    <Sample Icon = "AllControlls/ListView/ListGrouping.png" Title = "Grouping" Name = "ListViewGrouping"
+              Description = "This sample showcases the grouping capability of ListView which also provides support to freeze the group headers in view when grouped." />
+    <Sample Icon = "AllControlls/ListView/ListOrientation.png" Title = "Horizontal Orientation" Name = "ListViewOrientation"
+              Description = "This sample showcases the horizontal orientation support in ListView where the items are arranged in a horizontal manner." />
+    <Sample Icon = "AllControlls/ListView/ListSelection.png" Title = "Selection" Name = "ListViewSelection"
+              Description = "This sample showcases the selection capability of ListView which provides selection mode options like Single, Multiple and None." />
+    <Sample Icon = "AllControlls/ListView/ListFiltering.png" Title = "Sorting and Filtering" Name = "ListViewSortingFiltering"
+              Description = "This sample showcases the sorting and filtering capabilities of ListView." />
+    <Sample Icon = "AllControlls/ListView/ListSwiping.png" Title = "Swiping" Name = "ListViewSwiping"
+              Description = "This sample showcases the swiping functionalities of ListView which allows you to load the swipe views and associate them with custom actions." />
+    <Sample Icon = "AllControlls/ListView/ListPullToRefresh.png" Title = "Pull To Refresh" Name = "ListViewPullToRefresh" IsNew="true"
+              Description = "This sample showcases the pull-to-refresh capability of ListView which allows you to refresh the data source upon pull-to-refresh action." />
+    <Sample Icon = "AllControlls/ListView/ListAutofitItems.png" Title = "Autofit Items" Name = "ListViewAutoFitContent"
+              Description = "This sample showcases the autofit feature of ListView which automatically re-size the items based on its content dynamically." />
+  </Group>
+
+   <Group ImageId = "AllControlls/PDFViewer.png" Title = "PDFViewer"
+                Description = "High performance PDF Viewer component with features like search, zooming and text selection." SearchTags = "PDF viewer,PDF reader,Display PDF,View PDF,search text, zooming, scroll, select text, copy text" >
+    <Sample Title="PDFViewer" Name="PDFViewerGettingStarted" Icon="AllControlls/PDFViewer.png"/>
+  </Group>
+  
+   <Group ImageId = "AllControlls/AutoComplete.png" Title = "AutoComplete" SearchTags="SfAutoComplete,Filter,Suggestion,Searchbox,Editors"
+                Description = "Provide useful suggestions to users based on the already typed content." >
+    <Sample Title="AutoComplete" Name="AutoComplete" Icon="AllControlls/AutoComplete.png"/>
+  </Group>
+    
+   <Group ImageId = "AllControlls/NumericTextBox.png" Title = "NumericTextBox" SearchTags="SfNumericTextBox,Editors,currency,Percentage"
+                Description = "An advanced version of the text box control that restricts input to numeric values." >
+    <Sample Title="NumericTextBox" Name="NumericTextBox" Icon="AllControlls/NumericTextBox.png"/>
+  </Group>
+
+   <Group ImageId = "AllControlls/Calendar.png" Title = "Calendar" SearchTags="SfCalendar,Schedule,Appointment,Month,Year"
+                Description = "Month-View calendar interface for displaying events and selecting dates." >
+    <Sample Title="Getting Started" Name = "Configuration" />
+    <Sample Title="Inline Events" Name = "InlineEvents" />
+    <Sample Title="Blackout Dates" Name = "BlackoutDates"/>
+    <Sample Title="Globalization" Name = "CalendarLocalization" />
+   </Group>  
+ 
+  <Group ImageId = "AllControlls/NavigationDrawer.png" Title = "NavigationDrawer" SearchTags="SfNavigationDrawer,Drawer,Slider,BurgerMenu,flyout"
+                Description = "The navigation drawer control is a sliding panel that can be used to hide content like menus from the visible area of the screen." >
+    <Sample Title="NavigationDrawer" Name="NavigationDrawer_Main" Icon="AllControlls/NavigationDrawer.png"/>
+  </Group>
+
+  <Group ImageId = "AllControlls/Gauge.png" Title = "Gauge" SearchTags="SfGauge,Gauge,Speedometer,Linear,Digital,Radial,Clock,Needle,thermometer,cardashboard"
+                Description = "Visualize numeric data using Circular, linear and Digital gauge controls.">
+    <Sample Name = "CircularGaugeSample" Title = "Circular Gauge" IsUpdated="false" Icon = "AllControlls/Gauge.png" />
+    <Sample Name = "DigitalGaugeSample" Title = "Digital Gauge" IsUpdated="false" Icon = "AllControlls/Gauge.png" />
+    <Sample Name = "LinearGaugeSample" Title = "Linear Gauge" IsUpdated="false" Icon = "AllControlls/Gauge.png" />
+  </Group>
+ 
+  <Group ImageId = "AllControlls/RangeNavigator.png" Title = "RangeNavigator" SearchTags="Range,DateTime,Data Visualization"
+                Description = "The Range navigator control provides an intuitive interface for selecting a smaller range from a large collection." >
+    <Sample Title = "Getting Started" Name = "SimpleRangeNavigator" Icon = "AllControlls/RangeNavigator.png" />
+  </Group>
+ 
+ <Group ImageId = "AllControlls/Schedule.png" Title = "Schedule"  SearchTags="schedule,appointment,month,calendar,event,week,planner, day, recurrence, work week, timeslots, timeline."
+                Description = "Powerful calendar interface with appointment management capabilities."
+       IsUpdated="true">
+    <Sample Name = "Schedule_View" Title = "Getting started" 
+            Icon = "FeaturesSamples/ScheduleConfiguration.png"
+            Description = "Schedule control allows to view the days in multiple views such as day , week, work week and month view"/>
+    <Sample Name = "Recurrence" Title = "Recurring appointments"
+            Icon = "FeaturesSamples/ScheduleConfiguration.png"
+            Description = "Schedule control provides support to add and manage recursive appointments"/>
+    <Sample Name = "Localization" Title = "Localization"
+            Icon = "FeaturesSamples/ScheduleConfiguration.png"
+            Description = "Schedule control allows localization support to required culture"/>
+    <Sample Name = "Configurations" Title = "View configuration"
+            Icon = "FeaturesSamples/ScheduleConfiguration.png"
+            Description = "Schedule control allows to configure various properties available in the views, it also supports non-accesble blocks"/>
+    <Sample Name = "Customization" Title = "Appointment customization"
+            Icon = "FeaturesSamples/ScheduleConfiguration.png"
+            Description = "Schedule control allows customizable view for month cell, appointments, timslots and header"/>
+  </Group>
+  
+   <Group ImageId = "AllControlls/Kanban.png" Title = "Kanban" SearchTags="Kanban,Data Visualization,Cards"
+                Description = "The Kanban control provides an efficient interface to track and visualize the different stages in a task or workflow.">
+    <Sample Name = "KanbanGettingStarted" Title = "Kanban" />
+    <Sample Name = "KanbanCustomizationSample" Title = "Kanban Customization"  />
+  </Group>
+  
+   <Group ImageId = "AllControlls/Picker.png" Title = "Picker" Description = "Highly customizable picker control with features like cascading selection." IsPreview="true" SearchTags="SfPicker,DateTimePicker, Popup,Dialog,Selector">
+        <Sample Title = "Getting Started" Name = "PickerGettingStarted"   />
+        <Sample Title = "Dialog" Name = "PopupPicker"   />
+        <Sample Title = "Date/Time" Name = "DateTimePicker"   />
+        <Sample Title = "Cascading" Name = "Cascading"   />
+  </Group>
+  
+  <Group ImageId = "AllControlls/ImageEditor/ImageEditor.png" Title = "ImageEditor" SearchTags="SfImageEditor,ImageEditor,Editor,Photo,Image,Crop,Annotation,signature"
+               Description = "The image editor control lets users annotate images with freehand drawing, text and shapes. It is also possible to perform simple image manipulation operations like cropping,flipping and rotation." IsPreview="true" >
+    <Sample Title = "ImageEditor" Name = "ImageEditor" Icon = "AllControlls/ImageEditor.png"  />
+  </Group>
+  
+  <Group ImageId = "AllControlls/PullToRefresh.png" Title="PullToRefresh" SearchTags="pulltorefresh,refresh,animation,refreshanimation, reload, pull"
+         Description = "Panel control with built-in support for triggering refresh when the user performs a pull-down action."
+         IsUpdated="true">
+    <Sample Title = "Pull To Refresh" Name = "PullToRefreshView" Icon = "AllControlls/PullToRefresh.png" IsUpdated="true" />
+    <Sample Title = "Pull To Refresh With SfListView" Icon = "AllControlls/ListView/ListPullToRefresh.png"  Name = "ListViewPullToRefresh" IsNew="true"
+              Description = "This sample showcases the pull-to-refresh capability of ListView which allows you to refresh the data source upon pull-to-refresh action." />
+  </Group>
+  
+   <Group ImageId = "AllControlls/RadialMenu.png" Title = "RadialMenu" IsPreview="true" SearchTags="SfRadialmenu,Popup,Selector,ColorPicker,Hierarchical"
+                Description = "The radial menu control displays menu items in a circular layout. It can accommodate more menu items in the given space than the traditional vertical or horizontal menus." >
+    <Sample Title="Getting Started" Name="GettingStarted_RadialMenu" Icon="AllControlls/RadialMenu.png"/>
+    <Sample Title="Customization" Name="Customization_RadialMenu"/>     
+    <Sample Title="Segmentation" Name="SlotIndex"/>
+  </Group>
+  
+  <Group ImageId = "AllControlls/Sunburst/Sunburst.png" Title = "SunburstChart" SearchTags="Sunburst chart,Data Visualization,Hierarchical chart"
+                Description = "Visualize hierarchical data using concentric circle layout.">
+    <Sample Title = "Sunburst" Name = "Sunburst" Icon = "AllControlls/Sunburst/Sunburst.png"  />
+  </Group>
+   <Group ImageId = "AllControlls/Maps.png" Title = "Maps" SearchTags="SfMaps,Maps,Markers,Map,ColorMapping, geographic,polygon,shapefile"
+                Description = "Easily visualize business data over a geographical map.">
+    <Sample Name = "BubbleVisualization" Title = "Bubble Visualization" IsUpdated="false" Icon = "AllControlls/Maps.png" />
+    <Sample Name = "ColorMappings" Title = "Color Mappings" IsUpdated="false" Icon = "AllControlls/Maps.png" />
+    <Sample Name = "MapsGettingStarted" Title = "Data Markers" IsUpdated="false" Icon = "AllControlls/Maps.png" />
+    <Sample Name = "MapsTicketBooking" Title = "Ticket Booking" IsUpdated="false" Icon = "AllControlls/Maps.png" />
+  </Group>
+
+  <Group ImageId = "AllControlls/TreeMap.png" Title = "TreeMap" SearchTags="TreeMap, Hierarchical, ColorMapping, Grouping"
+                Description = "The tree map control provides a simple yet effective way to visualize flat or hierarchical data as clustered rectangles.">
+    <Sample Name = "TreeMapGettingStarted" Title = "Getting Started" IsUpdated="false" Icon = "AllControlls/TreeMap.png" />
+    <Sample Name = "Hierarchical" Title = "Hierarchical" IsUpdated="false" Icon = "AllControlls/TreeMap.png" />
+    <Sample Name = "TreeMapCustomization" Title = "Customization" IsUpdated="false" Icon = "AllControlls/TreeMap.png" />
+
+  </Group>
+
+  <Group ImageId = "AllControlls/Barcode.png" Title = "Barcode" SearchTags="Barcode, SfBarcode, QR code, 1D, 2D, Codabar, code 128, UPC, Datamatrix, code 93, code 11, code 32"
+                Description = "Easily generate one and two-dimensional barcodes including QR codes within your applications." >
+    <Sample  Title = "Codabar" Name = "Codabar" Icon = "AllControlls/Barcode.png" Category="Types"  />
+    <Sample  Title = "DataMatrix" Name = "DataMatrix" Icon = "AllControlls/Barcode.png" Category="Types"  />
+    <Sample  Title = "QRCode" Name = "QRCode" Icon = "AllControlls/Barcode.png" Category="Types"  />
+  </Group>
+
+  <Group ImageId = "AllControlls/Sparkline.png" Title = "Sparkline" SearchTags="Sparkline,Data Visualization,line,winloss,column,area"
+                Description = "Sparkline's are small charts typically drawn to depict trends in data." >
+    <Sample Name = "Sparkline"  Title = "Sparkline" UpdateType = "Updated" />
+  </Group>
+
+  <Group ImageId = "AllControlls/RangeSlider.png" Title = "RangeSlider" SearchTags="SfRangeSlider,Trackbar,Equalizer,Interval"
+                Description = "The Range slider control allows the user to select the range of values within the specified minimum and maximum limits." >
+    <Sample Title="RangeSlider" Name="RangeSlider" Icon="AllControlls/RangeSlider.png"/>
+    <Sample Title="Slider" Name="Orientation"/>
+  </Group>
+
+  <Group ImageId = "AllControlls/BusyIndicator.png" Title = "BusyIndicator" SearchTags="SfBusyIndicator,Progress,Indicator,Idle,Activity"
+                Description = "Pre-built animations to indicate busy status within your applications."
+                 >
+    <Sample Title="BusyIndicator" Name="BusyIndicator" Icon="AllControlls/BusyIndicator.png"/>
+  </Group>
+
+  <Group ImageId = "AllControlls/Rating.png" Title = "Rating" SearchTags="SfRating,Rate,Review,Feedback"
+                Description = "The rating control allows users to select a rating value from a group of visual symbols." >
+    <Sample Title="Getting Started" Name="Rating" Icon="AllControlls/Rating.png"/>
+    <Sample Title="Customization" Name="Rating_Customization" Icon="AllControlls/Rating.png"/>
+  </Group>
+
+  <Group ImageId = "AllControlls/Carousel.png" Title = "Carousel" SearchTags="SfCarousel,Navigation,Navigate,Gallery"
+                Description = "Provides an intuitive interface for navigating through a collection of views." >
+    <Sample Title="Carousel" Name="Carousel" Icon="AllControlls/Carousel.png"/>
+  </Group>
+
+  <Group ImageId = "AllControlls/Rotator.png" Title = "Rotator" SearchTags="SfRotator,Navigation,Navigate,Thumbnails,BannerSlideshow"
+                Description = "The rotator control provides an interactive way to navigate through a collection of views. Various navigation options like swiping, auto-play and tapping are supported." >
+    <Sample Title="Rotator" Name="Rotator" Icon="AllControlls/Rotator.png"/>
+  </Group>
+
+  <Group ImageId = "AllControlls/NumericUpDown.png" Title = "NumericUpDown" SearchTags="SfNumericUpDown,currency,Percentage,Increment,Decrement"
+                Description = "Restricts input to numeric values and provides buttons to easily increment and decrement values." >
+    <Sample Title="NumericUpDown" Name="NumericUpDown" Icon="AllControlls/NumericUpDown.png"/>
+  </Group>
+
+  <Group ImageId = "AllControlls/DataSource.png" Title = "DataSource" SearchTags="data,source,sort,group,filter"
+                 Description = "Simplifies connecting with various data sources and performing operations like sorting, filtering and grouping.">
+    <Sample Icon = "FeaturesSamples/DataSourceGetStarted.png" Title = "Getting Started" Name = "DataSourceGettingStarted"
+           Description = "This sample showcases the DataSource bound with ObservableCollection." />
+    <Sample Icon = "FeaturesSamples/DataSourceSorting.png" Title = "Sorting" Name = "DataSourceSorting"
+           Description = "This sample showcases the sorting capabilities of the DataSource." />
+    <Sample Icon = "FeaturesSamples/DataSourceGrouping.png" Title = "Grouping" Name = "DataSourceGrouping"
+              Description = "This sample showcases the grouping capabilities of the DataSource." />
+  </Group>
+  
+   <Group ImageId = "AllControlls/Calculate.png" Title = "Calculate" SearchTags="calculate,formula,function,expression,compute"
+           Description = "Powerful calculation engine with support for over 400 predefined functions." >
+    <Sample Icon = "FeaturesSamples/DataGridGrouping.png" Title = "Functions Library" Name = "FunctionsLibrary"
+            Description = "This sample demonstrates the calculation using various Excel-like functions." />
+    <Sample Icon = "FeaturesSamples/DataGridGrouping.png" Title = "CalcQuick Calculation" Name = "CalcQuick"
+              Description = "This sample demonstrates the calculation via keys and expressions using CalcQuick." />
+  </Group>
+
+  <Group ImageId = "AllControlls/XlsIO.png" Title = "XlsIO" SearchTags = "XlsIO,Excel,Workbook,sheet, Spreadsheet, formula, charts, import data, export data, data validation, conditional formatting, filters, sorting, find and replace, template marker, XLS, XLSX, pivot, Excel tables, formatting, styles. merge cells,range,cell,row,column,number format, named range"
+                Description = ".NET class library for creating and modifying Microsoft Excel workbooks.">
+    <Sample Name="CreateSpreadsheetPage"  Title="Create Spreadsheet" Icon="AllControlls/XlsIO/createspreadsheet.png" Description ="XlsIO supports to create an Excel document without any dependency of Microsoft Excel in few lines of code." />
+    <Sample Name="ChartsPage" Title="Charts" Icon="AllControlls/XlsIO/excelchart.png" Description ="Create and manipulate all types of Excel charts with elements like chart title, legend, axis title, data labels, line styles, etc." />
+    <Sample Name="FormulasPage" Title="Formulas"  Icon="AllControlls/XlsIO/formulas.png" Description ="XlsIO has support to read, write and calculate formulas. The built-in calculation engine can quickly evaluate formula cell values at runtime." />
+    <Sample Name="ImportBusinessObjectsPage"  Title="Business Objects" Icon="AllControlls/XlsIO/importbusinessobject.png" Description ="Business objects usually holds a set of instance variables or properties, also known as attributes. XlsIO allows to import data directly from business objects." />
+    <Sample Name="ImportXMLPage" Title="Import XML Data"  Icon="AllControlls/XlsIO/importxml.png" Description ="XlsIO supports single line of code to import XML data into an Excel worksheet." />
+    <Sample Name="FiltersPage" Title="Filters"  Icon="AllControlls/XlsIO/filters.png" Description ="XlsIO supports data filtering based on text, date and custom options." />
+    <Sample Name="FindAndReplacePage" Title="Find and Replace" Icon="AllControlls/XlsIO/findandreplace.png" Description ="XlsIO supports to find the range of a value in the worksheet and replace it with a new value." />
+  </Group>
+
+  <Group ImageId = "AllControlls/DocIO.png" Title = "DocIO" SearchTags = "DocIO,Word,document,DOCX,DOC,DOT,DOTX,DOCM,DOTM,html,rtf,txt,Mail merge,search,find,replace,clone,merge,text,image,section,table,chart,textbox,bookmark,watermark,header,footer,toc,bullet,numbering,style,formatting"
+        Description = ".NET class library for creating and modifying Microsoft Word documents." >
+    <Sample Name="GettingStartedDocIO" Title="Getting Started" Icon="AllControlls/DocIO/generateword.png" Type="SampleBrowser.GettingStartedDocIO" Description="This sample demonstrates how to create simple Word document with text, images and tables." />
+    <Sample Name="BuiltInStyle" Title="Built-in Style" Icon="AllControlls/DocIO/builtinstyle.png" Type="SampleBrowser.BuiltInStyle" Description="This sample demonstrates how to format the Word document contents with the built-in styles." />
+    <Sample Name="CustomStyle" Title="Custom Style" Icon="AllControlls/DocIO/customstyle.png" Type="SampleBrowser.CustomStyle" Description="This sample demonstrates how to format the Word document contents with user defined styles." />
+    <Sample Name="BookmarkNavigation" Title="Bookmark Navigation" Icon="AllControlls/DocIO/bookmarknavigation.png" Type="SampleBrowser.BookmarkNavigation" Description="This sample demonstrates how to insert, retrieve, replace and delete the contents of a specified bookmark using BookmarkNavigator functionality of DocIO." />
+    <Sample Name="DocIO_PieChart" Title= "Pie Chart" Icon="AllControlls/DocIO/piechart.png" Type = "SampleBrowser.DocIO_PieChart" Description="This sample demonstrates how to create a pie chart in a Word document." />
+    <Sample Name="DocIO_BarChart" Title ="Bar Chart" Icon="AllControlls/DocIO/barchart.png" Type="SampleBrowser.DocIO_BarChart" Description="This sample demonstrates how to create a bar chart in a Word document with the data from an existing Excel file." />
+    <Sample Name="MailMerge" Title="Mail Merge" Icon="AllControlls/DocIO/letterformat.png" Type="SampleBrowser.MailMerge" Description="This sample demonstrates how to create a letter format document by filling the data using Mail merge functionality of DocIO." />
+    <Sample Name="FormFillingAndProtection" Title="Form Filling and Protection" IsNew="true" Icon="AllControlls/DocIO/protectionandformfilling.png" Type="SampleBrowser.FormFillingAndProtection" Description="This sample demonstrates how to fill data and protect the content controls in an existing Word document." />
+    <Sample Name="XMLMapping" Title="XML Mapping" IsNew="true" Icon="AllControlls/DocIO/xmlmapping.png" Type="SampleBrowser.XMLMapping" Description="This sample demonstrates how to map custom XML part to content controls in the Word document." />
+    <Sample Name="WordToHTML" Title="Word to HTML" Icon="AllControlls/DocIO/wordtohtml.png" Type="SampleBrowser.WordToHTML" Description="This sample demonstrates how to convert a Word document into HTML file." />
+  </Group>
+
+  <Group ImageId = "AllControlls/Presentation.png" SearchTags="Presentation,PowerPoint,PPTX,clone,merge,text,image,slide,chart,shape,textbox,smart art,bullet,numbering,formatting, PPTM, POTX, POTM" Title = "Presentation"
+                Description = ".NET class library for creating and modifying Microsoft PowerPoint files (.pptx)" >
+    <Sample  Title = "Getting Started" Name = "GettingStarted" Icon = "AllControlls/Presentation/GettingStartedPresentation.png" Category="Types" Description ="This sample demonstrates how to create a PowerPoint presentation by adding text with simple text formatting." />
+    <Sample  Title = "Slides" Name = "Slides" Icon = "AllControlls/Presentation/SlidesPresentation.png" Category="Types" Description ="This sample demonstrates how to create a slide with predefined layouts, like Microsoft PowerPoint." />
+    <Sample  Title = "Charts" Name = "Charts" Icon = "AllControlls/Presentation/ChartsPresentation.png" Category="Types" Description ="This sample demonstrates how to create a pie chart in PowerPoint presentation." />
+    <Sample  Title = "Tables" Name = "Tables" Icon = "AllControlls/Presentation/TablesPresentation.png" Category="Types" Description ="This sample demonstrates how to create a table with specified number of rows and columns in PowerPoint presentation for displaying tabular data." />
+    <Sample  Title = "Images" Name = "Images" Icon = "AllControlls/Presentation/ImagesPresentation.png" Category="Types" Description ="This sample demonstrates how to add an image in PowerPoint presentation." />
+    <Sample  Title = "Comments" Name = "Comments" Icon = "AllControlls/Presentation/CommentsPresentation.png" Category="Types" Description ="This sample demonstrates how to add comments in PowerPoint presentation for reviewing and updating feedbacks." />
+  </Group>
+
+  <Group ImageId = "AllControlls/PDF.png" Title = "PDF" SearchTags="PDF,Form Filling,Security, Booklet, Digital Signature, Watermark, Stamping, barcode, tables"
+                Description = ".NET class library for creating and modifying PDF documents." IsUpdated="true" >
+    <Sample  Title = "Getting Started" Name = "GettingStartedPDF" Icon = "AllControlls/pdf/gettingstartedPDF.png" Category="Types" Description="This sample demonstrates how to create a simple PDF document with text and images." />
+    <Sample  Title = "Stamping" Name = "Stamping" Icon = "AllControlls/pdf/stamp.png" Category="Types" Description="This sample demonstrates how to stamp or watermark an existing PDF document." />
+    <Sample  Title = "Table Features" Name = "TableFeatures" Icon = "AllControlls/pdf/table.png" Category="Types" Description="This sample demonstrates how to create borderless tables in a PDF document." />
+    <Sample  Title = "Booklet" Name = "Booklet" Icon = "AllControlls/pdf/booklet.png" Category="Types"  Description="This sample demonstrates how to create a booklet from an existing PDF document."/>
+    <Sample  Title = "Barcode" Name = "Barcode" Icon = "AllControlls/pdf/barcodePDF.png" Category="Types" Description="This sample demonstrates how to create various barcode in a PDF document." />
+    <Sample  Title = "Email Attachment" Name = "MailAttachment" Icon = "AllControlls/pdf/mailattachment.png" Category="Types" Description="This sample demonstrates how to send a filled PDF form as an email attachment." />
+    <Sample  Title = "Digital Signature" Name = "DigitalSignature" Icon = "AllControlls/pdf/digitalsignature.png" Category="Types" Description="This sample demonstrates how to digitally sign PDF document using a .pfx certificate." IsNew="true" />
+  </Group>
+  
+</Samples>

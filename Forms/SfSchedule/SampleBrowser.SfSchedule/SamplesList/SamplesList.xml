@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Samples>
+  
+  <Sample Name = "GettingStarted" Title = "Getting Started"  Icon="ScheduleGettingStarted.png" 
+          Description = "This sample showcases schedule control with appointments. Schedule control contains day, week, work week and month views to view the appointments." />
+  
+  <Sample Name = "DayViewConfigurations" Title = "Day View Configurations" Icon="DayViewConfigurations.png" 
+          Description = "This sample showcases the capability to change the business hours and restricted hours in day, week and work week views." />
+
+  <Sample Name = "AppointmentEditor" Title = "Appointment Editor" Icon="AppointmentEditor.png" IsUpdated="true"
+          Description = "This sample showcases the appointments and how it can be added, modified through custom editor using touch events available in the control."/>
+
+  <Sample Name = "RecursiveAppointments" Title = "Recursive Appointments" Icon="RecursiveAppointment.png" 
+          Description = "This sample showcases recurring appointments which are generated based on RRule string."/>
+
+  <Sample Name = "ViewCustomization" Title = "View Customization" Icon="ViewCustomization.png" 
+          Description = "This sample showcases loading custom views for appointments." />
+
+  <Sample Name = "AgendaView" Title = "Agenda View" Icon="AgendaView.png" IsNew="true"
+           Description = "This sample showcases appointments display in separate listview below month view as an alternate for the built in inline view."/>
+  
+  <Sample Name = "Localization" Title = "Localization" Icon="Localization.png" 
+          Description = "This sample showcases localization support in schedule control to change the built in strings to desired locale." />
+
+</Samples>
+

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Samples>
+    <Sample  Title = "Line" Name = "LineChart" Category="Types" ImageSelected = "Line_selected.png" Icon = "Line.png" />
+    <Sample  Title = "Step Line" Name = "StepLineChart" Category="Types" Icon = "StepLine.png" ImageSelected = "StepLine_selected.png" />
+    <Sample  Title = "Bar" Name = "BarChart"  Category="Types" Icon = "Bar.png" ImageSelected = "Bar_selected.png" />
+    <Sample  Title = "Area" Name = "AreaChart" Category="Types" Icon = "Area.png" ImageSelected = "Area_selected.png"/>
+    <Sample  Title = "Spline" Name = "SplineChart" Category="Types" Icon = "Spline.png" ImageSelected = "Spline_selected.png"/>
+    <Sample  Title = "Column" Name = "ColumnChart" IsUpdated= "true" Category="Types" Icon = "Column.png" ImageSelected = "Column_selected.png" />
+    <Sample  Title = "Step Area" Name = "StepAreaChart" Category="Types" Icon = "StepArea.png" ImageSelected = "StepArea_selected.png" />
+    <Sample  Title = "Spline Area" Name = "SplineAreaChart" Category="Types" Icon = "SplineArea.png" ImageSelected = "SplineArea_selected.png" />
+    <Sample  Title = "Pie" Name = "PieChart" Category="Types" Icon = "Pie.png" ImageSelected = "Pie_selected.png" />
+    <Sample  Title = "Semi Pie" Name = "SemiPieChart" IsUpdated= "true" Category="Types" Icon = "SemiPie.png" ImageSelected = "SemiPie_selected.png" />
+    <Sample  Title = "Doughnut" Name = "DoughnutChart" Category="Types" Icon = "Doughnut.png" ImageSelected = "Doughnut_selected.png" />
+    <Sample  Title = "Semi Doughnut" Name = "SemiDoughnutChart" IsUpdated= "true" Category="Types" Icon = "SemiDoughnut.png" ImageSelected = "SemiDoughnut_selected.png" />
+    <Sample  Title = "Pyramid" Name = "PyramidChart" IsUpdated= "true" Category="Types" Icon = "Pyramid.png" ImageSelected = "Pyramid_selected.png" />
+    <Sample  Title = "Funnel" Name = "FunnelChart" Category="Types" Icon = "Funnel.png" ImageSelected = "Funnel_selected.png" />
+    <Sample  Title = "Bubble" Name = "BubbleChart" Category="Types" Icon = "Bubble.png" ImageSelected = "Bubble_selected.png" />
+    <Sample  Title = "Scatter" Name = "ScatterChart" Category="Types" Icon = "Scatter.png" ImageSelected = "Scatter_selected.png" />
+    <Sample  Title = "Range Column" Name = "RangeColumnChart"  Category="Types" Icon = "RangeColumn.png" ImageSelected = "RangeColumn_selected.png" />
+    <Sample  Title = "Range Area" Name = "RangeAreaChart" Category="Types" Icon = "RangeArea.png" ImageSelected = "RangeArea_selected.png" />
+    <Sample  Title = "Candle" Name = "CandleChart" Category="Types" Icon = "Candle.png" ImageSelected = "Candle_selected.png"/>
+    <Sample  Title = "OHLC" Name = "OHLCChart" Category="Types" Icon = "OHLC.png" ImageSelected = "OHLC_selected.png" />
+    <Sample  Title = "Polar" Name = "PolarChart" IsUpdated= "true" Category="Types" Icon = "Polar.png" ImageSelected = "Polar_selected.png" />
+    <Sample  Title = "Radar" Name = "RadarChart" IsUpdated= "true" Category="Types" Icon = "Radar.png" ImageSelected = "Radar_selected.png" />
+    <Sample  Title = "Stacked Column" Name = "StackedColumnChart" Category="Types" Icon = "StackedColumn.png" ImageSelected = "StackedColumn_selected.png" />
+    <Sample  Title = "100% Stacked Column" Name = "StackedColumn100Chart"  Category="Types" Icon = "Hun_centStackedColumn.png" ImageSelected = "Hun_centStackedColumn_selected.png" />
+    <Sample  Title = "Stacked Bar" Name = "StackedBarChart" Category="Types" Icon = "StackedBar.png" ImageSelected = "StackedBar_selected.png" />
+    <Sample  Title = "100% Stacked Bar" Name = "StackedBar100Chart"  Category="Types" Icon = "Hun_centStackedBar.png" ImageSelected = "Hun_centStackedBar_selected.png" />
+    <Sample  Title = "Stacked Area" Name = "StackedAreaChart" Category="Types" Icon = "StackedArea.png" ImageSelected = "StackedArea_selected.png" />
+    <Sample  Title = "100% Stacked Area" Name = "StackedArea100Chart" Category="Types" Icon = "Hun_centStackedArea.png" ImageSelected = "Hun_centStackedArea_selected.png" />
+
+    <Sample Icon = "Trackball.png" Category="Features" Name = "Trackball" Description = "This sample showcases the trackball feature. Trackball displays the tooltip for the data points that are closer to the point where you touch on the chart area."
+            Title = "Trackball"  />
+  <Sample Icon = "AxisCrossing.png" Category="Features" Name = "AxisCrossing" Description = "Axis crossing feature changes the location at which the x-axis crosses the y-axis and vice versa."
+         Title = "Axis Crossing" IsNew = "true" />
+  <Sample Icon = "ChartAnnotation.png" Category="Features" Name = "Annotations" Description = "Annotations are used to display metadata about a chart or series at a specific point of interest in the plotting area."
+            Title = "Annotations" IsNew = "true" />
+    <Sample Icon = "LiveUpdates.png" Category="Features"  Name = "LiveUpdate"  Description = "This Sample illustrates the performance of SfChart in real time update scenario."
+            Title = "Live Update" />
+    <Sample Icon = "CategoryAxis.png" Category="Features"  Name = "CategoryAxis"  Description = "This sample showcases the use of category axis in chart.Category Axis is an indexed based axis that plots values based on its index in the data source."
+            Title = "Category Axis" />
+    <Sample Icon = "NumericalAxis.png" Category="Features"  Name = "NumericAxis"  Description = "This sample showcases the use of numerical axis in chart. Numerical axis is used to plot numeric values."
+            Title = "Numerical Axis" />
+    <Sample Icon = "LogarithmicAxis.png" Category="Features"  Name = "LogarithmicAxis"  Description = "This sample showcases the use of logarithmic axis in chart."
+            Title = "Logarithmic Axis" />
+    <Sample Icon = "DatetimeAxis.png" Category="Features" Name = "DateTimeAxis" Description = "This sample showcases the use of date time axis"
+            Title = "DateTime Axis"  />
+    <Sample Icon = "StripLines.png" Category="Features"  Name = "StripLines"  Description = "Strip lines are used to highlight specific range in the chart. They can be horizontal or vertical and also be made to optionally repeat at specific intervals."
+            Title = "Strip Lines" />
+    <Sample Icon = "MultipleAxes.png" Category="Features"  Name = "MultipleAxes"  Description = "This sample showcases the use of multiple axes in chart."
+            Title = "Multiple Axes" />
+    <Sample Icon = "DataPointSelection.png" Category="Features"  Name = "DataPointSelection"  Description = "Selection aloows you to highlight a data point. You can select a data point by tapping on it."
+            Title = "Data Point Selection" />
+    <Sample Icon = "Zooming.png" Category="Features"  Name = "ZoomingAndPanning"  Description = "This sample showcases the zooming and panning capablities of chart."
+            Title = "Zooming and panning" />
+    <Sample Icon = "VerticalChart.png" Category="Features"  Name = "VerticalChart"  Description = "This sample showcases the vertical charts feature."
+            Title = "Vertical Chart" />
+    <Sample Icon = "Tooltip.png" Category="Features"  Name = "Tooltip"  Description = "This sample showcases the tooltip capablities in chart. Tooltip feature is used to show information about the segment when you tap on the segment."
+            Title = "Tooltip" />
+    <Sample Icon = "DataMaker.png" Name = "DataMarkerCustomization" Category="Features"  Description = "This sample showcases the customization of data markers. Data markers are used to provide information about the data points to the user."
+            Title = "Data Marker" />
+    <Sample Icon = "AutoScrolling.png" Category="Features"  Name = "AutoScrolling"  Description = "This sample demonstrates the automatic scrolling of axis during real time updates."
+            Title = "Auto Scrolling" />
+    <Sample Icon = "TechnicalIndicator.png" Category="Features"  Name = "TechnicalIndicator"  Description = "Technical indicators are the base for technical analysis which is used to determine the future of financial stock or economic trends."
+            Title = "Technical Indicator" />
+</Samples>

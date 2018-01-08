@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Samples>
+    <Sample Name = "BubbleVisualization" Title = "Bubble Visualization"/>
+    <Sample Name = "ColorMappings" Title = "Color Mappings"/>
+    <Sample Name = "MapsGettingStarted" Title = "Data Markers"/>
+    <Sample Name = "MapsTicketBooking" Title = "Ticket Booking"/>
+</Samples>

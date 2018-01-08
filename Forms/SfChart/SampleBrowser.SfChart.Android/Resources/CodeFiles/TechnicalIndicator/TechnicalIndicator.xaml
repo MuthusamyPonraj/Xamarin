@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.TechnicalIndicator"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+	<local:SampleView.Content>
+		  <Grid x:Name="rootLayout">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="2*"/>
+      </Grid.RowDefinitions>
+        
+         <StackLayout x:Name="pickerLayout" Orientation="Vertical" Grid.Row="0" Spacing="0" >
+           <StackLayout.IsVisible>
+             <OnPlatform x:TypeArguments="x:Boolean" Android="true" iOS="true" WinPhone="false"/>
+           </StackLayout.IsVisible>  
+           <Label x:Name="animationPickerTitle" Text="Technical Indicator Type" TextColor="#333333" HorizontalOptions="FillAndExpand" FontSize="18" VerticalOptions="FillAndExpand"/>
+           <Label x:Name="animationPickerLabel" FontSize="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+           <BoxView HeightRequest="0.8" Margin="10,0,10,0" Color="#B1BBCC"></BoxView>
+        </StackLayout>
+        
+        <StackLayout x:Name="WinPhonePickerLayout" Orientation="Vertical" Grid.Row="0">
+          <StackLayout.IsVisible>
+            <OnPlatform x:TypeArguments="x:Boolean" Android="false" iOS="false" WinPhone="true"/>
+          </StackLayout.IsVisible>
+        </StackLayout>
+               
+      <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="1">
+
+        <chart:SfChart.Margin>
+          <OnPlatform x:TypeArguments="Thickness"  WinPhone="10,0,10,0" />
+        </chart:SfChart.Margin>
+        
+        <chart:SfChart.Title>
+          <chart:ChartTitle Text="Foreign Exchange Rate Analysis" Font="15"/>
+        </chart:SfChart.Title>
+
+        <chart:SfChart.ChartBehaviors>
+          <chart:ChartTrackballBehavior />
+        </chart:SfChart.ChartBehaviors>
+        <chart:SfChart.BindingContext>
+          <sampleBrowser:TechnicalIndicatorViewModel />
+        </chart:SfChart.BindingContext>
+
+        <chart:SfChart.PrimaryAxis>
+          <chart:DateTimeAxis>
+            <chart:DateTimeAxis.LabelStyle>
+              <chart:ChartAxisLabelStyle LabelFormat = "MM/yyyy"/>
+            </chart:DateTimeAxis.LabelStyle>
+          </chart:DateTimeAxis>
+        </chart:SfChart.PrimaryAxis>
+
+        <chart:SfChart.SecondaryAxis>
+          <chart:NumericalAxis>
+          </chart:NumericalAxis>
+        </chart:SfChart.SecondaryAxis>
+
+        <chart:SfChart.Series>
+          <chart:HiLoOpenCloseSeries Name="Series" ItemsSource="{Binding TechnicalIndicatorData}" EnableAnimation="True">
+          </chart:HiLoOpenCloseSeries>
+        </chart:SfChart.Series>
+      </chart:SfChart>
+    </Grid>
+	</local:SampleView.Content>
+</local:SampleView>

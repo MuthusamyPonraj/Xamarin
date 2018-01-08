@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Samples>
+  <Sample Icon = "ListGettingStarted.png" Title = "Getting Started" Name = "GettingStarted"
+            Description = "This sample illustrates about getting started with ListView by loading a set of data items with predefined template." />
+  <Sample Icon = "ListGridLayout.png" Title = "Grid Layout" Name = "GridLayout"
+          Description = "This sample showcases the grid layout which arranges the items in a predefined number of columns." />
+  <Sample Icon = "ListGrouping.png" Title = "Grouping" Name = "Grouping"
+            Description = "This sample showcases the grouping capability of ListView which also provides support to freeze the group headers in view when grouped." />
+  <Sample Icon = "ListSelection.png" Title = "Selection" Name = "Selection"
+            Description = "This sample showcases the selection capability of ListView which provides selection mode options like Single, Multiple and None." />
+  <Sample Icon = "ListOrientation.png" Title = "Horizontal Orientation" Name = "Orientation"
+            Description = "This sample showcases the horizontal orientation support in ListView where the items are arranged in a horizontal manner." />
+  <Sample Icon = "ListSwiping.png" Title = "Swiping" Name = "Swiping"
+            Description = "This sample showcases the swiping functionalities of ListView which allows you to load the swipe views and associate them with custom actions." />
+  <Sample Icon = "ListItemReordering.png" Title = "Item Reordering" Name = "ItemReordering" IsNew="true"
+            Description = "This sample showcases the item reordering by drag and drop on either long press or from drag indicator." />
+  <Sample Icon = "ListPullToRefresh.png" Title = "Pull To Refresh" Name = "PullToRefresh"
+            Description = "This sample showcases the pull-to-refresh capability of ListView which allows you to refresh the data source upon pull-to-refresh action." />
+  <Sample Icon = "ListLoadMore.png" Title = "Load More" Name = "LoadMore" IsNew="true"
+            Description = "This sample showcases the loading more items automatically when end of the list is reached on scrolling." />
+  <Sample Icon = "ListAutofitItems.png" Title = "Autofit Items" Name = "AutoFitContent"
+            Description = "This sample showcases the autofit feature of ListView which automatically re-size the items based on its content dynamically." />
+  <Sample Icon = "ListDataTemplateSelector.png" Title = "Data Template Selector" Name = "DataTemplateSelector" IsNew="true"
+              Description = "This sample showcases the template selector feature of ListView which displays incoming and outgoing messsage on different template." />
+  <Sample Icon = "ListFiltering.png" Title = "Sorting and Filtering" Name = "SortingFiltering"
+            Description = "This sample showcases the sorting and filtering capabilities of ListView." />
+</Samples>

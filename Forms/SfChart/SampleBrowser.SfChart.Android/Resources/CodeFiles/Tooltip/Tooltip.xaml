@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.Tooltip"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+  xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" >
+		<local:SampleView.Content>
+	<StackLayout x:Name="stack">
+
+    <StackLayout.Resources>
+
+      <ResourceDictionary>
+        <local:ImagePathConverter x:Key="SourceConverter"></local:ImagePathConverter>
+        <DataTemplate x:Key="toolTipTemplate_Phone">
+
+          <StackLayout Orientation="Horizontal" HeightRequest="30"
+                       BackgroundColor="#C1272D" Spacing="3" Padding="0">
+            <Image Source="{Binding Converter={StaticResource SourceConverter},ConverterParameter=SampleBrowser.SfChart.grain.png}" Aspect="Fill" WidthRequest="30" HeightRequest="30"/>
+
+            <Grid HorizontalOptions="Fill" HeightRequest="30" RowSpacing="0">
+
+              <Grid.RowDefinitions>
+                <RowDefinition  />
+                <RowDefinition  />
+              </Grid.RowDefinitions>
+
+              <Label Text="{Binding Name}" HorizontalTextAlignment="Start"
+                     VerticalTextAlignment="Center" TextColor="#FFA500"
+                     FontFamily="Helvetica" Margin="0"  FontSize = "12" Grid.Row='0' />
+              <Label Text="{Binding Value}" HorizontalTextAlignment="Start"
+                     VerticalTextAlignment="Center" TextColor="White"
+                     FontFamily="Helvetica" Margin="0" FontSize = "12"  Grid.Row='1'/>
+            </Grid>
+
+          </StackLayout>
+
+        </DataTemplate>
+
+        <DataTemplate x:Key="toolTipTemplate_Desktop">
+
+          <StackLayout Orientation="Horizontal" BackgroundColor="#C1272D">
+            
+            <Image Source="{Binding Converter={StaticResource SourceConverter},ConverterParameter=SampleBrowser.SfChart.grain.png}" Aspect="Fill"  WidthRequest="40" HeightRequest="40"/>
+
+            <Grid HorizontalOptions="Fill"  Padding="0,4,4,4">
+
+              <Grid.RowDefinitions>
+                <RowDefinition  />
+                <RowDefinition  />
+              </Grid.RowDefinitions>
+
+              <Label Text="{Binding Name}" HorizontalTextAlignment="Start"
+                     VerticalTextAlignment="Center" TextColor="#FFA500" FontAttributes="Bold"
+                     FontFamily="Helvetica" Margin="0"  FontSize = "12" Grid.Row='0' />
+              <Label Text="{Binding Value}" HorizontalTextAlignment="Start"
+                     VerticalTextAlignment="Center" TextColor="White"
+                     FontFamily="Helvetica" Margin="0" FontSize = "12"  Grid.Row='1'/>
+            </Grid>
+
+          </StackLayout>
+
+        </DataTemplate>
+
+      </ResourceDictionary>
+    
+   </StackLayout.Resources>
+    
+   <chart:SfChart x:Name="chart" StyleId="Tooltip" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+     <chart:SfChart.Margin>
+       <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,0,15,0" />
+     </chart:SfChart.Margin>
+     
+     <chart:SfChart.Title>
+       <chart:ChartTitle Text="USA Wheat Production" Font="15"/>
+     </chart:SfChart.Title>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:CategoryAxis Interval="2" ShowMajorGridLines="False" PlotOffset="10">
+         <chart:CategoryAxis.AxisLineStyle>
+            <chart:ChartLineStyle x:Name="lineStyle" StrokeWidth="0.5"/>
+          </chart:CategoryAxis.AxisLineStyle>
+        </chart:CategoryAxis>
+      </chart:SfChart.PrimaryAxis>
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis Interval="0.2" Minimum="1.5" Maximum="2.701" EdgeLabelsDrawingMode="Shift">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text ="Billion Bushels">
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,0,10,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+          <chart:NumericalAxis.AxisLineStyle>
+            <chart:ChartLineStyle StrokeWidth="0"/>
+          </chart:NumericalAxis.AxisLineStyle>
+           <chart:NumericalAxis.MajorTickStyle>
+            <chart:ChartAxisTickStyle StrokeWidth="0"/>
+          </chart:NumericalAxis.MajorTickStyle>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.ChartBehaviors>
+        <chart:ChartTooltipBehavior  x:Name="tooltipBehavior"/>
+      </chart:SfChart.ChartBehaviors>
+      
+      <chart:SfChart.Series>        
+        <chart:SplineSeries x:Name="splineSeries" XBindingPath="Name" YBindingPath="Value" EnableTooltip="True">
+          <chart:SplineSeries.DataMarker>
+            <chart:ChartDataMarker ShowLabel="false" ShowMarker="True"  MarkerBorderColor="Black" x:Name="dataMarker">
+            	<chart:ChartDataMarker.MarkerHeight>
+            		    <OnPlatform x:TypeArguments="x:Double"
+								      iOS="5"
+								      Android="9"
+								      WinPhone="10" />
+            	</chart:ChartDataMarker.MarkerHeight>
+            	<chart:ChartDataMarker.MarkerWidth>
+            		    <OnPlatform x:TypeArguments="x:Double"
+								      iOS="5"
+								      Android="9"
+								      WinPhone="10" />
+            	</chart:ChartDataMarker.MarkerWidth>
+            </chart:ChartDataMarker>
+          </chart:SplineSeries.DataMarker>
+        </chart:SplineSeries>
+      </chart:SfChart.Series>
+    </chart:SfChart>
+  </StackLayout>
+</local:SampleView.Content>
+	</local:SampleView>

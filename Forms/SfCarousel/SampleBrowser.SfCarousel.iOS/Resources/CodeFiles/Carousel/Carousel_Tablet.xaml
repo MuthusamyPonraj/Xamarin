@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms"
+			xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+            xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			x:Class="SampleBrowser.SfCarousel.Carousel_Tablet">
+	<local:SampleView.Resources>
+    <ResourceDictionary>
+      <DataTemplate x:Key="itemTemplate">
+        <Image Source="{Binding Image}"  Aspect="AspectFit"/>
+      </DataTemplate>
+    </ResourceDictionary>
+  </local:SampleView.Resources>
+    
+<local:SampleView.Content >
+<Grid>
+<Grid.RowDefinitions>
+<RowDefinition Height="8*"/>
+<RowDefinition Height="4*" x:Name="property"/>
+</Grid.RowDefinitions>
+<carousel:SfCarousel x:Name="carousel" ItemTemplate="{StaticResource itemTemplate}" SelectedIndex="2" ScaleOffset="1" HeightRequest="600" WidthRequest="400" />
+  <ScrollView Grid.Row="1">
+
+    <StackLayout x:Name="Property_Windows">
+      <StackLayout Orientation="Horizontal" Padding="30,0,0,0" x:Name="temp"  HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+        <Label Text="OPTIONS" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" FontSize="18"  FontFamily="Helvetica"/>
+        <Button x:Name="Property_Button" HorizontalOptions="EndAndExpand" ></Button>
+      </StackLayout>
+    </StackLayout>
+
+  </ScrollView>
+</Grid>
+</local:SampleView.Content>
+</local:SampleView>
+
+

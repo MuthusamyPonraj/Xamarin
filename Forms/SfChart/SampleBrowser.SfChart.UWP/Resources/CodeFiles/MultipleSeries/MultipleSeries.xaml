@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.MultipleSeries"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+
+	<local:SampleView.Content>
+
+		 <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition ></RowDefinition>
+        <RowDefinition ></RowDefinition>
+      </Grid.RowDefinitions>
+      <chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <chart:SfChart.BindingContext>
+          <sampleBrowser:MultipleSeriesViewModel />
+        </chart:SfChart.BindingContext>
+
+        <chart:SfChart.Series>
+          <chart:PieSeries DataMarkerPosition="OutsideExtended" ItemsSource="{Binding PieData}" XBindingPath="date" YBindingPath="Value" ConnectorLineType="Bezier"  EnableTooltip="True" EnableAnimation="True">
+            <chart:PieSeries.DataMarker>
+              <chart:ChartDataMarker LabelContent="Percentage"/>
+            </chart:PieSeries.DataMarker>
+          </chart:PieSeries>
+        </chart:SfChart.Series>
+
+      </chart:SfChart>
+
+      <chart:SfChart x:Name="Chart1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+	    <chart:SfChart.BindingContext>
+          <local:MultipleSeriesViewModel  />
+        </chart:SfChart.BindingContext>
+
+        <chart:SfChart.PrimaryAxis>
+          <chart:DateTimeAxis >
+            <chart:DateTimeAxis.LabelStyle>
+              <chart:ChartAxisLabelStyle LabelFormat="MMM/dd/yyyy"/>
+            </chart:DateTimeAxis.LabelStyle>
+          </chart:DateTimeAxis>
+        </chart:SfChart.PrimaryAxis>
+
+        <chart:SfChart.SecondaryAxis>
+          <chart:NumericalAxis/>
+        </chart:SfChart.SecondaryAxis>
+
+        <chart:SfChart.Series>
+          <chart:ColumnSeries ItemsSource="{Binding MultipleSeriesData1}" XBindingPath="date" YBindingPath="Value"  EnableTooltip="True" EnableAnimation="True"/>
+          <chart:SplineSeries ItemsSource="{Binding MultipleSeriesData2}" XBindingPath="date" YBindingPath="Value"  EnableTooltip="True" EnableAnimation="True"/>
+        </chart:SfChart.Series>
+
+      </chart:SfChart>
+    </Grid>
+	</local:SampleView.Content>
+</local:SampleView>

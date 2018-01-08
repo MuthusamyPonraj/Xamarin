@@ -1,0 +1,109 @@
+node ('xamarin') 
+{
+timestamps{
+    stage 'Checkout' 
+    try    {	
+	  //checkout the xamarinandroid-samplebrowser Source	
+	  checkout([$class: 'GitSCM', branches: [[name: '*/$gitlabSourceBranch']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'xamarinandroid-samplebrowser']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: env.gitlabCredentialId, url: 'https://gitlab.syncfusion.com/essential-studio/xamarinandroid-samplebrowser.git']]])
+	  
+	  //checkout the essentialstudio-common Source
+	  checkout([$class: 'GitSCM', branches: [[name: '*/development']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'essentialstudio-common']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: env.gitlabCredentialId, url: 'https://gitlab.syncfusion.com/essential-studio/essentialstudio-common.git']]])
+	  	  
+     }
+    catch(Exception e)    {	 
+	    echo "Exception in 'Checkout' stage \r\n"+ e
+        currentBuild.result = 'FAILURE'		
+    } 
+
+if(currentBuild.result != 'FAILURE')
+{		
+	stage 'Build Source'
+	try	{	    
+ 	 
+	 gitlabCommitStatus("Build")
+	 {
+	   
+	  bat 'powershell.exe -ExecutionPolicy ByPass -File xamarinandroid-samplebrowser/build/build.ps1 -Script '+env.WORKSPACE+"/xamarinandroid-samplebrowser/build/build.cake -Target build  -nugetserverurl "+env.nugetserverurl
+	 
+	 }
+     
+	 def files = findFiles(glob: '**/cireports/errorlogs/*.txt')
+
+        if(files.size() > 0)
+        {
+           currentBuild.result = 'FAILURE'
+        }
+    }
+	 catch(Exception e) 
+    { 
+	    echo "Exception in 'Build' stage \r\n"+ e
+		currentBuild.result = 'FAILURE'
+    }
+}
+ 
+if(currentBuild.result != 'FAILURE' && gitlabSourceBranch == 'development')
+{
+	stage 'Publish'
+	try
+	{
+	  //method to get release notes content
+	  changeLogs()  
+	  
+	  gitlabCommitStatus("Publish")
+	    {  
+	        bat 'powershell.exe -ExecutionPolicy ByPass -File xamarinandroid-samplebrowser/build/build.ps1 -Script '+env.WORKSPACE+"/xamarinandroid-samplebrowser/build/build.cake -Target publish -apitoken " +env.Hockey_apitoken
+	        
+	    }
+	}
+	catch(Exception e) 
+	{
+		echo "Exception in 'Publish' stage \r\n"+ e
+		currentBuild.result = 'FAILURE'
+	}
+}
+	stage 'Delete Workspace'
+	
+	// Archiving artifacts when the folder was not empty	
+    def files = findFiles(glob: '**/cireports/**/*.*')      
+    
+    if(files.size() > 0) 		
+    { 		
+        archiveArtifacts artifacts: 'xamarinandroid-samplebrowser/cireports/', excludes: null 		
+    }
+	 
+	step([$class: 'WsCleanup'])
+}
+}
+
+
+@NonCPS
+def changeLogs(){
+try{
+     def releaseNotesContent=""; 	      
+	 //Get the current job changes summary as a collection(commit id, author, commit message)
+	   def commitLogSummaryDetails = currentBuild.changeSets
+	 //Jenkins job summary count (commitLogSummaryDetails.size)
+	   for (int i = 0; i < commitLogSummaryDetails.size(); i++) {
+	 //Get single job summary from the collection
+	   def commitDetails = commitLogSummaryDetails[i].items
+	   for (int j = 0; j < commitDetails.length; j++) {
+	   def commitDetail = commitDetails[j]
+       //Get the required "commit message and author details"
+       releaseNotesContent+="${commitDetail.msg}"+ ' - ' +"${commitDetail.author}"+"\r\n";	
+	   }     
+	 break;
+    }
+	
+    if (releaseNotesContent) {  
+       writeFile file: env.WORKSPACE+"/xamarinandroid-samplebrowser/cireports/releasenotes/releasenotes.txt", text: releaseNotesContent
+    }
+    else  {
+       writeFile file: env.WORKSPACE+"/xamarinandroid-samplebrowser/cireports/releasenotes/releasenotes.txt", text: "No commit details found for this job."
+    }
+}
+	catch(Exception e)
+	{
+	currentBuild.result = 'SUCCESS'
+	}
+ return "Success"
+}

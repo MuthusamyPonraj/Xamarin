@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Samples >
+  <Sample Title = "Weather Data" Name = "PullToRefreshView" Icon = "AllControlls/PullToRefresh.png" 
+          Description = "This sample showcases the pull-to-refresh capability of a simple layout allows you to refresh the data source upon pull-to-refresh action."/>
+  <Sample Title = "Pull To Refresh With SfListView" Icon = "AllControlls/ListView/ListPullToRefresh.png"  Name = "ListViewPullToRefresh"
+            Description = "This sample showcases the pull-to-refresh capability of ListView which allows you to refresh the data source upon pull-to-refresh action." />
+  <Sample Title = "Pull To Refresh with DataGrid" Name = "DataGridPullToRefresh" Icon = "AllControlls/PullToRefresh.png"  IsNew="true"
+          Description = "This sample showcases the pull-to-refresh capability to host SfDataGrid which allows you to refresh the data source upon pull-to-refresh action."  />
+</Samples>
