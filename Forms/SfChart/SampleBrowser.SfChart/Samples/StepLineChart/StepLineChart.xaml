@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.StepLineChart"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+	<local:SampleView.Content>
+
+
+    <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+      <chart:SfChart.Margin>
+        <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,0,15,0" />
+      </chart:SfChart.Margin>
+      
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="CO-2 Intensity Analysis" Font="15"/>
+      </chart:SfChart.Title>
+
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:StepLineSeriesViewModel />
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:NumericalAxis EdgeLabelsDrawingMode="Shift" Minimum="2005" Maximum="2012" Interval="1">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Year" >
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,10,0,0" iOS="0,0,0,10"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis Maximum="600" Minimum="390" Interval="30">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Intensity (g/KWh)" >
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness" Android="0,0,10,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Legend>
+        <chart:ChartLegend DockPosition="Bottom" ToggleSeriesVisibility="True"/>
+      </chart:SfChart.Legend>
+
+      <chart:SfChart.Series>
+        
+        <chart:StepLineSeries StrokeWidth="3" ItemsSource="{Binding StepLineData1}" XBindingPath="Value" YBindingPath="Size" Label="UK" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
+          <chart:StepLineSeries.DataMarker>
+            <chart:ChartDataMarker ShowMarker="True" MarkerColor="#FEBE17" MarkerBorderColor="#FEBE17" ShowLabel="False" MarkerHeight="8" MarkerWidth="8"/>
+          </chart:StepLineSeries.DataMarker>
+        </chart:StepLineSeries>
+
+        <chart:StepLineSeries StrokeWidth="3" ItemsSource="{Binding StepLineData2}" XBindingPath="Value" YBindingPath="Size" LegendIcon="Rectangle" Label="Korea" EnableTooltip="True" EnableAnimation="True">
+          <chart:StepLineSeries.DataMarker>
+            <chart:ChartDataMarker ShowMarker="True" MarkerColor="#4F4838" MarkerBorderColor="#4F4838" ShowLabel="False" MarkerHeight="8" MarkerWidth="8"/>
+          </chart:StepLineSeries.DataMarker>
+        </chart:StepLineSeries>
+
+        <chart:StepLineSeries StrokeWidth="3" ItemsSource="{Binding StepLineData3}" XBindingPath="Value" YBindingPath="Size" LegendIcon="Rectangle" Label="Japan" EnableTooltip="True" EnableAnimation="True">
+          <chart:StepLineSeries.DataMarker>
+            <chart:ChartDataMarker ShowMarker="True" MarkerColor="#C15146" MarkerBorderColor="#C15146" ShowLabel="False" MarkerHeight="8" MarkerWidth="8"/>
+          </chart:StepLineSeries.DataMarker>
+        </chart:StepLineSeries>
+      </chart:SfChart.Series>
+
+    </chart:SfChart>
+
+	</local:SampleView.Content>
+</local:SampleView>

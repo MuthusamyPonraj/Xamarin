@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView
+    x:Class="SampleBrowser.SfSchedule.DayViewConfigurations"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+	xmlns:samplelocal="clr-namespace:SampleBrowser.SfSchedule;assembly=SampleBrowser.SfSchedule"
+    xmlns:schedule="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms">
+  
+    <local:SampleView.Content>
+        <Grid x:Name="grid_layout">
+            <schedule:SfSchedule
+                x:Name="Schedule"
+                DataSource="{Binding Appointments}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+              <schedule:SfSchedule.DayViewSettings>
+                <schedule:DayViewSettings
+                     WorkStartHour="{Binding WorkStartHour}"
+                     WorkEndHour="{Binding EndHour}">
+                </schedule:DayViewSettings>
+              </schedule:SfSchedule.DayViewSettings>
+              <schedule:SfSchedule.WeekViewSettings>
+                <schedule:WeekViewSettings
+                     WorkStartHour="{Binding WorkStartHour}"
+                     WorkEndHour="{Binding EndHour}">
+                </schedule:WeekViewSettings>
+              </schedule:SfSchedule.WeekViewSettings>
+              <schedule:SfSchedule.WorkWeekViewSettings>
+                <schedule:WorkWeekViewSettings
+                     WorkStartHour="{Binding WorkStartHour}"
+                     WorkEndHour="{Binding EndHour}">
+                </schedule:WorkWeekViewSettings>
+              </schedule:SfSchedule.WorkWeekViewSettings>
+                <schedule:SfSchedule.BindingContext>
+                    <samplelocal:ConfigurationViewModel />
+                </schedule:SfSchedule.BindingContext>
+            </schedule:SfSchedule>
+        </Grid>
+    </local:SampleView.Content>
+
+  <local:SampleView.PropertyView>
+    <Grid  BackgroundColor="White"  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Label
+				Grid.Row="0"
+				x:Name="startHourLabel"
+				Text="Change the work hour starting time"
+				FontSize="15"
+				TextColor="Gray" />
+      <Slider 
+        Grid.Row="1"
+        x:Name="startTimeSlider"
+        Minimum="0"
+        Maximum="23"
+        Value="8">
+      </Slider>
+      <Label
+				Grid.Row="2"
+				x:Name="endHourLabel"
+				Text="Change the work hour ending time"
+	         	FontSize="15"
+				TextColor="Gray" />
+      <Slider
+				Grid.Row="3"
+				x:Name="endTimeSlider"
+				Minimum="0"
+				Maximum="23"
+				Value="16"/>
+      <Label
+				Grid.Row="4"
+				x:Name="scheduleViewLabel"
+				Text="Change the view type"
+		        FontSize="15"
+				TextColor="Gray" />
+      <Picker
+       x:Name="viewPicker"
+               Grid.Row="5"
+               HorizontalOptions="FillAndExpand">
+        <Picker.Items>
+          <x:String>Day View</x:String>
+          <x:String>Week View</x:String>
+          <x:String>Work Week View</x:String>
+        </Picker.Items>
+      </Picker>
+      <Label
+				Grid.Row="6"
+				x:Name="navigateToLabel"
+				Text="Navigate to specific date"
+		        FontSize="15"
+				TextColor="Gray" />
+      <DatePicker
+		        Grid.Row="7"
+				x:Name="datePicker" />
+    </Grid>
+  </local:SampleView.PropertyView>
+
+  <local:SampleView.Behaviors>
+    <samplelocal:DayViewConfigurationBehavior/>
+  </local:SampleView.Behaviors>
+</local:SampleView>

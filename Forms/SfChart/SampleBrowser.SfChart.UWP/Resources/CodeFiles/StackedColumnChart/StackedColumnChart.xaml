@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.StackedColumnChart"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">	
+	<local:SampleView.Content>
+
+		<chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+      <chart:SfChart.Margin>
+        <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,0,15,0" />
+      </chart:SfChart.Margin>
+      
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Most Popular Search Engines"  Font="15"/>
+      </chart:SfChart.Title>
+
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:StackedColumnSeriesViewModel />
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:CategoryAxis LabelPlacement="BetweenTicks">
+          <chart:CategoryAxis.Title>
+            <chart:ChartAxisTitle Text="Month">
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,10,0,0" iOS="0,0,0,10"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:CategoryAxis.Title>
+        </chart:CategoryAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis Maximum="1800" Minimum="0" Interval="200">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Number of visitors in Millions">
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness" Android="0,0,10,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+        
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Legend>
+        <chart:ChartLegend ToggleSeriesVisibility="True" DockPosition="Bottom"/>
+      </chart:SfChart.Legend>
+
+      <chart:SfChart.Series>
+        <chart:StackingColumnSeries x:Name="series1" ItemsSource="{Binding StackedColumnData1}" 
+                                    XBindingPath="Name" YBindingPath="Value" 
+                                    Label="Google" LegendIcon="Rectangle" 
+                                    EnableTooltip="True" EnableAnimation="True">
+           </chart:StackingColumnSeries>
+        
+        <chart:StackingColumnSeries x:Name="series2" ItemsSource="{Binding StackedColumnData2}" 
+                                    XBindingPath="Name" YBindingPath="Value" 
+                                    Label="Bing" LegendIcon="Rectangle" 
+                                    EnableTooltip="True" EnableAnimation="True">
+           </chart:StackingColumnSeries>
+
+        <chart:StackingColumnSeries x:Name="series3" ItemsSource="{Binding StackedColumnData3}" 
+                                    XBindingPath="Name" YBindingPath="Value" 
+                                    Label="Yahoo" LegendIcon="Rectangle" 
+                                    EnableTooltip="True" EnableAnimation="True">
+           </chart:StackingColumnSeries>
+
+        <chart:StackingColumnSeries x:Name="series4" ItemsSource="{Binding StackedColumnData4}" 
+                                    XBindingPath="Name" YBindingPath="Value" 
+                                    Label="Ask" LegendIcon="Rectangle" 
+                                    EnableTooltip="True" EnableAnimation="True">
+        </chart:StackingColumnSeries>
+
+      </chart:SfChart.Series>
+
+    </chart:SfChart>
+	</local:SampleView.Content>
+</local:SampleView>

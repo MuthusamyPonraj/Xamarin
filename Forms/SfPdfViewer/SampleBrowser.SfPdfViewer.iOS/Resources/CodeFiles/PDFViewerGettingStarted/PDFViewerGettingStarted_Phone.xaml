@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+             xmlns:sfpdfviewer="clr-namespace:Syncfusion.SfPdfViewer.XForms;assembly=Syncfusion.SfPdfViewer.XForms"
+                  xmlns:cr="clr-namespace:SampleBrowser.SfPdfViewer;assembly=SampleBrowser.SfPdfViewer"
+             x:Class="SampleBrowser.SfPdfViewer.PDFViewerGettingStarted_Phone">
+  <local:SampleView.BindingContext>
+    <cr:PdfViewerViewModel/>
+  </local:SampleView.BindingContext>
+  <local:SampleView.Content>
+    <Grid x:Name="mainGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="50" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="50" />
+      </Grid.RowDefinitions>
+      <Grid x:Name="toolbar"  Grid.Row="0" BackgroundColor="#E9E9E9" RowSpacing="0" HorizontalOptions="Fill" VerticalOptions="Fill">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="99*" />
+          <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <BoxView Grid.Row ="1" BackgroundColor ="Gray" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        <Grid Grid.Row="0" HorizontalOptions="Fill" VerticalOptions="Fill" >
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*" />
+            <ColumnDefinition Width ="3*" />
+            <ColumnDefinition Width ="3*"/>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="0.2*" />
+          </Grid.ColumnDefinitions>
+          <Button x:Name="showFileBtn"  Grid.Column="1" BackgroundColor="Transparent" Image="FileIcon.png" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding FileOpenCommand}"/>
+          <Button x:Name="saveButton"  Grid.Column="2" BackgroundColor="Transparent" Image="SaveIcon.png" HorizontalOptions="Center" VerticalOptions="Center" Clicked="SaveButton_Clicked"/>
+          <Button x:Name="undoButton"  Grid.Column="4" BackgroundColor="Transparent" Image="UndoIcon.png" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding PerformUndoCommand ,Source={x:Reference Name=pdfViewerControl}}"/>
+          <Button x:Name="redoButton"  Grid.Column="5" BackgroundColor="Transparent" Image="RedoIcon.png" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding PerformRedoCommand ,Source={x:Reference Name=pdfViewerControl}}"/>
+          <Button x:Name="searchButton" Grid.Column="7" BackgroundColor="Transparent" Image="SearchIcon.png" HorizontalOptions="Center" Command="{Binding SearchAndToolbarToggleCommand}" Clicked="OnSearchClicked"/>
+        </Grid>
+      </Grid>
+      <Grid x:Name="searchBar" Grid.Row="0" RowSpacing="0" BackgroundColor="#E9E9E9" HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="{Binding IsSearchbarVisible}">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="99*" />
+          <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <BoxView Grid.Row ="1" BackgroundColor ="Gray" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*" />
+            <ColumnDefinition Width="8*" />
+            <ColumnDefinition Width="2.5*" />
+            <ColumnDefinition Width="2.5*" />
+            <ColumnDefinition Width="2.5*" />
+            <ColumnDefinition Width="1.5*" />
+          </Grid.ColumnDefinitions>
+          <cr:SfFontButton x:Name="backIcon" Grid.Column="0" BackgroundColor="Transparent" TextColor="#0076FF" FontSize="30" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding SearchAndToolbarToggleCommand}" >
+            <cr:SfFontButton.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+              </OnPlatform>
+            </cr:SfFontButton.FontFamily>
+            <cr:SfFontButton.Text>
+              <OnPlatform x:TypeArguments="x:String" iOS ="&#xe719;" Android ="&#xe708;" WinPhone="&#xe71c;" />
+            </cr:SfFontButton.Text>
+            <cr:SfFontButton.Behaviors>
+              <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding CancelSearchCommand, Source={x:Reference Name=pdfViewerControl}}"/>
+            </cr:SfFontButton.Behaviors>
+          </cr:SfFontButton>
+          <cr:CustomEntry Grid.Column="1" x:Name="textSearchEntry" FontSize="18" HorizontalOptions="Fill" VerticalOptions="Center" Text="{Binding SearchedText}" TextColor="Black">
+            <cr:CustomEntry.Behaviors>
+              <cr:EventToCommandBehavior EventName="Completed" Command="{Binding SearchTextCommand , Source={x:Reference Name=pdfViewerControl}}" CommandParameter="{Binding Source ={x:Reference Name=textSearchEntry}, Path=Text}"/>
+            </cr:CustomEntry.Behaviors>
+          </cr:CustomEntry>
+          <cr:SfFontButton x:Name="searchPreviousButton" Grid.Column="2" IsVisible="false" BackgroundColor="Transparent" FontSize="30" TextColor="#0076FF" HorizontalOptions="End" VerticalOptions="Center" Command="{Binding SearchPreviousTextCommand, Source={x:Reference Name=pdfViewerControl}}" CommandParameter="{Binding Source ={x:Reference Name=textSearchEntry}, Path=Text}">
+            <cr:SfFontButton.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+              </OnPlatform>
+            </cr:SfFontButton.FontFamily>
+            <cr:SfFontButton.Text>
+              <OnPlatform x:TypeArguments="x:String" iOS ="&#xe710;" Android ="&#xe712;" WinPhone="&#xe709;" />
+            </cr:SfFontButton.Text>
+          </cr:SfFontButton>
+          <cr:SfFontButton x:Name="searchNextButton" Grid.Column="3" IsVisible="false" BackgroundColor="Transparent" FontSize="30" TextColor="#0076FF" HorizontalOptions="End" VerticalOptions="Center" Command="{Binding SearchNextTextCommand, Source={x:Reference Name=pdfViewerControl}}" CommandParameter="{Binding Source ={x:Reference Name=textSearchEntry}, Path=Text}">
+            <cr:SfFontButton.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+              </OnPlatform>
+            </cr:SfFontButton.FontFamily>
+            <cr:SfFontButton.Text>
+              <OnPlatform x:TypeArguments="x:String" iOS ="&#xe717;" Android ="&#xe706;" WinPhone="&#xe700;" />
+            </cr:SfFontButton.Text>
+          </cr:SfFontButton>
+          <cr:SfFontButton x:Name="cancelSearchButton" Grid.Column="4" IsVisible="{Binding IsCancelVisible}" FontSize="30" BackgroundColor="Transparent" TextColor="#0076FF" HorizontalOptions="Center" VerticalOptions="Center" Command="{Binding CancelSearchTextCommand, Source={x:Reference Name=pdfViewerControl}}" Clicked="OnCancelClicked">
+            <cr:SfFontButton.FontFamily>
+              <OnPlatform x:TypeArguments="x:String">
+                <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+              </OnPlatform>
+            </cr:SfFontButton.FontFamily>
+            <cr:SfFontButton.Text>
+              <OnPlatform x:TypeArguments="x:String" iOS ="&#xe705;" Android ="&#xe713;" WinPhone="&#xe70f;" />
+            </cr:SfFontButton.Text>
+          </cr:SfFontButton>
+        </Grid>
+      </Grid>
+
+      <Grid x:Name="pdfViewerGrid" Grid.Row="1" >
+        <Grid.Margin>
+          <OnPlatform x:TypeArguments="Thickness" Android="0" WinPhone="-9.3" iOS="0" />
+        </Grid.Margin>
+        <sfpdfviewer:SfPdfViewer x:Name="pdfViewerControl" InputFileStream="{Binding PdfDocumentStream}" TextMarkupSelected="PdfViewerControl_TextMarkupSelected" TextMarkupDeselected="PdfViewerControl_TextMarkupDeselected">
+          <sfpdfviewer:SfPdfViewer.Behaviors>
+            <cr:EventToCommandBehavior EventName="DocumentLoaded" Command="{Binding DocumentLoadedCommand}" />
+            <cr:EventToCommandBehavior EventName="DocumentLoaded" Command="{Binding AnnotationModeCommand, Source={x:Reference Name=pdfViewerControl}}" CommandParameter="None" />
+            <cr:EventToCommandBehavior EventName="TextMarkupSelected" Command="{Binding TextMarkupSelectedCommand}" />
+            <cr:EventToCommandBehavior EventName="TextMarkupDeselected" Command="{Binding TextMarkupDeselectedCommand}" />
+          </sfpdfviewer:SfPdfViewer.Behaviors>
+        </sfpdfviewer:SfPdfViewer>
+      </Grid>
+
+
+      <Grid x:Name="AnnotationGrid" RowSpacing="1" BackgroundColor="Transparent" Grid.Row="1" HeightRequest="{Binding AnnotationGridHeightRequest}" IsVisible="true" HorizontalOptions="Fill" VerticalOptions="End">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="highlightAnnotationBar" HeightRequest="{Binding AnnotationRowHeight}" Margin="-1" RowSpacing="0" Grid.Row="1" IsVisible="{Binding IsHighlightBarVisible}"  BackgroundColor="#E9E9E9" HorizontalOptions="Fill" VerticalOptions="Fill">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="99*" />
+          </Grid.RowDefinitions>
+          <BoxView Grid.Row ="0" BackgroundColor ="Gray" HorizontalOptions="Fill" />
+          <Grid Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="0.3*" />
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="4*" />
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="0.3*" />
+            </Grid.ColumnDefinitions>
+
+
+            <cr:SfFontButton x:Name="highlightAnnotationButton" Grid.Column="1" BackgroundColor="Transparent"  TextColor="#0076FF" FontSize="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+              <cr:SfFontButton.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+                </OnPlatform>
+              </cr:SfFontButton.FontFamily>
+              <cr:SfFontButton.Text>
+                <OnPlatform x:TypeArguments="x:String" iOS ="&#xe70f;" Android ="&#xe701;" WinPhone="&#xe71f;" />
+              </cr:SfFontButton.Text>
+            </cr:SfFontButton>
+            <cr:SfFontButton x:Name="colorButton" Grid.Column="4" BackgroundColor="{Binding HighlightColor}" WidthRequest="25" HeightRequest="25" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding ColorButtonClickedCommand}">
+            </cr:SfFontButton>
+            <cr:SfFontButton x:Name="backButton" Grid.Column="5" BackgroundColor="Transparent" TextColor="#0076FF" FontSize="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+              <cr:SfFontButton.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+                </OnPlatform>
+              </cr:SfFontButton.FontFamily>
+              <cr:SfFontButton.Text>
+                <OnPlatform x:TypeArguments="x:String" iOS ="&#xe706;" Android ="&#xe70a;" WinPhone="&#xe701;" />
+              </cr:SfFontButton.Text>
+              <cr:SfFontButton.Behaviors>
+                <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding AnnotationBackCommand}" />
+                <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding AnnotationModeCommand, Source={x:Reference Name=pdfViewerControl}}" CommandParameter="None" />
+              </cr:SfFontButton.Behaviors>
+            </cr:SfFontButton>
+
+          </Grid>
+        </Grid>
+
+        <Grid x:Name="underlineAnnotationBar" HeightRequest="{Binding AnnotationRowHeight}" Margin="-1" RowSpacing="0" Grid.Row="1" IsVisible="{Binding IsUnderlineBarVisible}"  BackgroundColor="#E9E9E9" HorizontalOptions="Fill" VerticalOptions="Fill">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="99*" />
+          </Grid.RowDefinitions>
+          <BoxView Grid.Row ="0" BackgroundColor ="Gray" HorizontalOptions="Fill" />
+          <Grid Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="0.3*" />
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="4*" />
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="0.3*" />
+            </Grid.ColumnDefinitions>
+
+
+            <cr:SfFontButton x:Name="underlineAnnotationButton" Grid.Column="1" BackgroundColor="Transparent"  TextColor="#0076FF" FontSize="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+              <cr:SfFontButton.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+                </OnPlatform>
+              </cr:SfFontButton.FontFamily>
+              <cr:SfFontButton.Text>
+                <OnPlatform x:TypeArguments="x:String" iOS ="&#xe711;" Android ="&#xe700;" WinPhone="&#xe71e;" />
+              </cr:SfFontButton.Text>
+            </cr:SfFontButton>
+            <cr:SfFontButton x:Name="colorButton1" Grid.Column="4" BackgroundColor="{Binding UnderlineColor}" WidthRequest="25" HeightRequest="25" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding ColorButtonClickedCommand}"/>
+            <cr:SfFontButton x:Name="backButton1" Grid.Column="5" BackgroundColor="Transparent" TextColor="#0076FF" FontSize="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+              <cr:SfFontButton.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+                </OnPlatform>
+              </cr:SfFontButton.FontFamily>
+              <cr:SfFontButton.Text>
+                <OnPlatform x:TypeArguments="x:String" iOS ="&#xe706;" Android ="&#xe70a;" WinPhone="&#xe701;" />
+              </cr:SfFontButton.Text>
+              <cr:SfFontButton.Behaviors>
+                <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding AnnotationBackCommand}" />
+                <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding AnnotationModeCommand, Source={x:Reference Name=pdfViewerControl}}" CommandParameter="None" />
+              </cr:SfFontButton.Behaviors>
+            </cr:SfFontButton>
+          </Grid>
+        </Grid>
+
+        <Grid x:Name="strikeThroughAnnotationBar" HeightRequest="{Binding AnnotationRowHeight}" Margin="-1" RowSpacing="0" Grid.Row="1" IsVisible="{Binding IsStrikeThroughBarVisible}"  BackgroundColor="#E9E9E9" HorizontalOptions="Fill" VerticalOptions="Fill">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="99*" />
+          </Grid.RowDefinitions>
+          <BoxView Grid.Row ="0" BackgroundColor ="Gray" HorizontalOptions="Fill" />
+          <Grid Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="0.3*" />
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="4*" />
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="1.5*" />
+              <ColumnDefinition Width="0.3*" />
+            </Grid.ColumnDefinitions>
+
+
+            <cr:SfFontButton x:Name="strikeThroughAnnotationButton" Grid.Column="1" BackgroundColor="Transparent"  TextColor="#0076FF" FontSize="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+              <cr:SfFontButton.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+                </OnPlatform>
+              </cr:SfFontButton.FontFamily>
+              <cr:SfFontButton.Text>
+                <OnPlatform x:TypeArguments="x:String" iOS ="&#xe71a;" Android ="&#xe71f;" WinPhone="&#xe706;" />
+              </cr:SfFontButton.Text>
+            </cr:SfFontButton>
+            <cr:SfFontButton x:Name="colorButton2" Grid.Column="4" BackgroundColor="{Binding StrikeThroughColor}" WidthRequest="25" HeightRequest="25" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding ColorButtonClickedCommand}"/>
+            <cr:SfFontButton x:Name="backButton2" Grid.Column="5" BackgroundColor="Transparent" TextColor="#0076FF" FontSize="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+              <cr:SfFontButton.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+                </OnPlatform>
+              </cr:SfFontButton.FontFamily>
+              <cr:SfFontButton.Text>
+                <OnPlatform x:TypeArguments="x:String" iOS ="&#xe706;" Android ="&#xe70a;" WinPhone="&#xe701;" />
+              </cr:SfFontButton.Text>
+              <cr:SfFontButton.Behaviors>
+                <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding AnnotationBackCommand}" />
+                <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding AnnotationModeCommand, Source={x:Reference Name=pdfViewerControl}}" CommandParameter="None" />
+              </cr:SfFontButton.Behaviors>
+            </cr:SfFontButton>
+          </Grid>
+        </Grid>
+
+
+        <Grid x:Name="secondaryAnnotationBar" HeightRequest="{Binding AnnotationRowHeight}" Margin="-1" RowSpacing="0" Grid.Row="1" IsVisible="{Binding IsSecondaryAnnotationBarVisible}" BackgroundColor="#E9E9E9" HorizontalOptions="Fill" VerticalOptions="Fill">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="99*" />
+          </Grid.RowDefinitions>
+          <BoxView Grid.Row ="0" BackgroundColor ="Gray" HorizontalOptions="Fill" />
+          <Grid Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <cr:SfFontButton x:Name="highlightButton" Grid.Column="1" TextColor="#0076FF" FontSize="30" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" >
+              <cr:SfFontButton.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+                </OnPlatform>
+              </cr:SfFontButton.FontFamily>
+              <cr:SfFontButton.Text>
+                <OnPlatform x:TypeArguments="x:String" iOS ="&#xe70f;" Android ="&#xe701;" WinPhone="&#xe71f;" />
+              </cr:SfFontButton.Text>
+              <cr:SfFontButton.Behaviors>
+                <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding HighlightCommand}"/>
+                <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding AnnotationModeCommand, Source={x:Reference Name=pdfViewerControl}}" CommandParameter="Highlight"/>
+              </cr:SfFontButton.Behaviors>
+            </cr:SfFontButton>
+            <cr:SfFontButton x:Name="underlineButton" Grid.Column="3" BackgroundColor="Transparent" Text="&#xe700;" FontSize="30" TextColor="#0076FF"  HorizontalOptions="Center" VerticalOptions="Center" >
+              <cr:SfFontButton.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+                </OnPlatform>
+              </cr:SfFontButton.FontFamily>
+              <cr:SfFontButton.Text>
+                <OnPlatform x:TypeArguments="x:String" iOS ="&#xe711;" Android ="&#xe700;" WinPhone="&#xe71e;" />
+              </cr:SfFontButton.Text>
+              <cr:SfFontButton.Behaviors>
+                <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding UnderlineCommand}"/>
+                <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding AnnotationModeCommand, Source={x:Reference Name=pdfViewerControl}}" CommandParameter="Underline"/>
+              </cr:SfFontButton.Behaviors>
+            </cr:SfFontButton>
+            <cr:SfFontButton x:Name="strikeThroughButton" Grid.Column="5" BackgroundColor="Transparent" Text="&#xe71f;" TextColor="#0076FF" FontSize="30"  HorizontalOptions="Center" VerticalOptions="Center">
+              <cr:SfFontButton.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+                </OnPlatform>
+              </cr:SfFontButton.FontFamily>
+              <cr:SfFontButton.Text>
+                <OnPlatform x:TypeArguments="x:String" iOS ="&#xe71a;" Android ="&#xe71f;" WinPhone="&#xe706;" />
+              </cr:SfFontButton.Text>
+              <cr:SfFontButton.Behaviors>
+                <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding StrikeThroughCommand}"/>
+                <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding AnnotationModeCommand, Source={x:Reference Name=pdfViewerControl}}" CommandParameter="Strikethrough"/>
+              </cr:SfFontButton.Behaviors>
+            </cr:SfFontButton>
+          </Grid>
+        </Grid>
+
+        <Grid x:Name="editAnnotationBar" Margin="-1" HeightRequest="{Binding AnnotationRowHeight}" RowSpacing="0" Grid.Row="1" IsVisible="{Binding IsEditAnnotationBarVisible}"  BackgroundColor="#E9E9E9" HorizontalOptions="Fill" VerticalOptions="Fill">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="99*" />
+          </Grid.RowDefinitions>
+          <BoxView Grid.Row ="0" BackgroundColor ="Gray" HorizontalOptions="Fill" />
+          <Grid Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="4*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <cr:SfFontButton x:Name="deleteButton" Grid.Column="1" BackgroundColor="Transparent" TextColor="#0076FF" FontSize="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Clicked="DeleteButton_Clicked" Command="{Binding DeleteCommand}">
+              <cr:SfFontButton.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                  <OnPlatform.WinPhone>/Assets/Fonts/PDFViewer_UWP.ttf#PDFViewer_UWP</OnPlatform.WinPhone>
+                </OnPlatform>
+              </cr:SfFontButton.FontFamily>
+              <cr:SfFontButton.Text>
+                <OnPlatform x:TypeArguments="x:String" iOS ="&#xe70d;" Android ="&#xe70c;" WinPhone="&#xe710;" />
+              </cr:SfFontButton.Text>
+            </cr:SfFontButton>
+            <cr:SfFontButton x:Name="changeColorButton" Grid.Column="2" BackgroundColor="{Binding DeleteButtonColor}" HeightRequest ="25" WidthRequest="25" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding ColorButtonClickedCommand}"/>
+          </Grid>
+        </Grid>
+
+        <Grid x:Name="colorBar" IsVisible="{Binding IsColorBarVisible}" HeightRequest="{Binding ColorRowHeight}" RowSpacing="0" Grid.Row="0" BackgroundColor="#E9E9E9" HorizontalOptions="Fill" VerticalOptions="Fill">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="99*" />
+          </Grid.RowDefinitions>
+          <BoxView Grid.Row ="0" BackgroundColor ="Gray" HorizontalOptions="Fill" />
+          <Grid Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="0.3*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="1*" />
+              <ColumnDefinition Width="0.3*" />
+            </Grid.ColumnDefinitions>
+
+            <cr:SfFontButton x:Name="cyanButton" HeightRequest ="25" WidthRequest="25" Grid.Column="1" BackgroundColor="#00FFFF" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding ColorCommand}" CommandParameter="Cyan" Clicked="ColorButton_Clicked" />
+            <cr:SfFontButton x:Name="greenButton" HeightRequest ="25" WidthRequest="25" Grid.Column="2" BackgroundColor="#008000" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding ColorCommand}" CommandParameter="Green" Clicked="ColorButton_Clicked"/>
+            <cr:SfFontButton x:Name="yellowButton" HeightRequest ="25" WidthRequest="25" Grid.Column="3" BackgroundColor="#FFFF00" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding ColorCommand}" CommandParameter="Yellow" Clicked="ColorButton_Clicked"/>
+            <cr:SfFontButton x:Name="magentaButton" HeightRequest ="25" WidthRequest="25" Grid.Column="4" BackgroundColor="#FF00FF" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding ColorCommand}" CommandParameter="Magenta" Clicked="ColorButton_Clicked"/>
+            <cr:SfFontButton x:Name="whiteButton" HeightRequest ="25" WidthRequest="25" Grid.Column="5" BackgroundColor="#FFFFFF" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding ColorCommand}" CommandParameter="White" Clicked="ColorButton_Clicked"/>
+            <cr:SfFontButton x:Name="blackButton" HeightRequest ="25" WidthRequest="25" Grid.Column="6" BackgroundColor="#000000" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding ColorCommand}" CommandParameter="Black" Clicked="ColorButton_Clicked"/>
+          </Grid>
+        </Grid>
+
+      </Grid>
+
+      <Grid BackgroundColor="#E9E9E9" Grid.Row="1" IsVisible="{Binding IsPickerVisible}" WidthRequest="250" HeightRequest="190" HorizontalOptions="Start" VerticalOptions="Start">
+        <ListView ItemsSource="{Binding PdfDocumentCollection}" SeparatorVisibility="None" SelectedItem="{Binding SelectedItem}">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <cr:CustomViewCell SelectedBackgroundColor="#CCCCCC">
+                <Grid Padding="12">
+                  <Label Text="{Binding FileName}" FontSize="16" TextColor="Black"/>
+                </Grid>
+              </cr:CustomViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </Grid>
+
+      <Grid x:Name="bottomToolbar" RowSpacing="0" Grid.Row="2" BackgroundColor="#E9E9E9" HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="{Binding IsBottomToolbarVisible}">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="1*" />
+          <RowDefinition Height="99*" />
+        </Grid.RowDefinitions>
+        <BoxView Grid.Row ="0" BackgroundColor ="#666666" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        <Grid Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*" />
+            <ColumnDefinition>
+              <ColumnDefinition.Width>
+                <OnPlatform x:TypeArguments="GridLength" Android="3*" iOS="3*" WinPhone="4*" />
+              </ColumnDefinition.Width>
+            </ColumnDefinition>
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="0.3*" />
+          </Grid.ColumnDefinitions>
+
+          <cr:CustomEntry Keyboard="Numeric" FontSize="15" x:Name="pageNumberEntry" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Grid.Column="1" VerticalOptions="Center" Text="{Binding PageNumber, Source={x:Reference Name=pdfViewerControl}, Mode=OneWay}" TextColor="#0076FF">
+            <cr:CustomEntry.Behaviors>
+              <cr:EventToCommandBehavior EventName="Completed" Command="{Binding GotoPageCommand ,Source={x:Reference Name=pdfViewerControl}}" CommandParameter="{Binding Source ={x:Reference pageNumberEntry}, Path=Text}"/>
+            </cr:CustomEntry.Behaviors>
+          </cr:CustomEntry>
+          <Label Text="/" Grid.Column="2" FontSize="13" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="#0076FF"/>
+          <Label x:Name="pageCountLabel" Grid.Column="3" FontSize="15" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Start" VerticalOptions="Center" Text="{Binding PageCount, Source={x:Reference Name=pdfViewerControl}}" TextColor="#0076FF"/>
+          <Button x:Name="annotationButton"  Grid.Column="5" BackgroundColor="Transparent" Image="AnnotationIcon.png" HorizontalOptions="Center" VerticalOptions="Center" >
+            <Button.Behaviors>
+              <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding AnnotationModeCommand, Source={x:Reference Name=pdfViewerControl}}" CommandParameter="None"/>
+              <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding AnnotationCommand}"/>
+              <cr:EventToCommandBehavior EventName="Clicked" Command="{Binding CancelSearchTextCommand, Source={x:Reference Name=pdfViewerControl}}" />
+            </Button.Behaviors>
+          </Button>
+        </Grid>
+      </Grid>
+    </Grid>
+  </local:SampleView.Content>
+</local:SampleView>

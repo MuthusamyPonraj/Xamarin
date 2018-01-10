@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.DoughnutChart"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+	<local:SampleView.Content>
+
+	<chart:SfChart x:Name="Chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Project Cost Breakdown" Font="15"/>
+      </chart:SfChart.Title>
+      
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:DoughnutSeriesViewModel />
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.Legend>
+        <chart:ChartLegend/>
+      </chart:SfChart.Legend>
+     
+      <chart:SfChart.Series>
+        <chart:DoughnutSeries ItemsSource="{Binding DoughnutSeriesData}" XBindingPath="Name" YBindingPath="Value" ExplodeOnTouch="True" LegendIcon="Rectangle"  EnableAnimation="True" StrokeWidth="1" StrokeColor="White">
+          <chart:DoughnutSeries.DataMarker>
+            <chart:ChartDataMarker LabelContent="Percentage" ShowLabel="True">
+             </chart:ChartDataMarker>
+          </chart:DoughnutSeries.DataMarker>
+        </chart:DoughnutSeries>
+      </chart:SfChart.Series>
+
+    </chart:SfChart>
+		
+	</local:SampleView.Content>
+</local:SampleView>

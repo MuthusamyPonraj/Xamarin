@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
+   	xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="SampleBrowser.SfRating.Rating_Tablet">
+	 <local:SampleView.Content >
+    <Grid Padding="10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="8*"/>
+        <RowDefinition Height="4*"/>
+      </Grid.RowDefinitions>
+      <ScrollView Grid.Row="0">
+        <Grid  x:Name="sampleLayout">
+          <Grid.Resources>
+            <ResourceDictionary>
+              <local:ImagePathConverter x:Key="ImagePathConverter" />
+            </ResourceDictionary>
+          </Grid.Resources>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="6*" x:Name="imageHeight" />
+            <RowDefinition Height="3*"/>
+          </Grid.RowDefinitions>
+          <Label WidthRequest="300" FontSize="24" Text="Movie Rating" HorizontalOptions="Start" />
+          <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="280" x:Name="column1" />
+              <ColumnDefinition Width="auto" x:Name="column2" />
+            </Grid.ColumnDefinitions>
+            <StackLayout x:Name="moviePic" Grid.Column="0" >
+              <Image WidthRequest="120" HeightRequest="300" x:Name="movieImage" Source="{Binding Converter={StaticResource ImagePathConverter},ConverterParameter=SampleBrowser.SfRating.movie.png}" Aspect= "Fill" />
+            </StackLayout>
+            <StackLayout x:Name="descStack" Orientation="Vertical" Grid.Column="1" Padding="10,0,20,0">
+              <Label   FontSize="20" Text="The Walk ( 2015 )" HorizontalOptions="Start" />
+              <StackLayout Orientation="Vertical">
+                <Label FontSize="12" Text="PG | 2h 20min" HorizontalOptions="Start" />
+                <rating:SfRating x:Name="sfRating1" HeightRequest="40" ItemSize="25" Precision="Exact" HorizontalOptions="Start" Value="3.5" ReadOnly="true"  ItemSpacing="0" ItemCount="5" TooltipPlacement="None"/>
+              </StackLayout>
+              <Label   FontSize="14"  HorizontalOptions="Start" >
+                In 1973, French street performer Philippe Petit is trying to make a living in Paris with juggling acts and wire walking, much to the chagrin of his father. During one performance, he eats a hard candy which was given to him by an audience member and injures his tooth. He visits the dentist and, while in the waiting room, sees a picture in a magazine of the Twin Towers in New York City.
+              </Label>
+
+            </StackLayout>
+          </Grid>
+
+          <StackLayout Padding="0,0,0,20" Grid.Row="2" Orientation="Vertical">
+            <Label    FontSize="16" Text="Rate" HorizontalOptions="Start" />
+
+            <rating:SfRating x:Name="sfRating2"  ItemSize="60"  WidthRequest="360" Precision="Standard"  HorizontalOptions="StartAndExpand" Value="3" ReadOnly="false"  ItemCount="5" ItemSpacing="10"  TooltipPrecision="0" TooltipPlacement="None"/>
+
+            <StackLayout Orientation="Horizontal" Padding="0,20,0,20">
+              <Label    FontSize="16" Text="Rating:" HorizontalOptions="Start" />
+              <Label   x:Name="showValue" Text="3/5"  FontSize="16" HorizontalOptions="Start" />
+            </StackLayout>
+          </StackLayout>
+        </Grid>
+        </ScrollView>
+          
+      <ScrollView Grid.Row="1">
+
+        <StackLayout x:Name="Property_Windows">
+          <StackLayout Orientation="Horizontal" Padding="10,0,0,0" x:Name="temp"  HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+            <Label Text="OPTIONS" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" FontSize="18"  FontFamily="Helvetica"/>
+            <Button x:Name="Property_Button" HorizontalOptions="EndAndExpand" ></Button>
+          </StackLayout>
+        </StackLayout>
+
+      </ScrollView>
+
+    </Grid>
+  </local:SampleView.Content>
+
+</local:SampleView>
+
+

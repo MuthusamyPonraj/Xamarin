@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.RangeColumnChart"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">	
+	<local:SampleView.Content>
+		 <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+       <chart:SfChart.Margin>
+         <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,0,15,0" />
+       </chart:SfChart.Margin>
+       
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Maximum and Minimum Temperature - 2012" Font="15"/>
+      </chart:SfChart.Title>
+
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:RangeColumnSeriesViewModel />
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:CategoryAxis LabelPlacement="BetweenTicks">
+          <chart:CategoryAxis.Title>
+            <chart:ChartAxisTitle Text="Month">
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,10,0,0" iOS="0,0,0,10"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:CategoryAxis.Title>
+        </chart:CategoryAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis>
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Temperature (celsius)">
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness" Android="0,0,10,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Legend>
+        <chart:ChartLegend DockPosition="Bottom" ToggleSeriesVisibility="True"/>
+      </chart:SfChart.Legend>
+
+      <chart:SfChart.ColorModel>
+        <chart:ChartColorModel Palette="TomatoSpectrum"/>
+      </chart:SfChart.ColorModel>
+
+      <chart:SfChart.Series>
+        <chart:RangeColumnSeries x:Name="rangeColumnSeries1" ItemsSource="{Binding RangeColumnData1}" XBindingPath="Name" 
+                                 High="High" Low="Low" Label="India" LegendIcon="Rectangle"  
+                                 EnableTooltip="True" EnableAnimation="True">
+          <chart:RangeColumnSeries.DataMarker>
+            <chart:ChartDataMarker ShowLabel="False"/>
+          </chart:RangeColumnSeries.DataMarker>
+        </chart:RangeColumnSeries>
+
+        <chart:RangeColumnSeries x:Name="rangeColumnSeries2" ItemsSource="{Binding RangeColumnData2}" 
+                                 XBindingPath="Name" High="High" Low="Low" Label="Germany" 
+                                 LegendIcon="Rectangle"  EnableTooltip="True" EnableAnimation="True">
+          <chart:RangeColumnSeries.DataMarker>
+            <chart:ChartDataMarker ShowLabel="False"/>
+          </chart:RangeColumnSeries.DataMarker>
+        </chart:RangeColumnSeries>
+      </chart:SfChart.Series>
+         
+    </chart:SfChart>
+	</local:SampleView.Content>
+</local:SampleView>

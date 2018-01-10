@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.AreaChart"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+	<local:SampleView.Content>
+		    <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+          <chart:SfChart.Margin>
+            <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,0,15,0" />
+          </chart:SfChart.Margin>
+          
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:AreaSeriesViewModel />
+      </chart:SfChart.BindingContext>
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Average Sales Comparison" Font="15"/>
+      </chart:SfChart.Title>
+      
+      <chart:SfChart.PrimaryAxis>
+        <chart:NumericalAxis Minimum="1900" Maximum="2000" Interval="20" EdgeLabelsDrawingMode="Shift">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Year" >
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,10,0,0" iOS="0,0,0,10"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis Maximum="5" Minimum="2" Interval="0.5">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Sales Amount in Millions" >
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness" Android="0,0,10,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Legend>
+        <chart:ChartLegend DockPosition="Bottom" ToggleSeriesVisibility="True"/>
+      </chart:SfChart.Legend>
+
+      <chart:SfChart.ColorModel>
+        <chart:ChartColorModel Palette="TomatoSpectrum"/>
+      </chart:SfChart.ColorModel>
+
+     
+      <chart:SfChart.Series>        
+        <chart:AreaSeries x:Name="series" ItemsSource="{Binding AreaData1}" Label="Product A" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True"
+                XBindingPath="Value" YBindingPath="Size"  Opacity="0.5"/>
+
+        <chart:AreaSeries ItemsSource="{Binding AreaData2}" Label="Product B" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True"
+                 XBindingPath="Value" YBindingPath="Size"  Opacity="0.5"/>
+
+        <chart:AreaSeries ItemsSource="{Binding AreaData3}" Label="Product C" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True"
+                XBindingPath="Value" YBindingPath="Size"  Opacity="0.5"/>
+      </chart:SfChart.Series>
+
+    </chart:SfChart>
+	</local:SampleView.Content>
+</local:SampleView>

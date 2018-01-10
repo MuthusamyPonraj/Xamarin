@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Samples>  
+    <Sample  Name = "GettingStartedPDF" Title = "Getting Started" Icon = "AllControlls/pdf/gettingstartedPDF.png" Description="This sample demonstrates how to create a simple PDF document with text and images." />
+    <Sample  Name = "Stamping" Title = "Stamping" Icon = "AllControlls/pdf/stamp.png" Description="This sample demonstrates how to stamp or watermark an existing PDF document." />
+    <Sample  Name = "TableFeatures" Title = "Table Features" Icon = "AllControlls/pdf/table.png" Description="This sample demonstrates how to create borderless tables in a PDF document." />
+    <Sample  Name = "Booklet" Title = "Booklet" Icon = "AllControlls/pdf/booklet.png"  Description="This sample demonstrates how to create a booklet from an existing PDF document."/>
+    <Sample  Name = "Barcode" Title = "Barcode" Icon = "AllControlls/pdf/barcodePDF.png" Description="This sample demonstrates how to create various barcode in a PDF document."/>
+    <Sample  Name = "MailAttachment" Title = "Email Attachment" Icon = "AllControlls/pdf/mailattachment.png"  Description="This sample demonstrates how to send a filled PDF form as an email attachment." />
+	<Sample  Name = "DigitalSignature" Title = "Digital Signature" Icon = "AllControlls/pdf/digitalsignature.png" Description="This sample demonstrates how to digitally sign PDF document using a .pfx certificate."/>
+	<Sample  Name = "ImageInsertion" Title = "Image Insertion" Icon = "AllControlls/pdf/imageinsertion.png" Description="This sample demonstrates how to insert images in a PDF document." IsNew = "true"/>
+	<Sample  Name = "Encryption" Title = "Encryption" Icon = "AllControlls/pdf/encryption.png" Description="This sample demonstrates how to create secure PDF document." IsNew = "true"/>
+</Samples>

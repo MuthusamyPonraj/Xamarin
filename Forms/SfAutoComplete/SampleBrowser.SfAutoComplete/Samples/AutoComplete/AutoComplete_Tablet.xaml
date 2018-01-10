@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                    xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+                  	xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms" 
+                  x:Class="SampleBrowser.SfAutoComplete.AutoComplete_Tablet">
+  <local:SampleView.Content>
+    <Grid Padding="10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="7*"/>
+        <RowDefinition Height="6*"/>
+      </Grid.RowDefinitions>
+      <ScrollView x:Name="sampleLayout"  Grid.Row="0" Padding="10, 0, 30,0" IsClippedToBounds="true">
+        <Grid x:Name="sampleLayout1">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+          </Grid.RowDefinitions>
+          <StackLayout x:Name="layout1">
+            <Label Text="Job Search" x:Name="jobSearchLabel" Grid.Row="0" FontSize="22"  FontAttributes="Bold"  HorizontalOptions="Start" VerticalOptions="Center"/>
+          </StackLayout>
+          <StackLayout Orientation="Vertical" Grid.Row="1" x:Name="countryLayout" >
+            <Label Text="Country" FontSize="16"   HorizontalOptions="Start"/>
+            <autocomplete:SfAutoComplete Watermark="Enter  Country Name" HeightRequest="45" x:Name="countryAutoComplete" SuggestionMode="StartsWith" AutoCompleteMode="Suggest" WidthRequest="40" MinimumPrefixCharacters="1" MaximumDropDownHeight="150"  AutoCompleteSource="{Binding }" />
+          </StackLayout>
+          <StackLayout Orientation="Vertical" Grid.Row="2" Padding="0,20,0,0" x:Name="jobLayout" >
+            <Label Text="Job Field" FontSize="16"  HorizontalOptions="Start"/>
+            <autocomplete:SfAutoComplete Watermark="Enter 'B' , 'S' , 'M' to start" HeightRequest="45" x:Name="jobFieldAutoComplete" SuggestionMode="StartsWith" AutoCompleteMode="Suggest" WidthRequest="40" MinimumPrefixCharacters="1" MaximumDropDownHeight="150" AutoCompleteSource="{Binding }"  />
+          </StackLayout>
+          <StackLayout Orientation="Vertical" Grid.Row="3"  x:Name="searchlayout" Padding="0,20,0,0">
+            <Label Text="Experience" FontSize="16" HorizontalOptions="Start"/>
+            <Picker x:Name="experiencePicker" HeightRequest="45" WidthRequest="40" >
+            </Picker>
+          </StackLayout>
+          <StackLayout Grid.Row="4" Padding="0,20,0,0" x:Name="buttonLayout">
+            <Button Text="Search" x:Name="searchButton"/>
+          </StackLayout>
+
+        </Grid>
+      </ScrollView>
+      <ScrollView Grid.Row="1" IsClippedToBounds="true">
+
+        <StackLayout x:Name="Property_Windows" >
+          <StackLayout Orientation="Horizontal" Padding="10,0,0,0" x:Name="temp"  HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+            <Label Text="OPTIONS" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" FontSize="18"  FontFamily="Helvetica"/>
+            <Button x:Name="Property_Button" HorizontalOptions="EndAndExpand" ></Button>
+          </StackLayout>
+        </StackLayout>
+      </ScrollView>
+
+    </Grid>
+  </local:SampleView.Content>
+  </local:SampleView>
+
+

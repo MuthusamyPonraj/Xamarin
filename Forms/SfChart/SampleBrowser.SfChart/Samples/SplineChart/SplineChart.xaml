@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.SplineChart"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">	
+	<local:SampleView.Content>
+		<chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+      <chart:SfChart.Margin>
+        <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,0,15,0" />
+      </chart:SfChart.Margin>
+      
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Climate Graph - 2012" Font="15"/>
+      </chart:SfChart.Title>
+
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:SplineSeriesViewModel />
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:CategoryAxis EdgeLabelsDrawingMode="Shift" LabelPlacement="BetweenTicks">
+          <chart:CategoryAxis.Title>
+            <chart:ChartAxisTitle Text="Month" >
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,10,0,0" iOS="0,0,0,10"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:CategoryAxis.Title>
+        </chart:CategoryAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis Maximum="35" Minimum="-5" Interval="5">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Temperature in Celsius" >
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness" Android="0,0,10,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Legend>
+        <chart:ChartLegend DockPosition="Bottom" ToggleSeriesVisibility="True"/>
+      </chart:SfChart.Legend>
+           
+      <chart:SfChart.Series>
+        <chart:SplineSeries ItemsSource="{Binding SplineData1}" XBindingPath="Name" YBindingPath="Value" StrokeWidth = "3" Label="London" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
+          <chart:SplineSeries.DataMarker>
+            <chart:ChartDataMarker ShowMarker="True" MarkerColor="#FEBE17" MarkerBorderColor="#FEBE17" ShowLabel="False" MarkerHeight="8" MarkerWidth="8"/>
+          </chart:SplineSeries.DataMarker>
+        </chart:SplineSeries>
+                
+        <chart:SplineSeries x:Name="series" ItemsSource="{Binding SplineData2}" XBindingPath="Name" YBindingPath="Value" StrokeWidth = "3" Label="France" LegendIcon="Rectangle" EnableTooltip="True" EnableAnimation="True">
+          <chart:SplineSeries.DataMarker>
+            <chart:ChartDataMarker ShowMarker="True" MarkerColor="#4F4838" MarkerBorderColor="#4F4838" ShowLabel="False" MarkerHeight="8" MarkerWidth="8"/>
+          </chart:SplineSeries.DataMarker>
+        </chart:SplineSeries>
+      </chart:SfChart.Series>
+
+    </chart:SfChart>
+	</local:SampleView.Content>
+</local:SampleView>

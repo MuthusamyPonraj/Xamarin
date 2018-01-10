@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Group ImageId = "AllControlls/AutoComplete.png" Title = "AutoComplete" SearchTags="SfAutoComplete,Filter,Suggestion,Searchbox,Editors"
+                Description = "Provide useful suggestions to users based on the already typed content." >
+    <Sample Title="AutoComplete" Name="AutoComplete" Icon="AllControlls/AutoComplete.png"/>
+  </Group>

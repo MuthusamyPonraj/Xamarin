@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"  xmlns:auto="clr-namespace:SampleBrowser.SfAutoComplete;assembly=SampleBrowser.SfAutoComplete" xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms" xmlns:customSlider="clr-namespace:SampleBrowser.SfAutoComplete;assembly=SampleBrowser.SfAutoComplete" x:Class="SampleBrowser.SfAutoComplete.AutoComplete_Default">
+    <local:SampleView.Content>
+        <Grid x:Name="sampleLayout" Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="jobSearchLabel" Text="Job Search" Grid.Row="0" FontSize="20" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" />
+            <StackLayout Orientation="Vertical" Grid.Row="1">
+                <Label x:Name="countryLabel" Text="Country" HeightRequest="30" FontSize="16" TextColor="#6d6d72" HorizontalOptions="Start" />
+                <StackLayout x:Name="countryAutoCompleteLayout">
+                    <auto:AutoCompleteRenderer Watermark="Enter Country Name" WatermarkColor="#adb2bb" TextSize="16" x:Name="countryAutoComplete" Margin="0,-10,0,0" SuggestionMode="StartsWith" AutoCompleteMode="Suggest" HeightRequest="45" MinimumPrefixCharacters="1" MaximumDropDownHeight="150"
+                        AutoCompleteSource="{Binding }" DropDownItemHeight="35" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Grid.Row="2">
+                <Label x:Name="jobFieldLabel" Text="Job Field" HeightRequest="30" FontSize="16" TextColor="#6d6d72" HorizontalOptions="Start" />
+                <StackLayout x:Name="jobAutoCompleteLayout">
+                    <auto:AutoCompleteRenderer Watermark="Enter 'B' , 'S' , 'M' to start" WatermarkColor="#adb2bb" TextSize="16" Margin="0,-10,0,0" x:Name="jobFieldAutoComplete" SuggestionMode="StartsWith" AutoCompleteMode="Suggest" HeightRequest="45" MinimumPrefixCharacters="1" MaximumDropDownHeight="150"
+                        AutoCompleteSource="{Binding }" DropDownItemHeight="35" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Grid.Row="3">
+                <Label x:Name="experienceLabel" Text="Experience" HeightRequest="30" FontSize="16" TextColor="#6d6d72" HorizontalOptions="Start" />
+                <Grid x:Name="pickerLayout">
+                    <Picker x:Name="experiencePicker" Margin="0,-10,0,0" HeightRequest="45" />
+                </Grid>
+            </StackLayout>
+            <StackLayout Padding="0,20,0,0" x:Name="buttonaStack" Grid.Row="4">
+                <Button x:Name="searchButton" VerticalOptions="Center" BorderWidth="1" HeightRequest="40" Text="Search" FontSize="Medium" Clicked="Handle_Clicked" BorderColor="#007aff" TextColor="#007aff" />
+            </StackLayout>
+        </Grid>
+    </local:SampleView.Content>
+    <local:SampleView.PropertyView>
+        <StackLayout x:Name="optionLayout" Spacing="10">
+            <StackLayout Spacing="3">
+                <Label x:Name="suggestionModeLabel" Text="Suggestion Mode" FontSize="16" HeightRequest="20" YAlign="End" TextColor="#666666" />
+                <StackLayout x:Name="pickerLayout1">
+                    <Picker x:Name="suggestionModepicker" HeightRequest="40" SelectedIndex="1" BackgroundColor="White" TextColor="#333333" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Spacing="5">
+                <Label x:Name="autoCompleteModeLabel" Text="AutoComplete Mode" FontSize="16" HeightRequest="20" YAlign="End" TextColor="#666666" />
+                <StackLayout x:Name="pickerLayout2">
+                    <Picker x:Name="autoCompleteModepicker" HeightRequest="40" SelectedIndex="1" BackgroundColor="White" TextColor="#333333" />
+                </StackLayout>
+            </StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label TextColor="#666666" x:Name="minimumPrefixCharacterLabel" Text="Minimum Prefix Character" VerticalOptions="Center" HorizontalOptions="Start" FontFamily="Helvetica" FontSize="16" />
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.8*" />
+                        <ColumnDefinition Width="0.2*" />
+                    </Grid.ColumnDefinitions>
+                    <customSlider:CustomSlider Minimum="0" Maximum="10" Value="1" ValueChanged="PrefixCharacter_Changed" />
+                    <Label Grid.Column="1" x:Name="minimumPrefixCharacterValueLabel" Text="1" HorizontalOptions="Center" />
+                </Grid>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label TextColor="#666666" x:Name="maximumDropDownHeightLabel" Text="Maximum Dropdown Height" VerticalOptions="Center" HorizontalOptions="Start" FontFamily="Helvetica" FontSize="16" />
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.8*" />
+                        <ColumnDefinition Width="0.2*" />
+                    </Grid.ColumnDefinitions>
+                    <customSlider:CustomSlider Minimum="0" Maximum="400" Value="150" ValueChanged="MaximumDropDown_Changed" />
+                    <Label Grid.Column="1" x:Name="maximumDropDownHeightValueLabel" Text="150" HorizontalOptions="Center" />
+                </Grid>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label TextColor="#666666" x:Name="popupDelayLabel" Text="Popup Delay(in milliseconds)" VerticalOptions="Center" HorizontalOptions="Start" FontFamily="Helvetica" FontSize="16" />
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.8*" />
+                        <ColumnDefinition Width="0.2*" />
+                    </Grid.ColumnDefinitions>
+                    <customSlider:CustomSlider Minimum="0" Maximum="5000" Value="150" ValueChanged="PopupDelay_Changned" />
+                    <Label Grid.Column="1" x:Name="popupDelayValueLabel" Text="150" HorizontalOptions="Center" />
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </local:SampleView.PropertyView>
+</local:SampleView>

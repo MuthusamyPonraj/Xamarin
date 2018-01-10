@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.DataMarkerCustomization"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">	
+
+		 <local:SampleView.Resources>
+    <ResourceDictionary>
+      <sampleBrowser:ColorConverter x:Key="colorConverter"/>
+      <sampleBrowser:StringConverter x:Key="stringConverter" />
+      <sampleBrowser:ChartImageConverter x:Key="imageConverter" />
+      <DataTemplate x:Key="dataMarkerTemplate">
+        <StackLayout Orientation="Horizontal" Spacing="0">
+          <Label Text="{Binding Value, Converter = {StaticResource stringConverter}}" TextColor="{Binding Value, Converter = {StaticResource colorConverter}}" VerticalOptions="Center" FontSize = "15" />
+        <Image Source="{Binding Value, Converter = {StaticResource imageConverter}}" WidthRequest="30" HeightRequest="30" HorizontalOptions="Fill" VerticalOptions="Fill" />
+        </StackLayout>
+      </DataTemplate>
+    </ResourceDictionary>
+  </local:SampleView.Resources>
+		  <local:SampleView.Content>
+    <chart:SfChart x:Name="chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+      <chart:SfChart.Margin>
+        <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,10,15,0" />
+      </chart:SfChart.Margin>
+      
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:DataMarkerCustomizationViewModel />
+      </chart:SfChart.BindingContext>
+      
+      <chart:SfChart.PrimaryAxis>
+        <chart:CategoryAxis ShowMajorGridLines="false">
+        </chart:CategoryAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis Maximum="100" Minimum="0" ShowMajorGridLines="false" >
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Series>
+        <chart:BarSeries x:Name ="columnSeries1" ItemsSource="{Binding DataMarkerData}" 
+						XBindingPath="Name" YBindingPath="Value" EnableAnimation="True">
+          <chart:BarSeries.DataMarker>
+            <chart:ChartDataMarker ShowLabel="True" LabelTemplate="{StaticResource dataMarkerTemplate}">
+				<chart:ChartDataMarker.LabelStyle>
+          <chart:DataMarkerLabelStyle LabelPosition="Outer">
+          </chart:DataMarkerLabelStyle>
+				</chart:ChartDataMarker.LabelStyle>
+			</chart:ChartDataMarker>
+          </chart:BarSeries.DataMarker>
+        </chart:BarSeries>
+        </chart:SfChart.Series>
+
+    </chart:SfChart>
+	</local:SampleView.Content>
+</local:SampleView>

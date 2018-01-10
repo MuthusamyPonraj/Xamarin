@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+	xmlns:CalendarSample="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="SampleBrowser.SfCalendar.Configuration_Tablet">
+	<local:SampleView.Content>
+    <Grid Padding="10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="8*"/>
+        <RowDefinition Height="250"/>
+      </Grid.RowDefinitions>
+
+      <StackLayout>
+        <CalendarSample:SfCalendar x:Name="calendar"  VerticalOptions="FillAndExpand" ViewMode="MonthView"/>
+      </StackLayout>
+
+      <StackLayout x:Name="Property_Windows" Grid.Row="1" >
+        <StackLayout Orientation="Horizontal" Padding="10,0,0,0"  x:Name="temp"  HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+          <Label Text="OPTIONS" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" FontSize="18"  FontFamily="Helvetica"/>
+          <Button x:Name="Property_Button" HorizontalOptions="EndAndExpand"></Button>
+        </StackLayout>
+      </StackLayout>
+    </Grid>
+
+  </local:SampleView.Content>
+</local:SampleView>
+

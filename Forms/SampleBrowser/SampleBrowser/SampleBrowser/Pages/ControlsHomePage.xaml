@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" 
+    xmlns:local="clr-namespace:SampleBrowser;assembly=SampleBrowser" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleBrowser.ControlsHomePage" 
+    Title="Syncfusion Xamarin Samples" BackgroundColor="#007DE6" Padding="0">
+  <ContentPage.BindingContext>
+      <local:ControlPageViewModel x:Name="viewModel" />
+   </ContentPage.BindingContext>
+   <ContentPage.Content>
+      <Grid x:Name="homeViewGrid" Padding="0" Margin="0" RowSpacing="0" ColumnSpacing="0"
+            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+         <Grid.RowDefinitions>
+            <RowDefinition x:Name="navigationBarRow" />
+            <RowDefinition x:Name="allControlsListViewRow" />
+         </Grid.RowDefinitions>
+         <StackLayout x:Name="searchBarGrid" Margin="10" Grid.Row="0" Spacing="0" Orientation="Horizontal" 
+                HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" IsVisible="true">
+            <local:SearchBarExt x:Name="searchBar" WidthRequest="1" Margin="3" PlaceholderColor = "#000061" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+                <local:SearchBarExt.WidthRequest> 
+                     <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="UWP">
+                            <OnIdiom x:TypeArguments="x:Double" Tablet="1" Phone="1" Desktop="150" />
+                        </On>
+                     </OnPlatform>                           
+                </local:SearchBarExt.WidthRequest>
+                <local:SearchBarExt.HorizontalOptions> 
+                   <OnPlatform x:TypeArguments="LayoutOptions">
+                        <On Platform="iOS">
+                            <OnIdiom x:TypeArguments="LayoutOptions" Tablet="FillAndExpand" Phone="FillAndExpand" />
+                        </On>
+                        <On Platform="Android">
+                            <OnIdiom x:TypeArguments="LayoutOptions" Tablet="FillAndExpand" Phone="FillAndExpand" />
+                        </On>
+                       <On Platform="UWP">
+                            <OnIdiom x:TypeArguments="LayoutOptions" Tablet="FillAndExpand" Phone="FillAndExpand" Desktop="EndAndExpand" />
+                        </On>
+                    </OnPlatform>                           
+                </local:SearchBarExt.HorizontalOptions>
+                <local:SearchBarExt.VerticalOptions> 
+                   <OnPlatform x:TypeArguments="LayoutOptions">                       
+                   <On Platform="iOS">
+                        <OnIdiom x:TypeArguments="LayoutOptions" Tablet="FillAndExpand" Phone="FillAndExpand" />
+                    </On>
+                   <On Platform="Android">
+                        <OnIdiom x:TypeArguments="LayoutOptions" Tablet="FillAndExpand" Phone="FillAndExpand" />
+                    </On>
+                   <On Platform="UWP">
+                        <OnIdiom x:TypeArguments="LayoutOptions" Tablet="FillAndExpand" Phone="FillAndExpand" Desktop="CenterAndExpand" />
+                    </On>
+                    </OnPlatform>                            
+                </local:SearchBarExt.VerticalOptions>
+                <local:SearchBarExt.Margin>
+                     <OnPlatform x:TypeArguments="Thickness" WinPhone="0" />
+                </local:SearchBarExt.Margin>
+                <local:SearchBarExt.CancelButtonColor>
+                     <OnPlatform x:TypeArguments="Color" WinPhone="Gray" Android="Black" /> 
+                </local:SearchBarExt.CancelButtonColor>
+                <local:SearchBarExt.TextColor>
+                     <OnPlatform x:TypeArguments="Color" WinPhone="Black" iOS="Black" Android="Black" /> 
+                </local:SearchBarExt.TextColor> 
+                <local:SearchBarExt.BackgroundColor>
+                     <OnPlatform x:TypeArguments="Color" WinPhone="White" Android="White" /> 
+                </local:SearchBarExt.BackgroundColor> 
+                <local:SearchBarExt.Placeholder>
+                     <OnPlatform x:TypeArguments="x:String" WinPhone="Search Controls" Android="Search Controls" />
+                </local:SearchBarExt.Placeholder> 
+                 <local:SearchBarExt.FontSize>
+                     <OnPlatform x:TypeArguments="x:Double" WinPhone="13" iOS="14" Android="14" />
+                </local:SearchBarExt.FontSize> 
+            </local:SearchBarExt>
+         </StackLayout>
+         <listView:SfListView x:Name="controlsList" ItemsSource="{Binding AllControlsList}" Grid.Row="1" ItemSize="95" Orientation="Vertical" Margin="0" Padding="0, 15, 0, 0" 
+                SelectionMode="Single" ItemSpacing="10, 0, 10, 10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                SelectionBackgroundColor="#F2F2F2" BackgroundColor="#F2F2F2"  ItemTapped="AllControlsListView_ItemTapped" >
+            <listView:SfListView.IsScrollBarVisible>
+                    <OnPlatform x:TypeArguments="x:Boolean" WinPhone="false" />
+            </listView:SfListView.IsScrollBarVisible>    
+            <listView:SfListView.LayoutManager>
+               <listView:GridLayout>
+                   <listView:GridLayout.SpanCount>
+                        <OnIdiom x:TypeArguments="x:Int32" Tablet="2" Desktop="3" Phone="1" />
+                    </listView:GridLayout.SpanCount>
+                </listView:GridLayout>
+            </listView:SfListView.LayoutManager>
+            <listView:SfListView.ItemTemplate>
+                   <DataTemplate>     
+               <Grid x:Name="grid" RowSpacing="0" VerticalOptions="FillAndExpand" WidthRequest="300" BackgroundColor="White" Margin="0" ColumnSpacing="0" Padding="0">
+                  <Grid.RowDefinitions>
+                     <RowDefinition x:Name="row" />
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                     <ColumnDefinition x:Name="imageCol" Width="90" />
+                     <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <Image Source="{Binding ImageId}" Margin="3,6,10,6" Aspect="Fill" Grid.Row="0" Grid.Column="0" 
+                        VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" />
+                  <Grid x:Name="ControlsGrid" Grid.Row="0" Margin="0" ColumnSpacing="0" RowSpacing="0" Padding="0" Grid.Column="1">
+                     <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="20" />
+                     </Grid.RowDefinitions>
+                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                     </Grid.ColumnDefinitions>
+                     <Label x:Name="nameLabel" FontSize="15" Margin="0,6,0,3" HorizontalOptions="StartAndExpand"
+                            TextColor="Black" Text="{Binding Title}" Grid.Row="0" Grid.Column="0" 
+                            HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                     <Image x:Name="controlsUpdateTypeImage" HeightRequest="20" WidthRequest="60" Aspect="AspectFit"
+                            Grid.Row="0" Grid.Column="0" HorizontalOptions="EndAndExpand" Source="{Binding UpdateType}" />
+                     <Label FontSize="11" Margin="0" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap" 
+                                TextColor="Black" Text="{Binding Description}" Grid.Row="1" Grid.Column="0" 
+                            HorizontalTextAlignment="Start" VerticalTextAlignment="Start" />
+                     <Label x:Name="samplesCount" FontSize="11" 
+                            HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" 
+                            TextColor="#767489" Text="{Binding SamplesCount,Converter={StaticResource sampleCountConverter}}"
+                            Margin="0,0,0,5" Grid.Row="2" HorizontalTextAlignment="Start" VerticalTextAlignment="End" />
+                  </Grid>
+               </Grid>
+                            </DataTemplate>
+            </listView:SfListView.ItemTemplate>
+         </listView:SfListView>
+      </Grid>
+   </ContentPage.Content>
+</ContentPage>

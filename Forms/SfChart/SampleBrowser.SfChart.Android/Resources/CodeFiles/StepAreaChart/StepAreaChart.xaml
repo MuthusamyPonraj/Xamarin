@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.StepAreaChart"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">	
+	<local:SampleView.Content>
+
+		 <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+       <chart:SfChart.Margin>
+         <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,0,15,0" />
+       </chart:SfChart.Margin>
+       
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Electricity Production" Font="15"/>
+      </chart:SfChart.Title>
+
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:StepAreaSeriesViewModel />
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:NumericalAxis EdgeLabelsDrawingMode="Shift">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Year">
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,10,0,0" iOS="0,0,0,10"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis x:Name="numericalAxis" Maximum="700" Interval="50">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Production (billion kWh)">
+              <chart:ChartAxisTitle.Font>
+                <OnPlatform x:TypeArguments="Font" iOS="12"/>
+              </chart:ChartAxisTitle.Font>
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness" Android="0,0,10,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Legend>
+        <chart:ChartLegend DockPosition="Bottom" ToggleSeriesVisibility="True"/>
+      </chart:SfChart.Legend>
+
+      <chart:SfChart.Series>
+
+        <chart:StepAreaSeries Opacity="0.5" Color="#69D2E7" ItemsSource="{Binding StepAreaData1}" XBindingPath="Value" YBindingPath="Size" LegendIcon="Rectangle" Label="Brazil" EnableTooltip="True" EnableAnimation="True">
+          <chart:StepAreaSeries.DataMarker>
+            <chart:ChartDataMarker ShowMarker="True" MarkerColor="#69D2E7" MarkerBorderColor="White" ShowLabel="False" MarkerHeight="8" MarkerWidth="8"/>
+          </chart:StepAreaSeries.DataMarker>
+        </chart:StepAreaSeries>
+
+      </chart:SfChart.Series>
+
+    </chart:SfChart>
+		
+	</local:SampleView.Content>
+</local:SampleView>

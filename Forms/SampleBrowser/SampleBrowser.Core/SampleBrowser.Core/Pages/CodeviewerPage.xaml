@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="SampleBrowser.Core.CodeviewerPage"
+             xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+		xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms">
+  <ContentPage.Content>
+    <Grid x:Name="codeViewGrid" RowSpacing="0" ColumnSpacing="0" Margin="0" Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+      <Grid.RowDefinitions>
+        <RowDefinition x:Name="samplesRow" />
+        <RowDefinition x:Name="horListViewRow" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <ScrollView x:Name="codeView" Padding="10" Grid.Column="0" Orientation="Both" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+        <Grid.Row>
+          <OnPlatform x:TypeArguments="x:Int32" iOS="0" Android="0" WinPhone="1" />
+        </Grid.Row>
+        <local:LongLabel x:Name="code" TextColor="Black" FontSize="15" >
+          <local:LongLabel.Margin>
+            <OnPlatform x:TypeArguments="Thickness" iOS="20" Android="10" WinPhone="40" />
+          </local:LongLabel.Margin>
+        </local:LongLabel>
+      </ScrollView>
+      <listView:SfListView x:Name="horizontalSampleListView" ItemSpacing="5,0,5,0" Padding="0" Grid.Column="0"
+              BackgroundColor="#F2F2F2" SelectionBackgroundColor="Transparent" AutoFitMode="Height"
+            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsScrollBarVisible="False"
+            Margin="0" Orientation="Horizontal" ItemTapped="HorizontalSampleListView_ItemTapped">
+        <Grid.Row>
+          <OnPlatform x:TypeArguments="x:Int32" iOS="1" Android="1" WinPhone="0" />
+        </Grid.Row>     
+      </listView:SfListView>
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.BubbleChart"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" 
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+		
+	<local:SampleView.Content>
+
+    <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+      <chart:SfChart.Margin>
+        <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,0,15,0" />
+      </chart:SfChart.Margin>
+      
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="World Countries Details" Font="15"/>
+      </chart:SfChart.Title>
+
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:BubbleSeriesViewModel />
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:NumericalAxis Minimum= "50" Maximum="110" Interval="10">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Literacy Rate">
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,10,0,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis Maximum="-2" Minimum="16" Interval="2">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="GDP Growth Rate">
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,0,10,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Series>
+        <chart:BubbleSeries ItemsSource="{Binding BubbleData}"  XBindingPath="Value1" YBindingPath="Value" Size="Size" MinimumRadius="5" MaximumRadius="40" Opacity="0.7" EnableTooltip="True" EnableAnimation="True">
+          <chart:BubbleSeries.ColorModel>
+            <chart:ChartColorModel Palette="Metro"/>
+          </chart:BubbleSeries.ColorModel>
+          <chart:BubbleSeries.DataMarker>
+            <chart:ChartDataMarker ShowLabel="False"/>
+          </chart:BubbleSeries.DataMarker>
+          <chart:BubbleSeries.TooltipTemplate>
+             <OnPlatform x:TypeArguments="DataTemplate">
+              <OnPlatform.WinPhone>
+               <DataTemplate>
+                 <Grid HorizontalOptions="Fill" VerticalOptions="Fill"  BackgroundColor="#C1272D" Padding="5">
+                   <Grid.RowDefinitions>
+                     <RowDefinition/>
+                     <RowDefinition/>
+                   </Grid.RowDefinitions>
+                   <Grid.ColumnDefinitions>
+                     <ColumnDefinition/>
+                     <ColumnDefinition Width="Auto"/>
+                     <ColumnDefinition/>
+                   </Grid.ColumnDefinitions>
+                       <Label Text="YValue" HorizontalTextAlignment="Start" TextColor="White" FontFamily="Helvetica"  FontSize = "12" Grid.Row="0" Grid.Column='0' />
+                       <Label Text=" : " HorizontalTextAlignment="Start" TextColor="White" FontFamily="Helvetica"  FontSize = "12" Grid.Row="0" Grid.Column='1' />
+                       <Label Text="{Binding Value}" HorizontalTextAlignment="Start" TextColor="White" FontFamily="Helvetica" FontSize = "15" Grid.Row="0" Grid.Column='2' />
+                    
+                       <Label Text="Size" HorizontalTextAlignment="Start" TextColor="White" FontFamily="Helvetica"  FontSize = "12" Grid.Row="1" Grid.Column='0' />
+                       <Label Text=" : " HorizontalTextAlignment="Start" TextColor="White" FontFamily="Helvetica"  FontSize = "12" Grid.Row="1" Grid.Column='1' />
+                       <Label Text="{Binding Size}" HorizontalTextAlignment="Start" TextColor="White" FontFamily="Helvetica" FontSize = "15" Grid.Row="1" Grid.Column='2' /> 
+                 </Grid>
+                </DataTemplate>
+              </OnPlatform.WinPhone>
+          	 </OnPlatform>
+          </chart:BubbleSeries.TooltipTemplate>
+        </chart:BubbleSeries>
+      </chart:SfChart.Series>
+
+      </chart:SfChart>
+	</local:SampleView.Content>
+</local:SampleView>

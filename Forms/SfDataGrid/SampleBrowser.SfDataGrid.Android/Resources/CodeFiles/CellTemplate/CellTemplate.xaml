@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<sample:SampleView x:Class="SampleBrowser.SfDataGrid.CellTemplate"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:SampleBrowser.SfDataGrid;assembly=SampleBrowser.SfDataGrid"
+                  xmlns:sample="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+                  xmlns:sfgrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms">
+
+  <sample:SampleView.BindingContext>
+        <local:CellTemplateViewModel x:Name="viewModel" />
+    </sample:SampleView.BindingContext>
+
+  <sample:SampleView.Content>
+
+        <sfgrid:SfDataGrid x:Name="dataGrid"
+                           AutoGenerateColumns="false"
+                           ItemsSource="{Binding EmployeeInformation}"
+                           ColumnSizer="Star"
+                           GridStyle="{local:CellTemplateStyle}"
+                           HeaderRowHeight="52"
+                           RowHeight="140"
+                           SelectionMode="Single"
+                           VerticalOverScrollMode="None">
+
+            <sfgrid:SfDataGrid.Columns>
+
+                <sfgrid:GridTemplateColumn HeaderCellTextSize="16"
+                                           HeaderFontAttribute="Bold"
+                                           HeaderText="Employee Details"
+                                           LineBreakMode="TailTruncation"
+                                           MappingName="Name">
+                    <sfgrid:GridTemplateColumn.HeaderCellTextSize>
+                        <OnIdiom x:TypeArguments="x:Double"
+                                 Phone="14"
+                                 Tablet="15" />
+                    </sfgrid:GridTemplateColumn.HeaderCellTextSize>
+                    <sfgrid:GridTemplateColumn.CellTemplate>
+
+                        <DataTemplate>
+                            <Grid ColumnSpacing="10"
+                                  Padding="20,10,20,10"
+                                  RowSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="140" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <ContentView Grid.Row="0"
+                                             Grid.Column="0"
+                                             Padding="0,0,0,25"
+                                             VerticalOptions="FillAndExpand">
+                                    <local:SfImage Source="{Binding Image}" />
+                                </ContentView>
+                                <Grid Grid.Row="0"
+                                      Grid.Column="1"
+                                      HeightRequest="130"
+                                      RowSpacing="1"
+                                      VerticalOptions="Start">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Row="0"
+                                           Grid.Column="0"
+                                           LineBreakMode="WordWrap"
+                                           Text="{Binding Name}"
+                                           TextColor="Black">
+                                        <Label.FontSize>
+                                            <OnPlatform x:TypeArguments="x:Double">
+                                                <OnPlatform.WinPhone>
+                                                    <OnIdiom x:TypeArguments="x:Double">
+                                                        <OnIdiom.Phone>12</OnIdiom.Phone>
+                                                    </OnIdiom>
+                                                </OnPlatform.WinPhone>
+                                                <OnPlatform.Android>
+                                                    <OnIdiom x:TypeArguments="x:Double"
+                                                             Phone="10"
+                                                             Tablet="12" />
+                                                </OnPlatform.Android>
+                                                <OnPlatform.iOS>
+                                                    <OnIdiom x:TypeArguments="x:Double"
+                                                             Phone="10"
+                                                             Tablet="12" />
+                                                </OnPlatform.iOS>
+                                            </OnPlatform>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Grid.Row="1"
+                                           Grid.Column="0"
+                                           LineBreakMode="WordWrap"
+                                           Text="{Binding EmployeeID}"
+                                           TextColor="Black">
+                                        <Label.FontSize>
+                                            <OnPlatform x:TypeArguments="x:Double">
+                                                <OnPlatform.WinPhone>
+                                                    <OnIdiom x:TypeArguments="x:Double">
+                                                        <OnIdiom.Phone>12</OnIdiom.Phone>
+                                                    </OnIdiom>
+                                                </OnPlatform.WinPhone>
+                                                <OnPlatform.Android>
+                                                    <OnIdiom x:TypeArguments="x:Double"
+                                                             Phone="10"
+                                                             Tablet="12" />
+                                                </OnPlatform.Android>
+                                                <OnPlatform.iOS>
+                                                    <OnIdiom x:TypeArguments="x:Double"
+                                                             Phone="10"
+                                                             Tablet="12" />
+                                                </OnPlatform.iOS>
+                                            </OnPlatform>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Grid.Row="2"
+                                           Grid.Column="0"
+                                           LineBreakMode="WordWrap"
+                                           Text="{Binding Country}"
+                                           TextColor="Black">
+                                        <Label.FontSize>
+                                            <OnPlatform x:TypeArguments="x:Double">
+                                                <OnPlatform.WinPhone>
+                                                    <OnIdiom x:TypeArguments="x:Double">
+                                                        <OnIdiom.Phone>12</OnIdiom.Phone>
+                                                    </OnIdiom>
+                                                </OnPlatform.WinPhone>
+                                                <OnPlatform.Android>
+                                                    <OnIdiom x:TypeArguments="x:Double"
+                                                             Phone="10"
+                                                             Tablet="12" />
+                                                </OnPlatform.Android>
+                                                <OnPlatform.iOS>
+                                                    <OnIdiom x:TypeArguments="x:Double"
+                                                             Phone="10"
+                                                             Tablet="12" />
+                                                </OnPlatform.iOS>
+                                            </OnPlatform>
+                                        </Label.FontSize>
+                                    </Label>
+                                    <Label Grid.Row="3"
+                                           Grid.Column="0"
+                                           LineBreakMode="WordWrap"
+                                           Text="{Binding Telephone}"
+                                           TextColor="Black">
+                                        <Label.FontSize>
+                                            <OnPlatform x:TypeArguments="x:Double">
+                                                <OnPlatform.WinPhone>
+                                                    <OnIdiom x:TypeArguments="x:Double">
+                                                        <OnIdiom.Phone>12</OnIdiom.Phone>
+                                                    </OnIdiom>
+                                                </OnPlatform.WinPhone>
+                                                <OnPlatform.Android>
+                                                    <OnIdiom x:TypeArguments="x:Double"
+                                                             Phone="10"
+                                                             Tablet="12" />
+                                                </OnPlatform.Android>
+                                                <OnPlatform.iOS>
+                                                    <OnIdiom x:TypeArguments="x:Double"
+                                                             Phone="10"
+                                                             Tablet="12" />
+                                                </OnPlatform.iOS>
+                                            </OnPlatform>
+                                        </Label.FontSize>
+                                    </Label>
+                                </Grid>
+
+                                <Label Grid.Row="0"
+                                       Grid.Column="2"
+                                       LineBreakMode="WordWrap"
+                                       Text="{Binding About}"
+                                       TextColor="Black">
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <OnPlatform.WinPhone>
+                                                <OnIdiom x:TypeArguments="x:Double">
+                                                    <OnIdiom.Phone>10</OnIdiom.Phone>
+                                                </OnIdiom>
+                                            </OnPlatform.WinPhone>
+                                            <OnPlatform.Android>
+                                                <OnIdiom x:TypeArguments="x:Double"
+                                                         Phone="10"
+                                                         Tablet="12" />
+                                            </OnPlatform.Android>
+                                            <OnPlatform.iOS>
+                                                <OnIdiom x:TypeArguments="x:Double"
+                                                         Phone="10"
+                                                         Tablet="12" />
+                                            </OnPlatform.iOS>
+                                        </OnPlatform>
+                                    </Label.FontSize>
+                                </Label>
+                            </Grid>
+                        </DataTemplate>
+
+                    </sfgrid:GridTemplateColumn.CellTemplate>
+                </sfgrid:GridTemplateColumn>
+
+            </sfgrid:SfDataGrid.Columns>
+        </sfgrid:SfDataGrid>
+
+    </sample:SampleView.Content>
+
+</sample:SampleView>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="SampleBrowser.SfChart.DateTimeAxis"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+  <local:SampleView.Content>
+
+
+    <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+      <chart:SfChart.Margin>
+        <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,0,15,0" />
+      </chart:SfChart.Margin>
+
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Sales Comparison " Font="15"/>
+      </chart:SfChart.Title>
+
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:DateTimeAxisViewModel />
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.PrimaryAxis>
+        <chart:DateTimeAxis LabelRotationAngle="-45" EdgeLabelsDrawingMode="Shift">
+          <chart:DateTimeAxis.Title>
+            <chart:ChartAxisTitle Text ="Sales Across Years">
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,10,0,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:DateTimeAxis.Title>
+          <chart:DateTimeAxis.LabelStyle>
+            <chart:ChartAxisLabelStyle LabelFormat = "MM/yyyy"/>
+          </chart:DateTimeAxis.LabelStyle>
+        </chart:DateTimeAxis>
+      </chart:SfChart.PrimaryAxis>
+
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis Minimum="0" Maximum="100" Interval="10">
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text ="Sales Amount in millions (USD)">
+              <chart:ChartAxisTitle.Margin>
+                <OnPlatform x:TypeArguments="Thickness"
+              		    Android="0,0,10,0"/>
+              </chart:ChartAxisTitle.Margin>
+            </chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+          <chart:NumericalAxis.LabelStyle>
+            <chart:ChartAxisLabelStyle LabelFormat = "$##.##"/>
+          </chart:NumericalAxis.LabelStyle>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+
+      <chart:SfChart.Series>
+        <chart:LineSeries ItemsSource="{Binding DateTimeData}" XBindingPath="date" YBindingPath="Value" EnableTooltip="True">
+        </chart:LineSeries>
+      </chart:SfChart.Series>
+    </chart:SfChart>
+
+  </local:SampleView.Content>
+</local:SampleView>

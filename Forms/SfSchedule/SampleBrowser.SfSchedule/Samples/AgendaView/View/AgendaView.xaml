@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView
+    x:Class="SampleBrowser.SfSchedule.AgendaView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+    xmlns:samplelocal="clr-namespace:SampleBrowser.SfSchedule"
+	xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"	
+    xmlns:schedule="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms">
+  <local:SampleView.Content>
+    <Grid>
+      <Grid.Resources>
+        <ResourceDictionary>
+          <samplelocal:ItemsCountConverter  x:Key ="countConverter" />
+        </ResourceDictionary>
+      </Grid.Resources>
+      <Grid.BindingContext>
+        <samplelocal:AgendaViewModel />
+      </Grid.BindingContext>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="0.7*" />
+        <RowDefinition Height="0.3*" />
+      </Grid.RowDefinitions>
+      <schedule:SfSchedule
+          BindingContext="{Binding}"
+          x:Name="schedule"
+          Grid.Row="0"
+          ViewHeaderHeight="40"
+          DataSource="{Binding Meetings}"
+          ScheduleView="MonthView">
+        <schedule:SfSchedule.AppointmentMapping>
+          <schedule:ScheduleAppointmentMapping
+              StartTimeMapping="From"
+              EndTimeMapping="To"
+              SubjectMapping="EventName"
+              ColorMapping="color">
+          </schedule:ScheduleAppointmentMapping>
+        </schedule:SfSchedule.AppointmentMapping>
+        <schedule:SfSchedule.MonthViewSettings>
+          <schedule:MonthViewSettings BlackoutDates="{Binding BlackoutDates}">
+          </schedule:MonthViewSettings>
+        </schedule:SfSchedule.MonthViewSettings>
+      </schedule:SfSchedule>
+      <Grid Grid.Row="1"  >
+        <Grid.RowDefinitions>
+          <RowDefinition Height="0.2*" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+          x:Name="SelectedDate_Button"
+               Margin="5,0,0,0"
+                  HorizontalOptions="Start"
+                  Text="{Binding SelectedDate}"
+                  TextColor="Black"
+                  FontAttributes="Bold"  
+                  FontSize="14"
+                  VerticalOptions="Start" />
+        <Grid  Grid.Row="1">
+          <listview:SfListView
+         ItemsSource="{Binding SelectedDateMeetings}" ItemSize="40" SelectionMode="None">
+            <listview:SfListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell>
+                  <Grid Margin="2,1,1,1">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="0.02*"/>
+                      <ColumnDefinition Width="0.78*"/>
+                      <ColumnDefinition Width="0.2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid
+                        BackgroundColor="{Binding color}"
+                        Grid.Column="0" >
+                    </Grid>
+                    <Label
+                        Text="{Binding EventName}"
+                        Grid.Column="1"
+                        VerticalOptions="Center"
+                        LineBreakMode="TailTruncation"
+                        TextColor="Black" >
+                    </Label>
+                    <Grid
+                       Margin="2"
+                       Grid.Column="2">
+                      <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                      </Grid.RowDefinitions>
+                      <Label
+                          Text="{Binding From, StringFormat='{}{0:hh:mm tt}'}}"
+                          Grid.Row="0"
+                          VerticalOptions="Center"
+                          FontSize="10"
+                          TextColor="Gray" >
+                      </Label>
+                      <Label
+                          Text="{Binding To, StringFormat='{}{0:hh:mm tt}'}}"
+                          Grid.Row="1"
+                          VerticalOptions="Center"
+                          FontSize="10"
+                          TextColor="Gray">
+                      </Label>
+                    </Grid>
+                  </Grid>
+                </ViewCell>
+              </DataTemplate>
+            </listview:SfListView.ItemTemplate>
+          </listview:SfListView>
+          <Label
+              Margin="5,0,0,0"
+              BindingContext="{Binding}"
+              Text="No Meetings"
+              IsVisible="{Binding SelectedDateMeetings, Converter={StaticResource countConverter}}" >
+          </Label>
+        </Grid>
+      </Grid>
+    </Grid>
+  </local:SampleView.Content>
+
+  <local:SampleView.Behaviors>
+    <samplelocal:AgendaViewBehavior />
+  </local:SampleView.Behaviors>
+  
+</local:SampleView>

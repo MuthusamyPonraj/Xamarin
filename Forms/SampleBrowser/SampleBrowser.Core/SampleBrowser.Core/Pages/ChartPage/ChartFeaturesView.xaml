@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="SampleBrowser.Core.ChartFeaturesView"
+		xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" BackgroundColor="#F2F2F2" >
+  <local:SampleView.Content>
+    <Grid x:Name="chartFeaturesGrid" BackgroundColor="#F2F2F2" VerticalOptions="FillAndExpand"
+			HorizontalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0" Padding="0,10,0,0" Margin="0" >
+      <Grid.RowDefinitions>
+        <RowDefinition x:Name="listViewRow" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition x:Name="col" />
+      </Grid.ColumnDefinitions>
+      <listView:SfListView x:Name="featuresLeftListView" ItemTapped="SamplesView_ItemTapped" Grid.Row="0" Grid.Column="0" ItemSize="90" Orientation="Vertical" SelectionBackgroundColor="Transparent"
+              Margin="0" Padding="0" SelectionMode="Single" ItemSpacing = "10,0,10,10"
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  BackgroundColor="Transparent">
+            <listView:SfListView.LayoutManager>
+                <listView:GridLayout>
+                    <listView:GridLayout.SpanCount>
+                         <OnIdiom x:TypeArguments="x:Int32" Phone="1" Tablet="2" Desktop="3" />    
+                    </listView:GridLayout.SpanCount>                        
+                </listView:GridLayout>
+            </listView:SfListView.LayoutManager>
+      </listView:SfListView>
+    </Grid>
+  </local:SampleView.Content>
+</local:SampleView>

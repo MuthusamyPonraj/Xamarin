@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"  
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="SampleBrowser.SfChart.FunnelChart"
+		xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+		xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+    xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+	
+	<local:SampleView.Content>
+
+		<chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+      <chart:SfChart.Margin>
+        <OnPlatform x:TypeArguments="Thickness"  WinPhone="0,0,0,10" />
+      </chart:SfChart.Margin>
+
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="Website Visitor" Font="15"/>
+      </chart:SfChart.Title>
+
+      <chart:SfChart.BindingContext>
+        <sampleBrowser:FunnelSeriesViewModel />
+      </chart:SfChart.BindingContext>
+
+      <chart:SfChart.Legend>
+        <chart:ChartLegend ToggleSeriesVisibility="true"/>
+      </chart:SfChart.Legend>
+
+      <chart:SfChart.Series>
+        <chart:FunnelSeries ItemsSource="{Binding FunnelData}" XBindingPath="Name" YBindingPath="Value" LegendIcon="Rectangle" StrokeWidth="1" StrokeColor="White" >
+          <chart:FunnelSeries.DataMarker>
+            <chart:ChartDataMarker ShowLabel="True">
+              <chart:ChartDataMarker.LabelStyle>
+                <chart:DataMarkerLabelStyle  Margin="0"/>
+              </chart:ChartDataMarker.LabelStyle>
+            </chart:ChartDataMarker>
+          </chart:FunnelSeries.DataMarker>
+          <chart:FunnelSeries.ColorModel>
+            <chart:ChartColorModel Palette="TomatoSpectrum"/>
+          </chart:FunnelSeries.ColorModel>
+        </chart:FunnelSeries>
+      </chart:SfChart.Series>
+
+    </chart:SfChart>
+		
+	</local:SampleView.Content>
+</local:SampleView>

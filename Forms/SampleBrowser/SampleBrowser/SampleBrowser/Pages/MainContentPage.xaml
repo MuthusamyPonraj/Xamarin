@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:local="clr-namespace:SampleBrowser;assembly=SampleBrowser"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="SampleBrowser.MainContentPage"
+	xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    Padding="0" Title="Syncfusion Xamarin Samples" MasterBehavior="Popover" BackgroundColor="#007DE6" >
+    <MasterDetailPage.IsGestureEnabled>
+        <OnPlatform x:TypeArguments="x:Boolean" WinPhone="false" iOS="false" Android="true" />
+    </MasterDetailPage.IsGestureEnabled>   
+    <MasterDetailPage.Master>
+    <local:MasterPage Title="Syncfusion Xamarin Samples" Icon="menu.jpg" />
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <NavigationPage BarBackgroundColor="#007DE6" BarTextColor="White" Title="Syncfusion Xamarin Components" >
+      <x:Arguments>
+        <local:ControlsHomePage x:Name="homePage"  Title="Syncfusion Xamarin Samples"/>
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>

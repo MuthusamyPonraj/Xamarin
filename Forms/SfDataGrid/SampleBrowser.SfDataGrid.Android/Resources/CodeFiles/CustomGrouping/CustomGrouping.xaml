@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sample:SampleView x:Class="SampleBrowser.SfDataGrid.CustomGrouping"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:data="clr-namespace:Syncfusion.Data;assembly=Syncfusion.Data.Portable"
+                  xmlns:local="clr-namespace:SampleBrowser.SfDataGrid;assembly=SampleBrowser.SfDataGrid"
+                  xmlns:sample="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+                  xmlns:sfgrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms">
+
+  <sample:SampleView.Resources>
+        <ResourceDictionary>
+            <local:GroupDataTimeConverter x:Key="customGroupDateTimeConverter" />
+            <local:CustomSortComparer x:Key="customSortComparer" />
+        </ResourceDictionary>
+    </sample:SampleView.Resources>
+
+  <sample:SampleView.BindingContext>
+        <local:SalesInfoViewModel x:Name="viewModel" />
+    </sample:SampleView.BindingContext>
+
+  <sample:SampleView.Content>
+        <Grid RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="1"
+                   Margin="5,0,0,0"
+                   BackgroundColor="Transparent"
+                   FontSize="12"
+                   Text="This sample showcases the custom grouping capabilities in SfDataGrid. Implement custom grouping logic if the standard grouping techniques does not meet your requirements. Below sample is grouped based on the total amount of sales in two quarters."
+                   TextColor="Black" />
+            <sfgrid:SfDataGrid x:Name="dataGrid"
+                               Grid.Row="2"
+                               AllowGroupExpandCollapse="true"
+                               AutoGenerateColumns="false"
+                               ItemsSource="{Binding DailySalesDetails}"
+                               ColumnSizer="Star"
+                               GridStyle="{local:DefaultStyle}"
+                               HeaderRowHeight="52"
+                               RowHeight="48"
+                               SelectionMode="Single"
+                               VerticalOverScrollMode="None">
+              <sfgrid:SfDataGrid.Behaviors>
+                <local:CustomGroupingBehavior/>
+              </sfgrid:SfDataGrid.Behaviors>
+
+              <sfgrid:SfDataGrid.SortComparers>
+                    <data:SortComparer Comparer="{StaticResource customSortComparer}" PropertyName="Total" />
+                </sfgrid:SfDataGrid.SortComparers>
+
+                <sfgrid:SfDataGrid.GroupColumnDescriptions>
+                    <sfgrid:GroupColumnDescription ColumnName="Total" Converter="{StaticResource customGroupDateTimeConverter}" />
+                </sfgrid:SfDataGrid.GroupColumnDescriptions>
+
+                <sfgrid:SfDataGrid.Columns>
+                    <sfgrid:GridTextColumn HeaderFontAttribute="Bold"
+                                           HeaderTextAlignment="Start"
+                                           LineBreakMode="TailTruncation"
+                                           LoadUIView="true"
+                                           MappingName="Name"
+                                           Padding="5,0,0,0"
+                                           TextAlignment="Start">
+                        <sfgrid:GridTextColumn.HeaderCellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                        <sfgrid:GridTextColumn.CellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.CellTextSize>
+                    </sfgrid:GridTextColumn>
+
+                    <sfgrid:GridTextColumn Format="C"
+                                           HeaderFontAttribute="Bold"
+                                           HeaderTextAlignment="Start"
+                                           LineBreakMode="TailTruncation"
+                                           LoadUIView="true"
+                                           MappingName="QS1"
+                                           Padding="5,0,5,0"
+                                           TextAlignment="End">
+                        <sfgrid:GridTextColumn.HeaderCellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                        <sfgrid:GridTextColumn.CellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.CellTextSize>
+                    </sfgrid:GridTextColumn>
+
+                    <sfgrid:GridTextColumn Format="C"
+                                           HeaderFontAttribute="Bold"
+                                           HeaderTextAlignment="Start"
+                                           LineBreakMode="TailTruncation"
+                                           LoadUIView="true"
+                                           MappingName="QS2"
+                                           Padding="5,0,5,0"
+                                           TextAlignment="End">
+                        <sfgrid:GridTextColumn.HeaderCellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                        <sfgrid:GridTextColumn.CellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.CellTextSize>
+                    </sfgrid:GridTextColumn>
+
+                    <sfgrid:GridTextColumn Format="C"
+                                           HeaderFontAttribute="Bold"
+                                           HeaderTextAlignment="Start"
+                                           LineBreakMode="TailTruncation"
+                                           LoadUIView="true"
+                                           MappingName="QS3"
+                                           Padding="5,0,5,0"
+                                           TextAlignment="End">
+                        <sfgrid:GridTextColumn.HeaderCellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                        <sfgrid:GridTextColumn.CellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.CellTextSize>
+                    </sfgrid:GridTextColumn>
+
+                    <sfgrid:GridTextColumn Format="C"
+                                           HeaderFontAttribute="Bold"
+                                           HeaderTextAlignment="Start"
+                                           LineBreakMode="TailTruncation"
+                                           LoadUIView="true"
+                                           MappingName="QS4"
+                                           Padding="5,0,5,0"
+                                           TextAlignment="End">
+                        <sfgrid:GridTextColumn.HeaderCellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                        <sfgrid:GridTextColumn.CellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.CellTextSize>
+                    </sfgrid:GridTextColumn>
+
+                    <sfgrid:GridTextColumn Width="0"
+                                           Format="C"
+                                           HeaderFontAttribute="Bold"
+                                           HeaderText="Total Sale"
+                                           HeaderTextAlignment="Start"
+                                           LineBreakMode="TailTruncation"
+                                           LoadUIView="true"
+                                           MappingName="Total"
+                                           Padding="5,0,5,0"
+                                           TextAlignment="End">
+                        <sfgrid:GridTextColumn.HeaderCellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                        <sfgrid:GridTextColumn.CellTextSize>
+                            <OnPlatform x:TypeArguments="x:Double"
+                                        Android="14"
+                                        WinPhone="12"
+                                        iOS="12" />
+                        </sfgrid:GridTextColumn.CellTextSize>
+                    </sfgrid:GridTextColumn>
+
+                </sfgrid:SfDataGrid.Columns>
+                <sfgrid:SfDataGrid.TableSummaryRows>
+                    <sfgrid:GridTableSummaryRow Title="Total Sales : {sum} "
+                                                Position="Bottom"
+                                                ShowSummaryInRow="True">
+                        <sfgrid:GridTableSummaryRow.SummaryColumns>
+                            <sfgrid:GridSummaryColumn Name="sum"
+                                                      Format="{}{Sum:c}"
+                                                      MappingName="Total"
+                                                      SummaryType="DoubleAggregate" />
+                        </sfgrid:GridTableSummaryRow.SummaryColumns>
+                    </sfgrid:GridTableSummaryRow>
+                </sfgrid:SfDataGrid.TableSummaryRows>
+            </sfgrid:SfDataGrid>
+
+        </Grid>
+    </sample:SampleView.Content>
+
+</sample:SampleView>

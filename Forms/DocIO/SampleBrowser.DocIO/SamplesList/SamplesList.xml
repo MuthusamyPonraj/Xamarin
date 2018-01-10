@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Samples>
+    <Sample Name="GettingStartedDocIO" Title="Getting Started" Icon="AllControlls/DocIO/generateword.png" Type="SampleBrowser.DocIO.GettingStartedDocIO" Description="This sample demonstrates how to create simple Word document with text, images and tables." />
+    <Sample Name="BuiltInStyle" Title="Built-in Style" Icon="AllControlls/DocIO/builtinstyle.png" Type="SampleBrowser.DocIO.BuiltInStyle" Description="This sample demonstrates how to format the Word document contents with the built-in styles." />
+    <Sample Name="CustomStyle" Title="Custom Style" Icon="AllControlls/DocIO/customstyle.png" Type="SampleBrowser.DocIO.CustomStyle" Description="This sample demonstrates how to format the Word document contents with user defined styles." />
+    <Sample Name="BookmarkNavigation" Title="Bookmark Navigation" Icon="AllControlls/DocIO/bookmarknavigation.png" Type="SampleBrowser.DocIO.BookmarkNavigation" Description="This sample demonstrates how to insert, retrieve, replace and delete the contents of a specified bookmark using BookmarkNavigator functionality of DocIO." />
+    <Sample Name="DocIO_PieChart" Title= "Pie Chart" Icon="AllControlls/DocIO/piechart.png" Type = "SampleBrowser.DocIO.DocIO_PieChart" Description="This sample demonstrates how to create a pie chart in a Word document." />
+    <Sample Name="DocIO_BarChart" Title ="Bar Chart" Icon="AllControlls/DocIO/barchart.png" Type="SampleBrowser.DocIO_BarChart" Description="This sample demonstrates how to create a bar chart in a Word document with the data from an existing Excel file." />
+    <Sample Name="MailMerge" Title="Mail Merge" Icon="AllControlls/DocIO/letterformat.png" Type="SampleBrowser.MailMerge" Description="This sample demonstrates how to create a letter format document by filling the data using Mail merge functionality of DocIO." />
+    <Sample Name="FormFillingAndProtection" Title="Form Filling and Protection" Icon="AllControlls/DocIO/protectionandformfilling.png" Type="SampleBrowser.FormFillingAndProtection" Description="This sample demonstrates how to fill data and protect the content controls in an existing Word document." />
+    <Sample Name="XMLMapping" Title="XML Mapping"  Icon="AllControlls/DocIO/xmlmapping.png" Type="SampleBrowser.XMLMapping" Description="This sample demonstrates how to map custom XML part to content controls in the Word document." />
+    <Sample Name="WordToHTML" Title="Word to HTML" Icon="AllControlls/DocIO/wordtohtml.png" Type="SampleBrowser.WordToHTML" Description="This sample demonstrates how to convert a Word document into HTML file." />
+</Samples>

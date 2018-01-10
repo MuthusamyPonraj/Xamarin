@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Samples>
+	<Sample Name = "KanbanGettingStarted" Title = "Kanban"  /> 
+    <Sample Name = "KanbanCustomizationSample" Title = "Kanban Customization"  /> 
+</Samples>

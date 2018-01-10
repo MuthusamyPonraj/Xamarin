@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="SampleBrowser.Core.SamplesListPage"
+		xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"  BackgroundColor="#F2F2F2" Padding="0,10,0,0">
+  <ContentPage.Content>
+    <Grid x:Name="samplesListGrid" BackgroundColor="#F1F1F1" VerticalOptions="FillAndExpand"
+			HorizontalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0" Padding="0" Margin="0" >
+      <Grid.RowDefinitions>
+        <RowDefinition x:Name="listViewRow" Height="10*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition x:Name="col" />
+      </Grid.ColumnDefinitions>
+      <listView:SfListView x:Name="samplesListView" ItemTapped="SamplesListView_ItemTapped" Grid.Row="0" BackgroundColor="Transparent" Grid.Column="0" RowSpacing="0" ItemSize="90" Orientation="Vertical"
+          SelectionBackgroundColor="Transparent" Margin="0" Padding="0" SelectionMode="Single" ColumnSpacing="0"
+                ItemSpacing="10,0,10,10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <listView:SfListView.LayoutManager>
+                <listView:GridLayout>
+                    <listView:GridLayout.SpanCount>
+                         <OnIdiom x:TypeArguments="x:Int32" Phone="1" Tablet="2" Desktop="3" />    
+                    </listView:GridLayout.SpanCount>                        
+                </listView:GridLayout>
+            </listView:SfListView.LayoutManager>                    
+      </listView:SfListView>
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>

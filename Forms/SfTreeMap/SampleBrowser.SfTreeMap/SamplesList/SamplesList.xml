@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Samples>
+ <Sample Name = "TreeMapGettingStarted" Title = "Getting Started" />
+ <Sample Name = "Hierarchical" Title = "Hierarchical"/>
+ <Sample Name = "TreeMapCustomization" Title = "Customization"/>
+</Samples>

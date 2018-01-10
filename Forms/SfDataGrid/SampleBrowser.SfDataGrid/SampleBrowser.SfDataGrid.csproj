@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF1EF104-CB3C-47A4-B279-CEF917F6D5E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SampleBrowser.SfDataGrid</RootNamespace>
+    <AssemblyName>SampleBrowser.SfDataGrid</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ISave.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\AutoRowHeight\AutoRowHeight.xaml.cs">
+      <DependentUpon>AutoRowHeight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\AutoRowHeight\Behaviors.cs" />
+    <Compile Include="Samples\CellTemplate\CellTemplate.xaml.cs">
+      <DependentUpon>CellTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\ConditionalFormatting\Behaviors.cs" />
+    <Compile Include="Samples\ConditionalFormatting\ConditionalFormatting.xaml.cs">
+      <DependentUpon>ConditionalFormatting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CustomGrouping\Behavior.cs" />
+    <Compile Include="Samples\CustomGrouping\CustomGrouping.xaml.cs">
+      <DependentUpon>CustomGrouping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\CustomSorting\CustomSorting.xaml.cs">
+      <DependentUpon>CustomSorting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\DataGridStyles\Behaviors.cs" />
+    <Compile Include="Samples\DataGridStyles\DataGridStyles.xaml.cs">
+      <DependentUpon>DataGridStyles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\DiagonalScrolling\Behaviors.cs" />
+    <Compile Include="Samples\DiagonalScrolling\DiagonalScrolling.xaml.cs">
+      <DependentUpon>DiagonalScrolling.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\DragAndDrop\Behaviors.cs" />
+    <Compile Include="Samples\DragAndDrop\DragAndDrop.xaml.cs">
+      <DependentUpon>DragAndDrop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Editing\Behaviors.cs" />
+    <Compile Include="Samples\Editing\Editing.xaml.cs">
+      <DependentUpon>Editing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Exporting\Behaviors.cs" />
+    <Compile Include="Samples\Exporting\Exporting.xaml.cs">
+      <DependentUpon>Exporting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Filtering\Behaviors.cs" />
+    <Compile Include="Samples\Filtering\Filtering.xaml.cs">
+      <DependentUpon>Filtering.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\FrozenRow\Behaviors.cs" />
+    <Compile Include="Samples\FrozenRow\FrozenRow.xaml.cs">
+      <DependentUpon>FrozenRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\GridColumns\GridColumns.xaml.cs">
+      <DependentUpon>GridColumns.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\GridGettingStarted\GridGettingStarted.xaml.cs">
+      <DependentUpon>GridGettingStarted.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Grouping\Behaviors.cs" />
+    <Compile Include="Samples\Grouping\Grouping.xaml.cs">
+      <DependentUpon>Grouping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Helpers\Converter.cs" />
+    <Compile Include="Samples\Helpers\CustomComparer.cs" />
+    <Compile Include="Samples\Helpers\CustomRenderers.cs" />
+    <Compile Include="Samples\Helpers\CustomView.cs" />
+    <Compile Include="Samples\Helpers\GridCustomEntry.cs" />
+    <Compile Include="Samples\Helpers\PickerExt.cs" />
+    <Compile Include="Samples\Helpers\SearchBarExt.cs" />
+    <Compile Include="Samples\Helpers\SelectionController.cs" />
+    <Compile Include="Samples\LoadMore\Behaviors.cs" />
+    <Compile Include="Samples\LoadMore\LoadMore.xaml.cs">
+      <DependentUpon>LoadMore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Model\BookInfo.cs" />
+    <Compile Include="Samples\Model\BookRepository.cs" />
+    <Compile Include="Samples\Model\CellTemplateModel.cs" />
+    <Compile Include="Samples\Model\CellTemplateModelRepository.cs" />
+    <Compile Include="Samples\Model\CustomerDetails.cs" />
+    <Compile Include="Samples\Model\CustomersRepository.cs" />
+    <Compile Include="Samples\Model\DealerInfo.cs" />
+    <Compile Include="Samples\Model\DealerRepository.cs" />
+    <Compile Include="Samples\Model\Employee.cs" />
+    <Compile Include="Samples\Model\EmployeeDetails.cs" />
+    <Compile Include="Samples\Model\EmployeeInfo.cs" />
+    <Compile Include="Samples\Model\EmployeeInfoRespository.cs" />
+    <Compile Include="Samples\Model\EmployeeInformation.cs" />
+    <Compile Include="Samples\Model\EmployeeInformationRepository.cs" />
+    <Compile Include="Samples\Model\OrderInfo.cs" />
+    <Compile Include="Samples\Model\OrderInfoRepository.cs" />
+    <Compile Include="Samples\Model\ProductInfo.cs" />
+    <Compile Include="Samples\Model\ProductInfoRepository.cs" />
+    <Compile Include="Samples\Model\ProductRepository.cs" />
+    <Compile Include="Samples\Model\Products.cs" />
+    <Compile Include="Samples\Model\ReleaseInfo.cs" />
+    <Compile Include="Samples\Model\ReleaseInfoRepository.cs" />
+    <Compile Include="Samples\Model\SalesInfoRepository.cs" />
+    <Compile Include="Samples\Model\StockData.cs" />
+    <Compile Include="Samples\Paging\Behavior.cs" />
+    <Compile Include="Samples\Paging\Paging.xaml.cs">
+      <DependentUpon>Paging.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\PullToRefresh\Behaviors.cs" />
+    <Compile Include="Samples\PullToRefresh\PullToRefresh.xaml.cs">
+      <DependentUpon>PullToRefresh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\RenderingDynamicData\RenderingDynamicData.xaml.cs">
+      <DependentUpon>RenderingDynamicData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Resizing\Behaviors.cs" />
+    <Compile Include="Samples\Resizing\Resizing.xaml.cs">
+      <DependentUpon>Resizing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\RowDragAndDrop\RowDragAndDrop.xaml.cs">
+      <DependentUpon>RowDragAndDrop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Selection\Behaviors.cs" />
+    <Compile Include="Samples\Selection\Selection.xaml.cs">
+      <DependentUpon>Selection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Sorting\Sorting.xaml.cs">
+      <DependentUpon>Sorting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\Styles\Blue.cs" />
+    <Compile Include="Samples\Styles\Dark.cs" />
+    <Compile Include="Samples\Styles\DefaultStyle.cs" />
+    <Compile Include="Samples\Styles\Green.cs" />
+    <Compile Include="Samples\Styles\PagingStyle.cs" />
+    <Compile Include="Samples\Styles\Red.cs" />
+    <Compile Include="Samples\Styles\SwipeStyle.cs" />
+    <Compile Include="Samples\Swiping\Behaviors.cs" />
+    <Compile Include="Samples\Swiping\Swiping.xaml.cs">
+      <DependentUpon>Swiping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\UnBoundColumn\UnBoundColumn.xaml.cs">
+      <DependentUpon>UnBoundColumn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Samples\ViewModel\ViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\AutoRowHeight\AutoRowHeight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\CellTemplate\CellTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\ConditionalFormatting\ConditionalFormatting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\CustomGrouping\CustomGrouping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\CustomSorting\CustomSorting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\DataGridStyles\DataGridStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\DiagonalScrolling\DiagonalScrolling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\DragAndDrop\DragAndDrop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Editing\Editing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Exporting\Exporting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Filtering\Filtering.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\FrozenRow\FrozenRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\GridColumns\GridColumns.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\GridGettingStarted\GridGettingStarted.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Grouping\Grouping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\LoadMore\LoadMore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Paging\Paging.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\PullToRefresh\PullToRefresh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\RenderingDynamicData\RenderingDynamicData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Resizing\Resizing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\RowDragAndDrop\RowDragAndDrop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Selection\Selection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Sorting\Sorting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\Swiping\Swiping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\UnBoundColumn\UnBoundColumn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SamplesList\SamplesList.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SampleBrowser.Core">
+      <HintPath>..\packages\SampleBrowser.Core.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.Compression.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Compression.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Core.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.Core.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Core.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Data.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDataGrid.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Data.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DataSource.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.DataSource.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.DataSource.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.GridCommon.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.GridCommon.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.Pdf.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Pdf.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGrid.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDataGrid.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfDataGrid.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfGridConverter.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfGridConverter.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfGridConverter.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfListView.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfListView.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericTextBox.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNumericTextBox.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfNumericTextBox.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfPullToRefresh.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPullToRefresh.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfPullToRefresh.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.XlsIO.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.XlsIO.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.XlsIO.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\CellTemplateImage\Image10.png" />
+    <EmbeddedResource Include="Icons\CellTemplateImage\Image13.png" />
+    <EmbeddedResource Include="Icons\CellTemplateImage\Image15.png" />
+    <EmbeddedResource Include="Icons\CellTemplateImage\Image17.png" />
+    <EmbeddedResource Include="Icons\CellTemplateImage\Image19.png" />
+    <EmbeddedResource Include="Icons\CellTemplateImage\Image2.png" />
+    <EmbeddedResource Include="Icons\CellTemplateImage\Image5.png" />
+    <EmbeddedResource Include="Icons\CellTemplateImage\Image6.png" />
+    <EmbeddedResource Include="Icons\CellTemplateImage\Image9.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Ascending.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Buchanan.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Callahan.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Davolio.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Delete.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Descending.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Dodsworth.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Down.png" />
+    <EmbeddedResource Include="Icons\DataGrid\DragDropIllustration.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Edit.png" />
+    <EmbeddedResource Include="Icons\DataGrid\EditIllustration.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Edit_Icon.png" />
+    <EmbeddedResource Include="Icons\DataGrid\ExcelExport.png" />
+    <EmbeddedResource Include="Icons\DataGrid\ExportExcel.png" />
+    <EmbeddedResource Include="Icons\DataGrid\ExportPdf.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Fuller.png" />
+    <EmbeddedResource Include="Icons\DataGrid\GreenUp.png" />
+    <EmbeddedResource Include="Icons\DataGrid\GroupCollapser.png" />
+    <EmbeddedResource Include="Icons\DataGrid\GroupExpander.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image0.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image1.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image10.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image11.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image12.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image13.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image14.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image15.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image16.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image17.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image18.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image19.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image2.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image20.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image21.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image22.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image23.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image24.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image25.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image26.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image27.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image28.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image3.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image4.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image5.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image6.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image7.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image8.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Image9.png" />
+    <EmbeddedResource Include="Icons\DataGrid\King.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Leverling.png" />
+    <EmbeddedResource Include="Icons\DataGrid\PdfExport.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Peacock.png" />
+    <EmbeddedResource Include="Icons\DataGrid\RedDown.png" />
+    <EmbeddedResource Include="Icons\DataGrid\ResizingIllustration.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Suyama.png" />
+    <EmbeddedResource Include="Icons\DataGrid\SyncfusionLogo.jpg" />
+    <EmbeddedResource Include="Icons\DataGrid\Undo.png" />
+    <EmbeddedResource Include="Icons\DataGrid\Up.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+    </PropertyGroup>
+  </Target>
+  <Import Project="..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
+  <PropertyGroup>
+    <PrepareResourceNamesDependsOn>
+      IncludeFilesInDroid;
+      $(PrepareResourceNamesDependsOn)
+    </PrepareResourceNamesDependsOn>
+  </PropertyGroup>
+  <Target Name="IncludeFilesInDroid">
+    <RemoveDir Directories="..\SampleBrowser.SfDataGrid.Android\Resources\CodeFiles\" />
+    <RemoveDir Directories="..\SampleBrowser.SfDataGrid.iOS\Resources\CodeFiles\" />
+    <RemoveDir Directories="..\SampleBrowser.SfDataGrid.UWP\Resources\CodeFiles\" />
+    <ItemGroup>
+      <SourceResourceFiles Include="Samples\**\*">
+        <DroidFiles>..\SampleBrowser.SfDataGrid.Android\Resources\CodeFiles\</DroidFiles>
+        <iOSFiles>..\SampleBrowser.SfDataGrid.iOS\Resources\CodeFiles\</iOSFiles>
+        <UWPFiles>..\SampleBrowser.SfDataGrid.UWP\Resources\CodeFiles\</UWPFiles>
+      </SourceResourceFiles>
+    </ItemGroup>
+    <Copy SourceFiles="@(SourceResourceFiles)" DestinationFolder="%(DroidFiles)\%(RecursiveDir)" />
+    <Copy SourceFiles="@(SourceResourceFiles)" DestinationFolder="%(iOSFiles)\%(RecursiveDir)" />
+    <Copy SourceFiles="@(SourceResourceFiles)" DestinationFolder="%(UWPFiles)\%(RecursiveDir)" />
+  </Target>
+</Project>
