@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleBrowser.SfChart.CategoryAxis" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+    <local:SampleView.Content>
+        <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <chart:SfChart.Margin>
+                <OnPlatform x:TypeArguments="Thickness" WinPhone="0,0,15,0" />
+            </chart:SfChart.Margin>
+            <chart:SfChart.Title>
+                <chart:ChartTitle Text="Internet Users - 2016" />
+            </chart:SfChart.Title>
+            <chart:SfChart.BindingContext>
+                <sampleBrowser:CategoryAxisViewModel />
+            </chart:SfChart.BindingContext>
+            <chart:SfChart.PrimaryAxis>
+                <chart:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="false">
+                    <chart:CategoryAxis.Title>
+                        <chart:ChartAxisTitle Text="Country" />
+                    </chart:CategoryAxis.Title>
+                </chart:CategoryAxis>
+            </chart:SfChart.PrimaryAxis>
+            <chart:SfChart.SecondaryAxis>
+                <chart:NumericalAxis Minimum="0" Maximum="100" IsVisible="false" ShowMajorGridLines="false">
+                </chart:NumericalAxis>
+            </chart:SfChart.SecondaryAxis>
+            <chart:SfChart.Series>
+                <chart:ColumnSeries ItemsSource="{Binding CategoryData}" XBindingPath="Name" YBindingPath="Value">
+                    <chart:ColumnSeries.ColorModel>
+                        <chart:ChartColorModel Palette="Natural"/>
+                    </chart:ColumnSeries.ColorModel>
+                    <chart:ColumnSeries.DataMarker>
+                        <chart:ChartDataMarker ShowLabel="true" ShowMarker="false" />
+                    </chart:ColumnSeries.DataMarker>
+                </chart:ColumnSeries>
+            </chart:SfChart.Series>
+        </chart:SfChart>
+    </local:SampleView.Content>
+</local:SampleView>

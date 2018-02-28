@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69AF2D54-9C72-4149-B566-C712585493D4}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SampleBrowser.Droid</RootNamespace>
+    <AssemblyName>SampleBrowser.Droid</AssemblyName>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidSupportedAbis>armeabi-v7a;armeabi;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
+    <AndroidEnableMultiDex>True</AndroidEnableMultiDex>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidEnableMultiDex>True</AndroidEnableMultiDex>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SampleBrowser.Calculate">
+      <HintPath>..\packages\SampleBrowser.Calculate.16.1.0.24\lib\MonoAndroid10\SampleBrowser.Calculate.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.Calculate.Android">
+      <HintPath>..\packages\SampleBrowser.Calculate.16.1.0.24\lib\MonoAndroid10\SampleBrowser.Calculate.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.DocIO">
+      <HintPath>..\packages\SampleBrowser.DocIO.16.1.0.24\lib\MonoAndroid10\SampleBrowser.DocIO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.DocIO.Android">
+      <HintPath>..\packages\SampleBrowser.DocIO.16.1.0.24\lib\MonoAndroid10\SampleBrowser.DocIO.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfCircularGauge">
+      <HintPath>..\packages\SampleBrowser.SfCircularGauge.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfCircularGauge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfCircularGauge.Android">
+      <HintPath>..\packages\SampleBrowser.SfCircularGauge.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfCircularGauge.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfDataForm">
+      <HintPath>..\packages\SampleBrowser.SfDataForm.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfDataForm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfDataForm.Android">
+      <HintPath>..\packages\SampleBrowser.SfDataForm.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfDataForm.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfPopupLayout">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SampleBrowser.SfPopupLayout.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfPopupLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfPopupLayout.Android">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SampleBrowser.SfPopupLayout.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfPopupLayout.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfDiagram">
+      <HintPath>..\packages\SampleBrowser.SfDiagram.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfDiagram.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfDiagram.Android">
+      <HintPath>..\packages\SampleBrowser.SfDiagram.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfDiagram.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfDigitalGauge">
+      <HintPath>..\packages\SampleBrowser.SfDigitalGauge.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfDigitalGauge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfDigitalGauge.Android">
+      <HintPath>..\packages\SampleBrowser.SfDigitalGauge.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfDigitalGauge.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfImageEditor">
+      <HintPath>..\packages\SampleBrowser.SfImageEditor.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfImageEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfImageEditor.Android">
+      <HintPath>..\packages\SampleBrowser.SfImageEditor.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfImageEditor.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfKanban">
+      <HintPath>..\packages\SampleBrowser.SfKanban.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfKanban.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfKanban.Android">
+      <HintPath>..\packages\SampleBrowser.SfKanban.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfKanban.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfLinearGauge">
+      <HintPath>..\packages\SampleBrowser.SfLinearGauge.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfLinearGauge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfLinearGauge.Android">
+      <HintPath>..\packages\SampleBrowser.SfLinearGauge.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfLinearGauge.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfMaskedEdit">
+      <HintPath>..\packages\SampleBrowser.SfMaskedEdit.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfMaskedEdit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfMaskedEdit.Android">
+      <HintPath>..\packages\SampleBrowser.SfMaskedEdit.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfMaskedEdit.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfNavigationDrawer">
+      <HintPath>..\packages\SampleBrowser.SfNavigationDrawer.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfNavigationDrawer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfNavigationDrawer.Android">
+      <HintPath>..\packages\SampleBrowser.SfNavigationDrawer.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfNavigationDrawer.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRadialMenu">
+      <HintPath>..\packages\SampleBrowser.SfRadialMenu.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfRadialMenu.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRadialMenu.Android">
+      <HintPath>..\packages\SampleBrowser.SfRadialMenu.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfRadialMenu.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfSunburstChart">
+      <HintPath>..\packages\SampleBrowser.SfSunburstChart.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfSunburstChart.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfSunburstChart.Android">
+      <HintPath>..\packages\SampleBrowser.SfSunburstChart.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfSunburstChart.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfTreeMap">
+      <HintPath>..\packages\SampleBrowser.SfTreeMap.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfTreeMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfTreeMap.Android">
+      <HintPath>..\packages\SampleBrowser.SfTreeMap.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfTreeMap.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Core.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.Core.16.1.0.24\lib\MonoAndroid10\Syncfusion.Core.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.DocIO.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.DocIO.16.1.0.24\lib\MonoAndroid10\Syncfusion.DocIO.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataForm.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDataForm.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfDataForm.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataForm.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDataForm.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfDataForm.XForms.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfDiagram.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDiagram.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfDiagram.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfDiagram.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDiagram.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfDiagram.XForms.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfGauge.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfGauge.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfGauge.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfGauge.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfGauge.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfGauge.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfGauge.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfGauge.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfGauge.XForms.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfListView.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfListView.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfListView.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfListView.XForms.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfPopupLayout.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPopupLayout.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfPopupLayout.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfPopupLayout.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPopupLayout.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfPopupLayout.XForms.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfMaskedEdit.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfMaskedEdit.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfMaskedEdit.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfMaskedEdit.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfMaskedEdit.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfMaskedEdit.XForms.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfNavigationDrawer.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNavigationDrawer.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfNavigationDrawer.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfNavigationDrawer.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNavigationDrawer.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfNavigationDrawer.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfNavigationDrawer.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNavigationDrawer.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfNavigationDrawer.XForms.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfRadialMenu.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRadialMenu.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfRadialMenu.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfRadialMenu.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRadialMenu.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfRadialMenu.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfRadialMenu.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRadialMenu.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfRadialMenu.XForms.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfTreeMap.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfTreeMap.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfTreeMap.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfTreeMap.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfTreeMap.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfTreeMap.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfTreeMap.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfTreeMap.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfTreeMap.XForms.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="FormsViewGroup">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.Android">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\MonoAndroid10\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Annotations">
+      <HintPath>..\packages\Xamarin.Android.Support.Annotations.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Compat">
+      <HintPath>..\packages\Xamarin.Android.Support.Compat.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.UI">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.UI.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.Utils">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.Utils.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Core.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Media.Compat">
+      <HintPath>..\packages\Xamarin.Android.Support.Media.Compat.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Media.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Fragment">
+      <HintPath>..\packages\Xamarin.Android.Support.Fragment.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Fragment.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Transition">
+      <HintPath>..\packages\Xamarin.Android.Support.Transition.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Transition.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.Palette">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.Palette.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v7.Palette.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Vector.Drawable">
+      <HintPath>..\packages\Xamarin.Android.Support.Vector.Drawable.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
+      <HintPath>..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design">
+      <HintPath>..\packages\Xamarin.Android.Support.Design.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.MediaRouter">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.MediaRouter.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v4.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.CardView.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.GridCommon.16.1.0.24\lib\MonoAndroid10\Syncfusion.GridCommon.Portable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfListView.Android">
+      <HintPath>..\packages\SampleBrowser.SfListView.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfListView.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfListView">
+      <HintPath>..\packages\SampleBrowser.SfListView.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfListView.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.DataSource.Android">
+      <HintPath>..\packages\SampleBrowser.DataSource.16.1.0.24\lib\MonoAndroid10\SampleBrowser.DataSource.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.DataSource">
+      <HintPath>..\packages\SampleBrowser.DataSource.16.1.0.24\lib\MonoAndroid10\SampleBrowser.DataSource.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.PDF.Android">
+      <HintPath>..\packages\SampleBrowser.PDF.16.1.0.24\lib\MonoAndroid10\SampleBrowser.PDF.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.PDF">
+      <HintPath>..\packages\SampleBrowser.PDF.16.1.0.24\lib\MonoAndroid10\SampleBrowser.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.Presentation.Android">
+      <HintPath>..\packages\SampleBrowser.Presentation.16.1.0.24\lib\MonoAndroid10\SampleBrowser.Presentation.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.Presentation">
+      <HintPath>..\packages\SampleBrowser.Presentation.16.1.0.24\lib\MonoAndroid10\SampleBrowser.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfAutoComplete.Android">
+      <HintPath>..\packages\SampleBrowser.SfAutoComplete.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfAutoComplete.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfAutoComplete">
+      <HintPath>..\packages\SampleBrowser.SfAutoComplete.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfAutoComplete.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfBarcode.Android">
+      <HintPath>..\packages\SampleBrowser.SfBarcode.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfBarcode.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfBarcode">
+      <HintPath>..\packages\SampleBrowser.SfBarcode.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfBarcode.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfBusyIndicator.Android">
+      <HintPath>..\packages\SampleBrowser.SfBusyIndicator.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfBusyIndicator.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfBusyIndicator">
+      <HintPath>..\packages\SampleBrowser.SfBusyIndicator.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfBusyIndicator.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfCalendar.Android">
+      <HintPath>..\packages\SampleBrowser.SfCalendar.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfCalendar.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfCalendar">
+      <HintPath>..\packages\SampleBrowser.SfCalendar.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfCalendar.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfCarousel.Android">
+      <HintPath>..\packages\SampleBrowser.SfCarousel.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfCarousel.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfCarousel">
+      <HintPath>..\packages\SampleBrowser.SfCarousel.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfCarousel.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfProgressBar.Android">
+      <HintPath>..\packages\SampleBrowser.SfProgressBar.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfProgressBar.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfProgressBar">
+      <HintPath>..\packages\SampleBrowser.SfProgressBar.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfChart.Android">
+      <HintPath>..\packages\SampleBrowser.SfChart.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfChart.Android.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfChart">
+      <HintPath>..\packages\SampleBrowser.SfChart.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfChart.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfDataGrid.Android">
+      <HintPath>..\packages\SampleBrowser.SfDataGrid.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfDataGrid.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfDataGrid">
+      <HintPath>..\packages\SampleBrowser.SfDataGrid.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfDataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfMaps.Android">
+      <HintPath>..\packages\SampleBrowser.SfMaps.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfMaps.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfMaps">
+      <HintPath>..\packages\SampleBrowser.SfMaps.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfMaps.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfNumericTextBox.Android">
+      <HintPath>..\packages\SampleBrowser.SfNumericTextBox.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfNumericTextBox.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfNumericTextBox">
+      <HintPath>..\packages\SampleBrowser.SfNumericTextBox.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfNumericTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfNumericUpDown.Android">
+      <HintPath>..\packages\SampleBrowser.SfNumericUpDown.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfNumericUpDown.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfNumericUpDown">
+      <HintPath>..\packages\SampleBrowser.SfNumericUpDown.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfNumericUpDown.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfPdfViewer.Android">
+      <HintPath>..\packages\SampleBrowser.SfPdfViewer.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfPdfViewer.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfPdfViewer">
+      <HintPath>..\packages\SampleBrowser.SfPdfViewer.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfPdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfPicker.Android">
+      <HintPath>..\packages\SampleBrowser.SfPicker.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfPicker.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfPicker">
+      <HintPath>..\packages\SampleBrowser.SfPicker.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfTabView.Android">
+      <HintPath>..\packages\SampleBrowser.SfTabView.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfTabView.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfTabView">
+      <HintPath>..\packages\SampleBrowser.SfTabView.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfTabView.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfPullToRefresh.Android">
+      <HintPath>..\packages\SampleBrowser.SfPullToRefresh.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfPullToRefresh.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfPullToRefresh">
+      <HintPath>..\packages\SampleBrowser.SfPullToRefresh.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfPullToRefresh.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRangeNavigator.Android">
+      <HintPath>..\packages\SampleBrowser.SfRangeNavigator.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfRangeNavigator.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRangeNavigator">
+      <HintPath>..\packages\SampleBrowser.SfRangeNavigator.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfRangeNavigator.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRangeSlider.Android">
+      <HintPath>..\packages\SampleBrowser.SfRangeSlider.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfRangeSlider.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRangeSlider">
+      <HintPath>..\packages\SampleBrowser.SfRangeSlider.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfRangeSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRating.Android">
+      <HintPath>..\packages\SampleBrowser.SfRating.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfRating.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRating">
+      <HintPath>..\packages\SampleBrowser.SfRating.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfRating.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRotator.Android">
+      <HintPath>..\packages\SampleBrowser.SfRotator.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfRotator.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRotator">
+      <HintPath>..\packages\SampleBrowser.SfRotator.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfRotator.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfSchedule.Android">
+      <HintPath>..\packages\SampleBrowser.SfSchedule.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfSchedule.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfSchedule">
+      <HintPath>..\packages\SampleBrowser.SfSchedule.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfSchedule.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfSparkline.Android">
+      <HintPath>..\packages\SampleBrowser.SfSparkline.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfSparkline.Android.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfSparkline">
+      <HintPath>..\packages\SampleBrowser.SfSparkline.16.1.0.24\lib\MonoAndroid10\SampleBrowser.SfSparkline.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.XlsIO.Android">
+      <HintPath>..\packages\SampleBrowser.XlsIO.16.1.0.24\lib\MonoAndroid10\SampleBrowser.XlsIO.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.XlsIO">
+      <HintPath>..\packages\SampleBrowser.XlsIO.16.1.0.24\lib\MonoAndroid10\SampleBrowser.XlsIO.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.OfficeChart.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.OfficeChart.16.1.0.24\lib\MonoAndroid10\Syncfusion.OfficeChart.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.Pdf.16.1.0.24\lib\MonoAndroid10\Syncfusion.Pdf.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Presentation.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.Presentation.16.1.0.24\lib\MonoAndroid10\Syncfusion.Presentation.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfAutoComplete.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfAutoComplete.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfAutoComplete.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfAutoComplete.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfAutoComplete.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfAutoComplete.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfAutoComplete.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfAutoComplete.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfAutoComplete.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBarcode.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfBarcode.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfBarcode.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBarcode.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfBarcode.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfBarcode.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBarcode.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfBarcode.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfBarcode.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBusyIndicator.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfBusyIndicator.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfBusyIndicator.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBusyIndicator.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfBusyIndicator.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfBusyIndicator.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBusyIndicator.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfBusyIndicator.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfBusyIndicator.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfCalendar.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfCalendar.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfCalendar.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfCalendar.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfCalendar.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfCalendar.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfCalendar.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfCalendar.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfCalendar.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfCarousel.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfCarousel.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfCarousel.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfCarousel.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfCarousel.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfCarousel.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfCarousel.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfCarousel.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfCarousel.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfChart.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfChart.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Data.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDataGrid.16.1.0.24\lib\MonoAndroid10\Syncfusion.Data.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGrid.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDataGrid.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfDataGrid.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGrid.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDataGrid.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfDataGrid.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfImageEditor.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfImageEditor.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfImageEditor.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfImageEditor.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfImageEditor.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfImageEditor.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfKanban.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfKanban.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfKanban.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfKanban.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfKanban.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfKanban.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfKanban.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfKanban.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfKanban.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfMaps.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfMaps.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfMaps.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfMaps.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfMaps.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfMaps.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfMaps.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfMaps.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfMaps.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericTextBox.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfNumericTextBox.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericTextBox.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfNumericTextBox.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericTextBox.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfNumericTextBox.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericUpDown.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfNumericUpDown.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericUpDown.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfNumericUpDown.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericUpDown.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfNumericUpDown.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfPdfViewer.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPdfViewer.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfPdfViewer.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfPdfViewer.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPdfViewer.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfPdfViewer.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfPicker.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPicker.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfPicker.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfPicker.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPicker.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfPicker.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfPicker.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPicker.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfPicker.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfTabView.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfTabView.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfTabView.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfTabView.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfTabView.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfTabView.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfTabView.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfTabView.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfTabView.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfProgressBar.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfProgressBar.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfProgressBar.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfProgressBar.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfProgressBar.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfProgressBar.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfPullToRefresh.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPullToRefresh.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfPullToRefresh.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfPullToRefresh.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPullToRefresh.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfPullToRefresh.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRangeSlider.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRangeSlider.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfRangeSlider.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRangeSlider.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRangeSlider.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfRangeSlider.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRangeSlider.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRangeSlider.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfRangeSlider.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRating.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRating.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfRating.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRating.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRating.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfRating.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRating.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRating.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfRating.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRotator.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRotator.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfRotator.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRotator.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRotator.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfRotator.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRotator.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRotator.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfRotator.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSchedule.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfSchedule.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfSchedule.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSchedule.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfSchedule.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfSchedule.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSchedule.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfSchedule.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfSchedule.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSparkline.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfSparkline.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfSparkline.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSparkline.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfSparkline.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfSparkline.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSparkline.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfSparkline.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfSparkline.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSunburstChart.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfSunburstChart.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfSunburstChart.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSunburstChart.XForms.Android">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfSunburstChart.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfSunburstChart.XForms.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSunburstChart.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfSunburstChart.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfSunburstChart.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.XlsIO.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.XlsIO.16.1.0.24\lib\MonoAndroid10\Syncfusion.XlsIO.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfGridConverter.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfGridConverter.16.1.0.24\lib\MonoAndroid10\Syncfusion.SfGridConverter.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Xamarin.Android.Support.v17.Leanback">
+      <HintPath>..\packages\Xamarin.Android.Support.v17.Leanback.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v17.Leanback.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SB.Core\SampleBrowser.Core.csproj">
+      <Project>{E791D2A6-C148-49D9-87F1-B3CB6B195F0D}</Project>
+      <Name>SampleBrowser.Core</Name>
+    </ProjectReference>
+	  <ProjectReference Include="..\SB.Core.Droid\SampleBrowser.Core.Droid.csproj">
+      <Project>{A258AB54-3FB7-41C1-8CDD-3B78CA5E4CD9}</Project>
+      <Name>SampleBrowser.Core.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SB\SampleBrowser.csproj">
+      <Project>{4880E1CC-531B-4357-B029-61E761FF0C54}</Project>
+      <Name>SampleBrowser</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreenActivity.cs" />
+    <Compile Include="Renderer\CustomSearchRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Tabbar.axml" />
+    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable\AppIcon.png" />
+    <AndroidResource Include="Resources\drawable\AutoComplete.png" />
+    <AndroidResource Include="Resources\drawable\back.png" />
+    <AndroidResource Include="Resources\drawable\BackIcon.png" />
+    <AndroidResource Include="Resources\drawable\Barcode.png" />
+    <AndroidResource Include="Resources\drawable\SfMaskedEdit.png" />
+    <AndroidResource Include="Resources\drawable\burgericon.png" />
+    <AndroidResource Include="Resources\drawable\BusyIndicator.png" />
+    <AndroidResource Include="Resources\drawable\Calculate.png" />
+    <AndroidResource Include="Resources\drawable\Calendar.png" />
+    <AndroidResource Include="Resources\drawable\CancelSearch.png" />
+    <AndroidResource Include="Resources\drawable\Carousel.png" />
+    <AndroidResource Include="Resources\drawable\Chart.png" />
+    <AndroidResource Include="Resources\drawable\ProgressBar.png" />
+    <AndroidResource Include="Resources\drawable\DataGrid.png" />
+    <AndroidResource Include="Resources\drawable\DataSource.png" />
+    <AndroidResource Include="Resources\drawable\DocIO.png" />
+    <AndroidResource Include="Resources\drawable\documentation.png" />
+    <AndroidResource Include="Resources\drawable\homeSearchIcon.png" />
+    <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable\ImageEditor.png" />
+    <AndroidResource Include="Resources\drawable\Kanban.png" />
+    <AndroidResource Include="Resources\drawable\Maps.png" />
+    <AndroidResource Include="Resources\drawable\menu.jpg" />
+    <AndroidResource Include="Resources\drawable\NavigationDrawer.png" />
+    <AndroidResource Include="Resources\drawable\newimage.png" />
+    <AndroidResource Include="Resources\drawable\NumericTextBox.png" />
+    <AndroidResource Include="Resources\drawable\NumericUpDown.png" />
+    <AndroidResource Include="Resources\drawable\Picker.png" />
+    <AndroidResource Include="Resources\drawable\Option.png" />
+    <AndroidResource Include="Resources\drawable\PDF.png" />
+    <AndroidResource Include="Resources\drawable\PDFViewer.png" />
+    <AndroidResource Include="Resources\drawable\Presentation.png" />
+    <AndroidResource Include="Resources\drawable\preview.png" />
+    <AndroidResource Include="Resources\drawable\productpage.png" />
+    <AndroidResource Include="Resources\drawable\PullToRefresh.png" />
+    <AndroidResource Include="Resources\drawable\RadialMenu.png" />
+    <AndroidResource Include="Resources\drawable\RangeNavigator.png" />
+    <AndroidResource Include="Resources\drawable\RangeSlider.png" />
+    <AndroidResource Include="Resources\drawable\Rating.png" />
+    <AndroidResource Include="Resources\drawable\Rotator.png" />
+    <AndroidResource Include="Resources\drawable\Schedule.png" />
+    <AndroidResource Include="Resources\drawable\Sparkline.png" />
+    <AndroidResource Include="Resources\drawable\SplashScreen.png" />
+    <AndroidResource Include="Resources\drawable\synclogo.png" />
+    <AndroidResource Include="Resources\drawable\TreeMap.png" />
+    <AndroidResource Include="Resources\drawable\updated.png" />
+    <AndroidResource Include="Resources\drawable\whatsnew.png" />
+    <AndroidResource Include="Resources\drawable\XlsIO.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\AppIcon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ImageEditor.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\SplashScreen.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\synclogo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\AppIcon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\AutoComplete.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Barcode.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\SfMaskedEdit.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\BusyIndicator.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Calculate.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Calendar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Carousel.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Chart.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ProgressBar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataGrid.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DataSource.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\DocIO.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\documentation.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ImageEditor.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Kanban.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ListView.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Maps.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\NavigationDrawer.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\NumericTextBox.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\NumericUpDown.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\PDF.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\PDFViewer.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Picker.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Presentation.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\productpage.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\PullToRefresh.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\RadialMenu.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\RangeNavigator.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\RangeSlider.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Rating.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Rotator.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Schedule.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Sparkline.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\SplashScreen.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\synclogo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TreeMap.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\whatsnew.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\XlsIO.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\AppIcon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\AutoComplete.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Barcode.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\SfMaskedEdit.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\BusyIndicator.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Calculate.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Calender.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Carousel.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Chart.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ProgressBar.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataGrid.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataSource.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DocIO.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\documentation.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ImageEditor.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Kanban.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ListView.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Maps.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\NavigationDrawer.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\NumericTextBox.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\NumericUpDown.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\PDF.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\PDFViewer.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Picker.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Presentation.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\productpage.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\PullToRefresh.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\RadialMenu.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\RangeNavigator.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\RangeSlider.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Rating.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Rotator.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Schedule.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Sparkline.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\SplashScreen.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\synclogo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\TreeMap.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\whatsnew.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\XlsIO.png" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values\splash.xml" />
+    <AndroidResource Include="Resources\drawable\TabView.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TabView.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\TabView.png" />
+    <AndroidResource Include="Resources\drawable\Ctrl_Sort_Ascending.png" />
+    <AndroidResource Include="Resources\drawable\Ctrl_Sort_Descending.png" />
+    <AndroidResource Include="Resources\drawable\Ctrl_Sort_Icon.png" />
+    <AndroidResource Include="Resources\drawable\Ctrl_Sort_Ascending.png">
+      <Link>Resources\drawable-hdpi\Ctrl_Sort_Ascending.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Ctrl_Sort_Descending.png">
+      <Link>Resources\drawable-hdpi\Ctrl_Sort_Descending.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Ctrl_Sort_Icon.png">
+      <Link>Resources\drawable-hdpi\Ctrl_Sort_Icon.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Ctrl_Sort_Ascending.png">
+      <Link>Resources\drawable-xhdpi\Ctrl_Sort_Ascending.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Ctrl_Sort_Descending.png">
+      <Link>Resources\drawable-xhdpi\Ctrl_Sort_Descending.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Ctrl_Sort_Icon.png">
+      <Link>Resources\drawable-xhdpi\Ctrl_Sort_Icon.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Ctrl_Sort_Ascending.png">
+      <Link>Resources\drawable-xxhdpi\Ctrl_Sort_Ascending.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Ctrl_Sort_Descending.png">
+      <Link>Resources\drawable-xxhdpi\Ctrl_Sort_Descending.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Ctrl_Sort_Icon.png">
+      <Link>Resources\drawable-xxhdpi\Ctrl_Sort_Icon.png</Link>
+    </AndroidResource>
+  </ItemGroup>
+   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\PopUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\PopUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\PopUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Sunburst.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\circulargauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\digitalgauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\lineargauge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Diagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\DataForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ListView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\DataForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ListView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\DataForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\DataForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Renderer\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.280\build\netstandard1.0\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.UI.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.Utils.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.Utils.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Fragment.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Transition.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Transition.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Transition.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Transition.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.Palette.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.Palette.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.Palette.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.Palette.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.RecyclerView.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.RecyclerView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.RecyclerView.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.RecyclerView.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Vector.Drawable.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.AppCompat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.AppCompat.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Design.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Design.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Design.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.Design.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.MediaRouter.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.MediaRouter.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v4.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v4.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v4.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v4.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.CardView.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.CardView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.CardView.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v7.CardView.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v17.Leanback.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v17.Leanback.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v17.Leanback.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.v17.Leanback.targets')" />
+</Project>

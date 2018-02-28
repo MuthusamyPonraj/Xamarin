@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleBrowser.SfChart.RangeColumnChart" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+    <local:SampleView.Content>
+        <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <chart:SfChart.Margin>
+                <OnPlatform x:TypeArguments="Thickness" WinPhone="0,0,15,0" />
+            </chart:SfChart.Margin>
+            <chart:SfChart.Title>
+                <chart:ChartTitle Text="Maximum and Minimum Temperature - 2012"  />
+            </chart:SfChart.Title>
+            <chart:SfChart.BindingContext>
+                <sampleBrowser:RangeColumnSeriesViewModel />
+            </chart:SfChart.BindingContext>
+            <chart:SfChart.PrimaryAxis>
+                <chart:CategoryAxis ShowMajorGridLines="false" LabelPlacement="BetweenTicks">
+                </chart:CategoryAxis>
+            </chart:SfChart.PrimaryAxis>
+            <chart:SfChart.SecondaryAxis>
+                <chart:NumericalAxis>
+                    <chart:NumericalAxis.AxisLineStyle>
+                        <chart:ChartLineStyle StrokeWidth="0">
+                        </chart:ChartLineStyle>
+                    </chart:NumericalAxis.AxisLineStyle>
+                  <chart:NumericalAxis.MajorTickStyle>
+                    <chart:ChartAxisTickStyle TickSize="0" />
+                  </chart:NumericalAxis.MajorTickStyle>
+                    <chart:NumericalAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle x:Name="secondaryAxisLabelStyle"/>
+                    </chart:NumericalAxis.LabelStyle>
+                </chart:NumericalAxis>
+            </chart:SfChart.SecondaryAxis>
+            <chart:SfChart.Legend>
+                <chart:ChartLegend DockPosition="Bottom" ToggleSeriesVisibility="True" IconWidth="14" IconHeight="14" />
+            </chart:SfChart.Legend>
+            <chart:SfChart.ColorModel>
+                <chart:ChartColorModel Palette="Natural" />
+            </chart:SfChart.ColorModel>
+            <chart:SfChart.Series>
+                <chart:RangeColumnSeries x:Name="rangeColumnSeries1" ItemsSource="{Binding RangeColumnData1}" XBindingPath="Name" High="High" Low="Low" Label="India" LegendIcon="Circle" EnableTooltip="true" EnableAnimation="true">
+                    <chart:RangeColumnSeries.DataMarker>
+                        <chart:ChartDataMarker ShowLabel="False" />
+                    </chart:RangeColumnSeries.DataMarker>
+                </chart:RangeColumnSeries>
+                <chart:RangeColumnSeries x:Name="rangeColumnSeries2" ItemsSource="{Binding RangeColumnData2}" XBindingPath="Name" High="High" Low="Low" Label="Germany" LegendIcon="Circle" EnableTooltip="true" EnableAnimation="true">
+                    <chart:RangeColumnSeries.DataMarker>
+                        <chart:ChartDataMarker ShowLabel="False" />
+                    </chart:RangeColumnSeries.DataMarker>
+                </chart:RangeColumnSeries>
+            </chart:SfChart.Series>
+        </chart:SfChart>
+    </local:SampleView.Content>
+</local:SampleView>

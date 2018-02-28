@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sample:SampleView x:Class="SampleBrowser.SfDataGrid.AutoRowHeight"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:sample="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+                  xmlns:local="clr-namespace:SampleBrowser.SfDataGrid;assembly=SampleBrowser.SfDataGrid"
+                  xmlns:sfgrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms">
+
+  <sample:SampleView.BindingContext>
+        <local:AutoRowHeightViewModel x:Name="viewModel" />
+    </sample:SampleView.BindingContext>
+
+  <sample:SampleView.Content>
+        <sfgrid:SfDataGrid x:Name="dataGrid"
+                           AutoGenerateColumns="False"
+                           ColumnSizer="Star"
+                           ItemsSource="{Binding ReleaseInformation}"
+                           HeaderRowHeight="52"
+                           RowHeight="48"
+                           SelectionMode="Single"
+                           VerticalOverScrollMode="None">
+          
+             <sfgrid:SfDataGrid.Opacity>
+            <OnPlatform x:TypeArguments="x:Double"
+                                    Android="87"
+                                    iOS="87"
+                                    WinPhone="80"
+                                    />
+          </sfgrid:SfDataGrid.Opacity>
+
+          <sfgrid:SfDataGrid.Behaviors>
+            <local:AutoRowHeightBehaviors />
+          </sfgrid:SfDataGrid.Behaviors>
+
+            <sfgrid:SfDataGrid.Columns x:TypeArguments="sfgrid:Columns">
+
+                <sfgrid:GridTextColumn HeaderFontAttribute="Bold"
+                                       HeaderText="Platform"
+                                       HeaderTextAlignment="Start"
+                                       LineBreakMode="WordWrap"
+                                       LoadUIView="False"
+                                       MappingName="Platform"
+                                       TextAlignment="Start">
+                   <sfgrid:GridTextColumn.Padding>
+                      <OnPlatform x:TypeArguments="Thickness"
+                                  Android= "8, 12, 8, 12"
+                                  WinPhone="8, 12, 8, 16"
+                                  iOS="8, 12, 8, 12" />
+                  </sfgrid:GridTextColumn.Padding>
+                  
+                    <sfgrid:GridTextColumn.HeaderCellTextSize>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                    Android="13"
+                                    WinPhone="14"
+                                    iOS="14" />
+                    </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                    <sfgrid:GridTextColumn.CellTextSize>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                    Android="13"
+                                    WinPhone="14"
+                                    iOS="14" />
+                    </sfgrid:GridTextColumn.CellTextSize>
+                
+                    <sfgrid:GridTextColumn.HeaderFont>
+                      <OnPlatform x:TypeArguments="x:String"
+                                    Android="Roboto-Regular"
+                                    WinPhone="SegoeUI"
+                                    iOS="SFProText-Regular" />
+                    </sfgrid:GridTextColumn.HeaderFont>
+
+                  <sfgrid:GridTextColumn.RecordFont>
+                    <OnPlatform x:TypeArguments="x:String"
+                                    Android="Roboto-Regular"
+                                    WinPhone="SegoeUI"
+                                    iOS="SFProText-Regular" />
+                  </sfgrid:GridTextColumn.RecordFont>
+
+                </sfgrid:GridTextColumn>
+
+                <sfgrid:GridTextColumn HeaderFontAttribute="Bold"
+                                       HeaderText="Feature"
+                                       HeaderTextAlignment="Start"
+                                       LineBreakMode="WordWrap"
+                                       MappingName="Features"
+                                       TextAlignment="Start">
+                  
+                     <sfgrid:GridTextColumn.Padding>
+                      <OnPlatform x:TypeArguments="Thickness"
+                                  Android= "8, 12, 8, 12"
+                                  WinPhone="8, 12, 8, 16"
+                                  iOS="8, 12, 8, 12" />
+                    </sfgrid:GridTextColumn.Padding>
+                  
+                    <sfgrid:GridTextColumn.HeaderCellTextSize>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                    Android="13"
+                                    WinPhone="14"
+                                    iOS="14" />
+                    </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                    <sfgrid:GridTextColumn.CellTextSize>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                    Android="13"
+                                    WinPhone="14"
+                                    iOS="14" />
+                    </sfgrid:GridTextColumn.CellTextSize>
+                
+                    <sfgrid:GridTextColumn.HeaderFont>
+                      <OnPlatform x:TypeArguments="x:String"
+                                    Android="Roboto-Regular"
+                                    WinPhone="SegoeUI"
+                                    iOS="SFProText-Regular" />
+                    </sfgrid:GridTextColumn.HeaderFont>
+
+                    <sfgrid:GridTextColumn.RecordFont>
+                      <OnPlatform x:TypeArguments="x:String"
+                                    Android="Roboto-Regular"
+                                    WinPhone="SegoeUI"
+                                    iOS="SFProText-Regular" />
+                    </sfgrid:GridTextColumn.RecordFont>
+
+                </sfgrid:GridTextColumn>
+
+                <sfgrid:GridTextColumn HeaderFontAttribute="Bold"
+                                       HeaderText="Description"
+                                       HeaderTextAlignment="Start"
+                                       LineBreakMode="WordWrap"
+                                       MappingName="Description"
+                                       TextAlignment="Start">
+                  
+                    <sfgrid:GridTextColumn.Padding>
+                      <OnPlatform x:TypeArguments="Thickness"
+                                  Android= "8, 12, 8, 12"
+                                  WinPhone="7, 12, 7, 16"
+                                  iOS="8, 12, 8, 12" />
+                  </sfgrid:GridTextColumn.Padding>
+
+                    <sfgrid:GridTextColumn.HeaderCellTextSize>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                    Android="13"
+                                    WinPhone="14"
+                                    iOS="14" />
+                    </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                    <sfgrid:GridTextColumn.CellTextSize>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                    Android="13"
+                                    WinPhone="14"
+                                    iOS="14" />
+                    </sfgrid:GridTextColumn.CellTextSize>
+                
+                    <sfgrid:GridTextColumn.HeaderFont>
+                      <OnPlatform x:TypeArguments="x:String"
+                                    Android="Roboto-Regular"
+                                    WinPhone="SegoeUI"
+                                    iOS="SFProText-Regular" />
+                    </sfgrid:GridTextColumn.HeaderFont>
+
+                    <sfgrid:GridTextColumn.RecordFont>
+                      <OnPlatform x:TypeArguments="x:String"
+                                    Android="Roboto-Regular"
+                                    WinPhone="SegoeUI"
+                                    iOS="SFProText-Regular" />
+                    </sfgrid:GridTextColumn.RecordFont>
+
+                </sfgrid:GridTextColumn>
+
+                <sfgrid:GridTextColumn HeaderFontAttribute="Bold"
+                                       HeaderText="Version"
+                                       HeaderTextAlignment="Start"
+                                       LineBreakMode="WordWrap"
+                                       MappingName="ReleaseVersion"
+                                       TextAlignment="Center">
+                  
+                     <sfgrid:GridTextColumn.Padding>
+                      <OnPlatform x:TypeArguments="Thickness"
+                                  Android= "8, 12, 16, 12"
+                                  WinPhone="8, 12, 16, 16"
+                                  iOS="8, 12, 16, 12" />
+                  </sfgrid:GridTextColumn.Padding>
+                  
+                    <sfgrid:GridTextColumn.HeaderCellTextSize>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                    Android="13"
+                                    WinPhone="14"
+                                    iOS="14" />
+                    </sfgrid:GridTextColumn.HeaderCellTextSize>
+
+                    <sfgrid:GridTextColumn.CellTextSize>
+                        <OnPlatform x:TypeArguments="x:Double"
+                                    Android="13"
+                                    WinPhone="14"
+                                    iOS="14" />
+                    </sfgrid:GridTextColumn.CellTextSize>
+                
+                    <sfgrid:GridTextColumn.HeaderFont>
+                      <OnPlatform x:TypeArguments="x:String"
+                                    Android="Roboto-Regular"
+                                    WinPhone="SegoeUI"
+                                    iOS="SFProText-Regular" />
+                    </sfgrid:GridTextColumn.HeaderFont>
+
+                    <sfgrid:GridTextColumn.RecordFont>
+                      <OnPlatform x:TypeArguments="x:String"
+                                    Android="Roboto-Regular"
+                                    WinPhone="SegoeUI"
+                                    iOS="SFProText-Regular" />
+                    </sfgrid:GridTextColumn.RecordFont>
+
+                </sfgrid:GridTextColumn>
+            
+            </sfgrid:SfDataGrid.Columns>
+        </sfgrid:SfDataGrid>
+    </sample:SampleView.Content>
+</sample:SampleView>

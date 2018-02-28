@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView  xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+  xmlns:sflistView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+	xmlns:navigation="clr-namespace:Syncfusion.SfNavigationDrawer.XForms;assembly=Syncfusion.SfNavigationDrawer.XForms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleBrowser.SfNavigationDrawer.NavigationDrawer_Tablet">
+	 <local:SampleView.Content>
+    <navigation:SfNavigationDrawer BackgroundColor="White" x:Name="navigationDrawer">
+      <navigation:SfNavigationDrawer.DrawerHeaderView>
+        <Grid BackgroundColor="#00a0e1">
+          <Image x:Name="gradiantImage" Aspect="AspectFill" BackgroundColor="#00a0e1"  HeightRequest="150" />
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="8*" />
+              <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Image x:Name="userImage" Margin="7,0,0,0" Aspect="AspectFit" HeightRequest="80" WidthRequest="80" HorizontalOptions="Start" Source="ellana.png" />
+            <Label x:Name="userNameLabel" Grid.Row="1" Margin="7,0,0,0" Text="ellana@outlook.com" TextColor="White" HorizontalOptions="Start" HorizontalTextAlignment="Start" />
+          </Grid>
+        </Grid>
+      </navigation:SfNavigationDrawer.DrawerHeaderView>
+      <navigation:SfNavigationDrawer.DrawerContentView>
+        <Grid BackgroundColor="#f0f0f0" x:Name="drawerContentViewGrid" Padding="1,1,0.5,1">
+          <sflistView:SfListView x:Name="listView" BackgroundColor="White" ItemTapped="Handle_ItemTapped" SelectionBackgroundColor="Transparent">
+            <sflistView:SfListView.ItemTemplate>
+              <DataTemplate>
+                <StackLayout Orientation="Horizontal">
+                  <Label x:Name="iconLabel" Text="{Binding Icon}" TextColor="{Binding FontColor}" Margin="7,0,0,0" FontSize="20" HeightRequest="25" VerticalTextAlignment="Center" VerticalOptions="Center">
+                    <Label.FontFamily>
+                      <OnPlatform x:TypeArguments="x:String" iOS="navigation" Android="navigation.ttf#navigation" WinPhone="Segoe_MDL2_Assets.ttf#Segoe MDL2 Assets" />
+                    </Label.FontFamily>
+                  </Label>
+                  <Label x:Name="menuItemLabel" Margin="7,0,0,0" Text="{Binding MenuItem}" TextColor="{Binding FontColor}" VerticalTextAlignment="Center" HeightRequest="25" VerticalOptions="Center" YAlign="Center" />
+                </StackLayout>
+              </DataTemplate>
+            </sflistView:SfListView.ItemTemplate>
+          </sflistView:SfListView>
+        </Grid>
+      </navigation:SfNavigationDrawer.DrawerContentView>
+    </navigation:SfNavigationDrawer>
+  </local:SampleView.Content>
+  <local:SampleView.PropertyView>
+    <StackLayout x:Name="optionLayout" Orientation="Vertical" Spacing="10">
+      <StackLayout Orientation="Vertical">
+        <Label Text="Transition Type" FontSize="18" HeightRequest="40" WidthRequest="150" HorizontalOptions="Start" VerticalOptions="StartAndExpand" />
+        <Picker x:Name="transitionPicker" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="40" />
+      </StackLayout>
+      <StackLayout HeightRequest="20" />
+      <StackLayout Orientation="Vertical">
+        <Label Text="Position" FontSize="18" HeightRequest="40" WidthRequest="150" HorizontalOptions="Start" VerticalOptions="StartAndExpand" />
+        <Picker x:Name="positionPicker" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="40" />
+      </StackLayout>
+    </StackLayout>
+  </local:SampleView.PropertyView>
+ </local:SampleView>

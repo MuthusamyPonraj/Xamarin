@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleBrowser.SfChart.LineChart" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" xmlns:samplebrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+    <local:SampleView.Content>
+        <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <chart:SfChart.Title>
+                <chart:ChartTitle Text="Efficiency of oil fired power production" >
+                </chart:ChartTitle>
+            </chart:SfChart.Title>
+            <chart:SfChart.BindingContext>
+                <samplebrowser:LineSeriesViewModel />
+            </chart:SfChart.BindingContext>
+            <chart:SfChart.PrimaryAxis>
+                <chart:CategoryAxis ShowMajorGridLines="false" PlotOffset="10" AxisLineOffset="10">
+                    <chart:CategoryAxis.MajorTickStyle>
+                        <chart:ChartAxisTickStyle TickSize="10">
+                        </chart:ChartAxisTickStyle>
+                    </chart:CategoryAxis.MajorTickStyle>
+                </chart:CategoryAxis>
+            </chart:SfChart.PrimaryAxis>
+            <chart:SfChart.SecondaryAxis>
+                <chart:NumericalAxis Maximum="100" Minimum="0" Interval="20">
+                    <chart:NumericalAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle x:Name="secondaryAxisLabelStyle" />
+                    </chart:NumericalAxis.LabelStyle>
+                    <chart:NumericalAxis.AxisLineStyle>
+                        <chart:ChartLineStyle StrokeWidth="0">
+                        </chart:ChartLineStyle>
+                    </chart:NumericalAxis.AxisLineStyle>
+                  <chart:NumericalAxis.MajorTickStyle>
+                    <chart:ChartAxisTickStyle TickSize="0" />
+                  </chart:NumericalAxis.MajorTickStyle>
+                </chart:NumericalAxis>
+            </chart:SfChart.SecondaryAxis>
+            <chart:SfChart.Legend >
+                <chart:ChartLegend x:Name="chartLegend" DockPosition="Bottom" ToggleSeriesVisibility="True" IconWidth="14" IconHeight="14">
+                </chart:ChartLegend>
+            </chart:SfChart.Legend>
+            <chart:SfChart.ColorModel>
+                <chart:ChartColorModel Palette="Natural" />
+            </chart:SfChart.ColorModel>
+            <chart:SfChart.Series>
+                <chart:LineSeries StrokeWidth="3" ItemsSource="{Binding LineData1}" XBindingPath="Name" YBindingPath="Value" Label="Germany" LegendIcon="Circle" EnableTooltip="true" EnableAnimation="false">
+                    <chart:LineSeries.DataMarker>
+                        <chart:ChartDataMarker MarkerWidth="12" MarkerHeight="12" ShowLabel="false" ShowMarker="true" MarkerBorderColor="White" MarkerBorderWidth="2" MarkerColor="#00bdae">
+                        </chart:ChartDataMarker>
+                    </chart:LineSeries.DataMarker>
+                </chart:LineSeries>
+                <chart:LineSeries StrokeWidth="3" ItemsSource="{Binding LineData2}" XBindingPath="Name" YBindingPath="Value" LegendIcon="Circle" Label="France" EnableTooltip="true" EnableAnimation="false">
+                    <chart:LineSeries.DataMarker>
+                        <chart:ChartDataMarker MarkerWidth="12" MarkerHeight="12" ShowLabel="false" ShowMarker="true" MarkerBorderColor="White" MarkerBorderWidth="2" MarkerColor="#404041">
+                        </chart:ChartDataMarker>
+                    </chart:LineSeries.DataMarker>
+                </chart:LineSeries>
+            </chart:SfChart.Series>
+        </chart:SfChart>
+    </local:SampleView.Content>
+</local:SampleView>

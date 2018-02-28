@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleBrowser.SfChart.StackedAreaChart" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+    <local:SampleView.Content>
+        <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <chart:SfChart.Margin>
+                <OnPlatform x:TypeArguments="Thickness" WinPhone="0,0,15,0" />
+            </chart:SfChart.Margin>
+            <chart:SfChart.Title>
+                <chart:ChartTitle Text="Industrial Production Growth"  />
+            </chart:SfChart.Title>
+            <chart:SfChart.BindingContext>
+                <sampleBrowser:StackedAreaSeriesViewModel />
+            </chart:SfChart.BindingContext>
+            <chart:SfChart.PrimaryAxis>
+                <chart:CategoryAxis ShowMajorGridLines="False">
+                    <chart:CategoryAxis.MajorTickStyle>
+                        <chart:ChartAxisTickStyle TickSize="8">
+                        </chart:ChartAxisTickStyle>
+                    </chart:CategoryAxis.MajorTickStyle>
+                </chart:CategoryAxis>
+            </chart:SfChart.PrimaryAxis>
+            <chart:SfChart.SecondaryAxis>
+                <chart:NumericalAxis ShowMajorGridLines="false" Maximum="0" Minimum="30" Interval="5">
+                    <chart:NumericalAxis.Title>
+                        <chart:ChartAxisTitle Text="Production (%)">
+                            <chart:ChartAxisTitle.Font>
+                                <OnPlatform x:TypeArguments="Font" iOS="12" />
+                            </chart:ChartAxisTitle.Font>
+                            <chart:ChartAxisTitle.Margin>
+                                <OnPlatform x:TypeArguments="Thickness" Android="0,0,10,0" />
+                            </chart:ChartAxisTitle.Margin>
+                        </chart:ChartAxisTitle>
+                    </chart:NumericalAxis.Title>
+                </chart:NumericalAxis>
+            </chart:SfChart.SecondaryAxis>
+            <chart:SfChart.Legend>
+                <chart:ChartLegend ToggleSeriesVisibility="True" DockPosition="Bottom" IconWidth="14" IconHeight="14" />
+            </chart:SfChart.Legend>
+            <chart:SfChart.ColorModel>
+                <chart:ChartColorModel Palette="Natural" />
+            </chart:SfChart.ColorModel>
+            <chart:SfChart.Series>
+                <chart:StackingAreaSeries ItemsSource="{Binding StackedAreaData1}" XBindingPath="Name" YBindingPath="Value" EnableAnimation="true" Label="US" LegendIcon="Circle" EnableTooltip="true" />
+                <chart:StackingAreaSeries ItemsSource="{Binding StackedAreaData2}" XBindingPath="Name" YBindingPath="Value" EnableAnimation="true" Label="Indonesia" LegendIcon="Circle" EnableTooltip="true" />
+                <chart:StackingAreaSeries ItemsSource="{Binding StackedAreaData3}" XBindingPath="Name" YBindingPath="Value" EnableAnimation="true" Label="Russia" LegendIcon="Circle" EnableTooltip="true" />
+                <chart:StackingAreaSeries ItemsSource="{Binding StackedAreaData4}" XBindingPath="Name" YBindingPath="Value" EnableAnimation="true" Label="Bangladesh" LegendIcon="Circle" EnableTooltip="true" />
+            </chart:SfChart.Series>
+        </chart:SfChart>
+    </local:SampleView.Content>
+</local:SampleView>

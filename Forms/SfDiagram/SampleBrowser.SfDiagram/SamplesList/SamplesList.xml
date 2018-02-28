@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Samples>
+  <Sample Title="Organization Chart" Category="Types" Icon ="Diagram/OrganizationalLayout.png" Name="OrganizationChart" SearchTags="layout,organization, datasource" Description="This sample demonstates creating a simple chart layout using diagram control"/>
+  <Sample Title="Mind Map"  Name="MindMap" Category="Types" Icon ="Diagram/MindMap.png" SearchTags="layout,mindmap, datasource" Description="This sample demonstates creating a simple mind map layout using diagram control" IsNew="True"/>
+  <Sample Title="Flow Diagram"  Name="FlowDiagram" Icon ="Diagram/FlowDiagram.png" Category="Types" SearchTags="workflow, diagram, process" Description="This sample demonstates creating a simple flow diagam using diagram control"/>
+  <Sample Title="Node Customization"  Name="NodeContent" Category="Types" Icon ="Diagram/NodeAnnotation.png" SearchTags="custom, sfgraphics, annotation" Description="This sample demonstates creating a node with different type content"/>
+</Samples>

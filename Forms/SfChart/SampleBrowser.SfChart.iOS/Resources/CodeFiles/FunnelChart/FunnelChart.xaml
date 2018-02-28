@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleBrowser.SfChart.FunnelChart" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+    <local:SampleView.Content>
+        <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="chart">
+            <chart:SfChart.Title>
+                <chart:ChartTitle Text="Website Visitor"  />
+            </chart:SfChart.Title>
+            <chart:SfChart.BindingContext>
+                <sampleBrowser:FunnelSeriesViewModel />
+            </chart:SfChart.BindingContext>
+            <chart:SfChart.Legend>
+                <chart:ChartLegend IconHeight="14" IconWidth="14"  ToggleSeriesVisibility="true" DockPosition="Top" OverflowMode="Scroll" />
+            </chart:SfChart.Legend>
+            <chart:SfChart.Series>
+                <chart:FunnelSeries ItemsSource="{Binding FunnelData}" XBindingPath="Name" YBindingPath="Value" LegendIcon="Circle" StrokeWidth="1" StrokeColor="White">
+                    <chart:FunnelSeries.DataMarker>
+                        <chart:ChartDataMarker ShowLabel="True">
+                            <chart:ChartDataMarker.LabelStyle>
+                                <chart:DataMarkerLabelStyle TextColor="White" BackgroundColor="Transparent" />
+                            </chart:ChartDataMarker.LabelStyle>
+                        </chart:ChartDataMarker>
+                    </chart:FunnelSeries.DataMarker>
+                    <chart:FunnelSeries.ColorModel>
+                        <chart:ChartColorModel Palette="Natural" />
+                    </chart:FunnelSeries.ColorModel>
+                </chart:FunnelSeries>
+            </chart:SfChart.Series>
+        </chart:SfChart>
+    </local:SampleView.Content>
+</local:SampleView>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sample:SampleView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:sample="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleBrowser.SfPopupLayout.OnBoardHelps" xmlns:sfgrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms" xmlns:popuplayout="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms" xmlns:local="clr-namespace:SampleBrowser.SfDataGrid;assembly=SampleBrowser.SfDataGrid" xmlns:behavior="clr-namespace:SampleBrowser.SfPopupLayout;assembly=SampleBrowser.SfPopupLayout">
+    <sample:SampleView.Resources>
+        <ResourceDictionary>
+            <Image x:Key="leftImage" BackgroundColor="Transparent" />
+            <Image x:Key="rightImage" BackgroundColor="Transparent" HorizontalOptions="Fill" />
+        </ResourceDictionary>
+    </sample:SampleView.Resources>
+    <sample:SampleView.Content>
+        <popuplayout:SfPopupLayout x:Name="popupLayout">
+            <popuplayout:SfPopupLayout.Content>
+                <Grid x:Name="overViewPage" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <local:CustomLayout x:Name="custumLayout">
+                        <sfgrid:SfDataGrid x:Name="dataGrid" AllowSwiping="true" AutoGenerateColumns="false" ColumnSizer="Star" HeaderRowHeight="52" MaxSwipeOffset="150" RowHeight="58" VerticalOverScrollMode="None" AllowEditing="true"
+                            AllowResizingColumn="true" AllowDraggingRow="true">
+                            <sfgrid:SfDataGrid.Columns x:TypeArguments="sfgrid:Columns">
+                                <sfgrid:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Order ID" HeaderTextAlignment="Start" LineBreakMode="TailTruncation" MappingName="OrderID" Padding="5,0,5,0" TextAlignment="End">
+                                    <sfgrid:GridTextColumn.HeaderCellTextSize>
+                                        <OnPlatform x:TypeArguments="x:Double" Android="14" WinPhone="12" iOS="12" />
+                                    </sfgrid:GridTextColumn.HeaderCellTextSize>
+                                    <sfgrid:GridTextColumn.CellTextSize>
+                                        <OnPlatform x:TypeArguments="x:Double" Android="14" WinPhone="12" iOS="12" />
+                                    </sfgrid:GridTextColumn.CellTextSize>
+                                </sfgrid:GridTextColumn>
+                                <sfgrid:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Customer ID" HeaderTextAlignment="Start" LineBreakMode="TailTruncation" MappingName="EmployeeID" Padding="5,0,5,0" TextAlignment="End">
+                                    <sfgrid:GridTextColumn.HeaderCellTextSize>
+                                        <OnPlatform x:TypeArguments="x:Double" Android="14" WinPhone="12" iOS="12" />
+                                    </sfgrid:GridTextColumn.HeaderCellTextSize>
+                                    <sfgrid:GridTextColumn.MinimumWidth>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <OnPlatform.iOS>
+                                                <OnIdiom x:TypeArguments="x:Double" Phone="90" Tablet="20" />
+                                            </OnPlatform.iOS>
+                                        </OnPlatform>
+                                    </sfgrid:GridTextColumn.MinimumWidth>
+                                    <sfgrid:GridTextColumn.CellTextSize>
+                                        <OnPlatform x:TypeArguments="x:Double" Android="14" WinPhone="12" iOS="12" />
+                                    </sfgrid:GridTextColumn.CellTextSize>
+                                </sfgrid:GridTextColumn>
+                                <sfgrid:GridTextColumn HeaderFontAttribute="Bold" HeaderText="Name" HeaderTextAlignment="Start" LineBreakMode="TailTruncation" MappingName="CustomerID" Padding="5, 0, 0, 0" TextAlignment="Start">
+                                    <sfgrid:GridTextColumn.HeaderCellTextSize>
+                                        <OnPlatform x:TypeArguments="x:Double" Android="14" WinPhone="12" iOS="12" />
+                                    </sfgrid:GridTextColumn.HeaderCellTextSize>
+                                    <sfgrid:GridTextColumn.CellTextSize>
+                                        <OnPlatform x:TypeArguments="x:Double" Android="14" WinPhone="12" iOS="12" />
+                                    </sfgrid:GridTextColumn.CellTextSize>
+                                </sfgrid:GridTextColumn>
+                                <sfgrid:GridTextColumn HeaderFontAttribute="Bold" HeaderText="City" HeaderTextAlignment="Start" LineBreakMode="TailTruncation" MappingName="ShipCity" Padding="5, 0, 0, 0" TextAlignment="Start">
+                                    <sfgrid:GridTextColumn.HeaderCellTextSize>
+                                        <OnPlatform x:TypeArguments="x:Double" Android="14" WinPhone="12" iOS="12" />
+                                    </sfgrid:GridTextColumn.HeaderCellTextSize>
+                                    <sfgrid:GridTextColumn.CellTextSize>
+                                        <OnPlatform x:TypeArguments="x:Double" Android="14" WinPhone="12" iOS="12" />
+                                    </sfgrid:GridTextColumn.CellTextSize>
+                                </sfgrid:GridTextColumn>
+                            </sfgrid:SfDataGrid.Columns>
+                          
+                          
+                            <sfgrid:SfDataGrid.LeftSwipeTemplate>
+                              <DataTemplate>
+                                <Grid BackgroundColor="#EF5350">
+                                  <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40" />
+                                    <ColumnDefinition />
+                                  </Grid.ColumnDefinitions>
+                                  <ContentView Grid.Column="0" Padding="16,0,0,0" Content="{StaticResource rightImage}" />
+                                  <Label Grid.Column="1" BackgroundColor="Transparent" HorizontalTextAlignment="Start" LineBreakMode="NoWrap" Text="DELETE" TextColor="White" VerticalTextAlignment="Center" />
+                                </Grid>
+                              </DataTemplate>
+                            </sfgrid:SfDataGrid.LeftSwipeTemplate>
+                        </sfgrid:SfDataGrid>
+                    </local:CustomLayout>
+                    <RelativeLayout x:Name="relativeLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image x:Name="InfoNotification" HeightRequest="200" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=0.5}" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=0.45}" IsVisible="true" />
+                        <Image x:Name="ResizingIllustration" HeightRequest="150" WidthRequest="150" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=0.3}" IsVisible="false" />
+                        <Image x:Name="EditIllustration" HeightRequest="150" WidthRequest="150" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=0.5}" RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=100, Property=Height, Factor=0.4}" IsVisible="false" />
+                        <Image x:Name="SwipeIllustration" HeightRequest="200" WidthRequest="200" RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=50}" RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=100,Property=Height, Factor=0.4}" IsVisible="false" />
+                        <RelativeLayout x:Name="dragDropLayout" HeightRequest="200" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=0.3}" RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=10}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Constant=100,Property=Height, Factor=0.2}">
+                            <Image x:Name="HandSymbol" HeightRequest="30" WidthRequest="30" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height, Factor=0.375}" IsVisible="false" />
+                            <Image x:Name="DragAndDropIllustration" HeightRequest="200" WidthRequest="200" IsVisible="false" />
+                        </RelativeLayout>
+                        <Label x:Name="label" FontAttributes="Bold" FontSize="25" Text="Next" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HeightRequest="50" WidthRequest="100" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8}"
+                            HorizontalOptions="EndAndExpand" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=0.7}" IsVisible="true" />
+                      <Label x:Name="oklabel" FontAttributes="Bold" FontSize="20" Text="Ok, got it !" TextColor="White" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HeightRequest="50" WidthRequest="100" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=0.8}"
+                            HorizontalOptions="CenterAndExpand" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=0.7}" IsVisible="false" />
+                    </RelativeLayout>
+                </Grid>
+            </popuplayout:SfPopupLayout.Content>
+        </popuplayout:SfPopupLayout>
+    </sample:SampleView.Content>
+    <sample:SampleView.Behaviors>
+        <behavior:OnBoardHelpsBehavior />
+    </sample:SampleView.Behaviors>
+</sample:SampleView>

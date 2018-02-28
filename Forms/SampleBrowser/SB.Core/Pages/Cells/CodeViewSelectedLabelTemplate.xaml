@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+		  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		  x:Class="SampleBrowser.Core.CodeViewSelectedLabelTemplate"
+	      xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core">
+    
+    <Label FontSize="12" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center"
+           VerticalTextAlignment="Center" LineBreakMode="NoWrap"  Text="{Binding .}" TextColor="#007ED6">
+        <Label.TextColor>
+            <OnPlatform x:TypeArguments="Color">
+                <On Platform="Android">
+                    <OnIdiom x:TypeArguments="Color" Tablet="#007DE6" Phone="#007DE6" />
+                </On>
+                <On Platform="iOS">
+                    <OnIdiom x:TypeArguments="Color" Tablet="#007DE6" Phone="#007DE6" />
+                </On>
+                <On Platform="UWP">
+                    <OnIdiom x:TypeArguments="Color" Tablet="#007ED6" Phone="#007ED6" Desktop="#F3C746" />
+                </On>
+            </OnPlatform>
+        </Label.TextColor>
+    </Label>
+</ViewCell>

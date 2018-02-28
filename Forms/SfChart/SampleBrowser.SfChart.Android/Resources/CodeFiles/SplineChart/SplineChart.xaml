@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:SampleView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleBrowser.SfChart.SplineChart" xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core" xmlns:sampleBrowser="clr-namespace:SampleBrowser.SfChart;assembly=SampleBrowser.SfChart">
+    <local:SampleView.Content>
+        <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <chart:SfChart.Margin>
+                <OnPlatform x:TypeArguments="Thickness" WinPhone="0,0,15,0" />
+            </chart:SfChart.Margin>
+            <chart:SfChart.Title>
+                <chart:ChartTitle Text="Climate Graph"  />
+            </chart:SfChart.Title>
+            <chart:SfChart.BindingContext>
+                <sampleBrowser:SplineSeriesViewModel />
+            </chart:SfChart.BindingContext>
+            <chart:SfChart.PrimaryAxis>
+                <chart:CategoryAxis LabelPlacement="BetweenTicks" ShowMajorGridLines="false">
+                </chart:CategoryAxis>
+            </chart:SfChart.PrimaryAxis>
+            <chart:SfChart.SecondaryAxis>
+                <chart:NumericalAxis Maximum="35" Minimum="-5" Interval="5">
+                    <chart:NumericalAxis.AxisLineStyle>
+                        <chart:ChartLineStyle StrokeWidth="0">
+                        </chart:ChartLineStyle>
+                    </chart:NumericalAxis.AxisLineStyle>
+                  <chart:NumericalAxis.MajorTickStyle>
+                    <chart:ChartAxisTickStyle TickSize="0" />
+                  </chart:NumericalAxis.MajorTickStyle>
+                    <chart:NumericalAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle x:Name="secondaryAxisLabelStyle"/>
+                    </chart:NumericalAxis.LabelStyle>
+                </chart:NumericalAxis>
+            </chart:SfChart.SecondaryAxis>
+            <chart:SfChart.Legend>
+                <chart:ChartLegend DockPosition="Bottom" ToggleSeriesVisibility="True" IconWidth="14" IconHeight="14" />
+            </chart:SfChart.Legend>
+            <chart:SfChart.ColorModel>
+                <chart:ChartColorModel Palette="Natural" />
+            </chart:SfChart.ColorModel>
+            <chart:SfChart.Series>
+                <chart:SplineSeries ItemsSource="{Binding SplineData1}" XBindingPath="Name" YBindingPath="Value" StrokeWidth="3" Label="Germany" LegendIcon="Circle" EnableTooltip="true">
+                    <chart:StepLineSeries.DataMarker>
+                        <chart:ChartDataMarker MarkerWidth="12" MarkerHeight="12" ShowLabel="false" ShowMarker="true" MarkerBorderColor="White" MarkerBorderWidth="2" MarkerColor="#00bdae">
+                        </chart:ChartDataMarker>
+                    </chart:StepLineSeries.DataMarker>
+                </chart:SplineSeries>
+                <chart:SplineSeries x:Name="series" ItemsSource="{Binding SplineData2}" XBindingPath="Name" YBindingPath="Value" StrokeWidth="3" Label="France" LegendIcon="Circle" EnableTooltip="true">
+                    <chart:StepLineSeries.DataMarker>
+                        <chart:ChartDataMarker MarkerWidth="12" MarkerHeight="12" ShowLabel="false" ShowMarker="true" MarkerBorderColor="White" MarkerBorderWidth="2" MarkerColor="#404041">
+                        </chart:ChartDataMarker>
+                    </chart:StepLineSeries.DataMarker>
+                </chart:SplineSeries>
+            </chart:SfChart.Series>
+        </chart:SfChart>
+    </local:SampleView.Content>
+</local:SampleView>

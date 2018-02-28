@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+    xmlns:imageeditor="clr-namespace:Syncfusion.SfImageEditor.XForms;assembly=Syncfusion.SfImageEditor.XForms"
+    xmlns:customControls="clr-namespace:SampleBrowser.SfImageEditor.CustomControls;assembly=SampleBrowser.SfImageEditor"
+    x:Class="SampleBrowser.SfImageEditor.ImageEditorToolbarPage">
+    <ContentPage.Content>
+        <Grid x:Name="mainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <AbsoluteLayout BackgroundColor="Transparent" x:Name="absoluteLay" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <imageeditor:SfImageEditor x:Name="imageEditor" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                </imageeditor:SfImageEditor>
+                <Grid BackgroundColor="White" x:Name="cancelToolBar" AbsoluteLayout.LayoutBounds="0,0,1,0.08" AbsoluteLayout.LayoutFlags="All" IsVisible="false">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                     <customControls:CustomButton  Grid.Column="0" BackgroundColor="White" HeightRequest="50" WidthRequest="100" Text="Ok" VerticalOptions="Start" Clicked="Done_Clicked" BorderColor="White" />
+                     <customControls:CustomButton  Grid.Column="1" BackgroundColor="White" Text="Cancel" HeightRequest="50" WidthRequest="100" VerticalOptions="Start" Clicked="Cancel_Clicked" BorderColor="White"/>
+                </Grid>
+            </AbsoluteLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

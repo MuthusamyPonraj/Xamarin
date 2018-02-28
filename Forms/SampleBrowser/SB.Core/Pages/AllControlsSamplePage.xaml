@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+		     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		     x:Class="SampleBrowser.Core.AllControlsSamplePage"
+		     xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+		     xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:LabelColorSelector x:Key="labelColorSelector" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="codeViewerButton" Order="Primary" Priority="1" Clicked="CodeViewerButton_Clicked">
+            <ToolbarItem.Text>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="UWP">
+                        <OnIdiom x:TypeArguments="x:String" Tablet="View Code"  Phone="View Code" Desktop="View Code" />
+                    </On>
+                </OnPlatform>
+            </ToolbarItem.Text>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="absoluteLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                        AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid x:Name="contentGrid" RowSpacing="0" ColumnSpacing="0" Margin="0" Padding="0" AbsoluteLayout.LayoutFlags="All"
+                  AbsoluteLayout.LayoutBounds="0,0,1,1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+                <Grid.RowDefinitions>
+                    <RowDefinition x:Name="sampleRowDef" />
+                    <RowDefinition x:Name="boxRowDef" />
+                    <RowDefinition x:Name="listViewRowDef" />
+                </Grid.RowDefinitions>
+
+                <BoxView x:Name="typesBorderBox" BackgroundColor="#cecccc" HorizontalOptions="FillAndExpand" Grid.Row="1" />
+                
+                <listView:SfListView x:Name="horizontalListView" ItemSpacing="10,0,10,0" Padding="0" Grid.Column="0" AutoFitMode="Height"
+                                     BackgroundColor="#F2F2F2" SelectionBackgroundColor="Transparent" Loaded="HorizontalSampleListView_Loaded"
+                                     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsScrollBarVisible="False"
+                                     Margin="0" Orientation="Horizontal" ItemTemplate="{StaticResource labelColorSelector}">
+                    <listView:SfListView.BackgroundColor>
+                        <OnIdiom x:TypeArguments="Color" Desktop="#343435" Phone="#F2F2F2" Tablet="#F2F2F2" />
+                    </listView:SfListView.BackgroundColor>
+                </listView:SfListView>
+            </Grid>
+
+            <ContentView x:Name="propertyView" BackgroundColor="White" AbsoluteLayout.LayoutFlags="All">
+                <AbsoluteLayout.LayoutBounds>
+                    <OnIdiom x:TypeArguments="Rectangle">
+                        <OnIdiom.Tablet>1,2,1,0.5</OnIdiom.Tablet>
+                        <OnIdiom.Phone>1,2,1,0.5</OnIdiom.Phone>
+                        <!--<OnIdiom.Desktop>2, 0, 0.5, 0.5</OnIdiom.Desktop>-->
+                    </OnIdiom>
+                </AbsoluteLayout.LayoutBounds>
+
+                <Grid>
+                    <Grid.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="UWP">
+                                <OnIdiom x:TypeArguments="Color" Desktop="#007DE6" />
+                            </On>
+                        </OnPlatform>
+                    </Grid.BackgroundColor>
+
+                    <Grid.Padding>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="UWP">
+                                <OnIdiom x:TypeArguments="Thickness" Desktop="0.5,0,0,0" />
+                            </On>
+                        </OnPlatform>
+                    </Grid.Padding>
+
+                    <Grid RowSpacing="0" ColumnSpacing="0">
+                        <Grid.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color" WinPhone="#F4F6F6"/>
+                        </Grid.BackgroundColor>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition>
+                                <RowDefinition.Height>
+                                    <OnIdiom x:TypeArguments="GridLength" Desktop="60" Phone="55" Tablet="60" />
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                            
+                            <RowDefinition>
+                                <RowDefinition.Height>
+                                    <OnIdiom x:TypeArguments="GridLength" Desktop="*" Phone="*" Tablet="*" />
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid BackgroundColor="#007DE6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.82*" />
+                                <ColumnDefinition Width="0.18*" />
+                            </Grid.ColumnDefinitions>
+                          
+                            <Grid.BackgroundColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="Android">
+                                        <OnIdiom x:TypeArguments="Color" Tablet="#007DE6" Phone="#007DE6" />
+                                    </On>
+                                    <On Platform="iOS">
+                                        <OnIdiom x:TypeArguments="Color" Tablet="#007DE6" Phone="#007DE6" />
+                                    </On>
+                                    <On Platform="UWP">
+                                  <OnIdiom x:TypeArguments="Color" Tablet="#007DE6" Phone="#007DE6" Desktop="#FFE6E6E6" />
+                                </On>
+                              </OnPlatform>
+                            </Grid.BackgroundColor>
+
+                            <Label Grid.Column="0" FontAttributes="Bold" Text="    Properties" TextColor="White" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"
+                                   VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontSize="18">
+                               <Label.TextColor>
+                                    <OnPlatform x:TypeArguments="Color">
+                                        <On Platform="Android">
+                                            <OnIdiom x:TypeArguments="Color" Tablet="White" Phone="White" />
+                                        </On>
+                                        <On Platform="iOS">
+                                            <OnIdiom x:TypeArguments="Color" Tablet="White" Phone="White" />
+                                        </On>
+                                        <On Platform="UWP">
+                                      <OnIdiom x:TypeArguments="Color" Tablet="White" Phone="White" Desktop="#007DE6" />
+                                    </On>
+                                  </OnPlatform>
+                               </Label.TextColor>
+                            </Label>
+
+                            <Button x:Name="closeButton" Image="CloseIcon.png" Clicked="PropertiesCloseButton_Clicked" BackgroundColor="#007DE6"
+                                    Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Button.BackgroundColor>
+                                    <OnPlatform x:TypeArguments="Color">
+                                        <On Platform="Android">
+                                            <OnIdiom x:TypeArguments="Color" Tablet="#007DE6" Phone="#007DE6" />
+                                        </On>
+                                        <On Platform="iOS">
+                                            <OnIdiom x:TypeArguments="Color" Tablet="#007DE6" Phone="#007DE6" />
+                                        </On>
+                                        <On Platform="UWP">
+                                      <OnIdiom x:TypeArguments="Color" Tablet="#007DE6" Phone="#007DE6" Desktop="#FFE6E6E6" />
+                                    </On>
+                                  </OnPlatform>
+                                </Button.BackgroundColor>
+
+                                <Button.HorizontalOptions>
+                                    <OnPlatform x:TypeArguments="LayoutOptions">
+                                        <On Platform="iOS">
+                                            <OnIdiom x:TypeArguments="LayoutOptions" Tablet="FillAndExpand" Phone="FillAndExpand" />
+                                        </On>
+                                        <On Platform="Android">
+                                            <OnIdiom x:TypeArguments="LayoutOptions" Tablet="FillAndExpand" Phone="FillAndExpand" />
+                                        </On>
+                                        <On Platform="UWP">
+                                            <OnIdiom x:TypeArguments="LayoutOptions" Tablet="FillAndExpand" Phone="FillAndExpand" Desktop="End" />
+                                        </On>
+                                    </OnPlatform>
+                                </Button.HorizontalOptions>
+
+                                <Button.VerticalOptions>
+                                    <OnPlatform x:TypeArguments="LayoutOptions">
+                                        <On Platform="iOS">
+                                            <OnIdiom x:TypeArguments="LayoutOptions" Tablet="FillAndExpand" Phone="FillAndExpand" />
+                                        </On>
+                                        <On Platform="Android">
+                                            <OnIdiom x:TypeArguments="LayoutOptions" Tablet="FillAndExpand" Phone="FillAndExpand" />
+                                        </On>
+                                        <On Platform="UWP">
+                                            <OnIdiom x:TypeArguments="LayoutOptions" Tablet="FillAndExpand" Phone="FillAndExpand" Desktop="Center" />
+                                        </On>
+                                    </OnPlatform>
+                                </Button.VerticalOptions>
+                            </Button>
+                        </Grid>
+
+                        <ScrollView x:Name="propertyContent" IsClippedToBounds="true" Padding="20,5" Grid.Row="1" >
+                            <ScrollView.BackgroundColor>
+                              <OnPlatform x:TypeArguments="Color">
+                                <On Platform="UWP">
+                                  <OnIdiom x:TypeArguments="Color" Desktop="#FFE6E6E6" />
+                                </On>
+                              </OnPlatform>
+                            </ScrollView.BackgroundColor>
+                          
+                            <ScrollView.Orientation>
+                                <OnPlatform x:TypeArguments="ScrollOrientation">
+                                    <On Platform="iOS">
+                                        <OnIdiom x:TypeArguments="ScrollOrientation" Tablet="Vertical" Phone="Vertical" />
+                                    </On>
+                                    <On Platform="Android">
+                                        <OnIdiom x:TypeArguments="ScrollOrientation" Tablet="Vertical" Phone="Vertical" />
+                                    </On>
+                                    <On Platform="UWP">
+                                        <OnIdiom x:TypeArguments="ScrollOrientation" Tablet="Vertical" Phone="Vertical" Desktop="Both" />
+                                    </On>
+                                </OnPlatform>
+                            </ScrollView.Orientation>
+                        </ScrollView>
+                    </Grid>
+                </Grid>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

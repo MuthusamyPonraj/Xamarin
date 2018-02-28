@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4880E1CC-531B-4357-B029-61E761FF0C54}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SampleBrowser</RootNamespace>
+    <AssemblyName>SampleBrowser</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml" />
+    <EmbeddedResource Include="Pages\ControlsHomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlsList\ControlsList.xml" />
+    <EmbeddedResource Include="Pages\MainContentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MasterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\CustomSearchEntry.cs" />
+    <Compile Include="Pages\ControlsHomePage.xaml.cs">
+      <DependentUpon>ControlsHomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\DefaultControlItemTempate.xaml.cs">
+      <DependentUpon>DefaultControlItemTempate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\GroupingControlItemTemplate.xaml.cs">
+      <DependentUpon>GroupingControlItemTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\GroupingSampleItemTemplate.xaml.cs">
+      <DependentUpon>GroupingSampleItemTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\TemplateSelector.cs" />
+    <Compile Include="ViewModel\ControlPageViewModel.cs" />
+    <Compile Include="Pages\MainContentPage.xaml.cs">
+      <DependentUpon>MainContentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MasterPage.xaml.cs">
+      <DependentUpon>MasterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MasterPageViewModel.cs" />
+    <Compile Include="Models\NavigationDrawerModel.cs" />
+    <Compile Include="Models\NavigationLinkModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.DocIO">
+      <HintPath>..\packages\SampleBrowser.DocIO.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.DocIO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfCircularGauge">
+      <HintPath>..\packages\SampleBrowser.SfCircularGauge.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfCircularGauge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfDataForm">
+      <HintPath>..\packages\SampleBrowser.SfDataForm.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfDataForm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfDigitalGauge">
+      <HintPath>..\packages\SampleBrowser.SfDigitalGauge.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfDigitalGauge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfImageEditor">
+      <HintPath>..\packages\SampleBrowser.SfImageEditor.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfImageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfLinearGauge">
+      <HintPath>..\packages\SampleBrowser.SfLinearGauge.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfLinearGauge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfMaskedEdit">
+      <HintPath>..\packages\SampleBrowser.SfMaskedEdit.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfMaskedEdit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfNavigationDrawer">
+      <HintPath>..\packages\SampleBrowser.SfNavigationDrawer.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfNavigationDrawer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfNumericTextBox">
+      <HintPath>..\packages\SampleBrowser.SfNumericTextBox.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfNumericTextBox.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfNumericUpDown">
+      <HintPath>..\packages\SampleBrowser.SfNumericUpDown.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfNumericUpDown.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfSunburstChart">
+      <HintPath>..\packages\SampleBrowser.SfSunburstChart.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfSunburstChart.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfTreeMap">
+      <HintPath>..\packages\SampleBrowser.SfTreeMap.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfTreeMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.DataSource.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.DataSource.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.DataSource.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.DocIO.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.DocIO.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.DocIO.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.GridCommon.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.GridCommon.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfListView">
+      <HintPath>..\packages\SampleBrowser.SfListView.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfListView.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfCalendar.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfCalendar.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfCalendar.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfCalendar">
+      <HintPath>..\packages\SampleBrowser.SfCalendar.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfCalendar.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfCarousel">
+      <HintPath>..\packages\SampleBrowser.SfCarousel.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfCarousel.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfCarousel.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfCarousel.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfCarousel.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfSparkline">
+      <HintPath>..\packages\SampleBrowser.SfSparkline.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfSparkline.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataForm.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDataForm.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfDataForm.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfGauge.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfGauge.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfGauge.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfListView.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfListView.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfListView.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfMaskedEdit.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfMaskedEdit.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfMaskedEdit.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfNavigationDrawer.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNavigationDrawer.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfNavigationDrawer.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericTextBox.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfNumericTextBox.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericUpDown.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfNumericUpDown.XForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.SfSparkline.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfSparkline.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfSparkline.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfBarcode">
+      <HintPath>..\packages\SampleBrowser.SfBarcode.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfBarcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBarcode.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfBarcode.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfBarcode.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfImageEditor.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfImageEditor.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfImageEditor.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRotator.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRotator.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfRotator.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRotator">
+      <HintPath>..\packages\SampleBrowser.SfRotator.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfRotator.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfPicker">
+      <HintPath>..\packages\SampleBrowser.SfPicker.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfPicker.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPicker.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfPicker.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfProgressBar">
+      <HintPath>..\packages\SampleBrowser.SfProgressBar.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfProgressBar.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfProgressBar.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfProgressBar.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRadialMenu">
+      <HintPath>..\packages\SampleBrowser.SfRadialMenu.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfRadialMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRadialMenu.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRadialMenu.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfRadialMenu.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRating">
+      <HintPath>..\packages\SampleBrowser.SfRating.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfRating.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRating.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRating.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfRating.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfPdfViewer">
+      <HintPath>..\packages\SampleBrowser.SfPdfViewer.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfPdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfPdfViewer.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPdfViewer.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfPdfViewer.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.Calculate">
+      <HintPath>..\packages\SampleBrowser.Calculate.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.Calculate.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Calculate.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.Calculate.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Calculate.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.OfficeChart.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.OfficeChart.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.OfficeChart.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.PDF">
+      <HintPath>..\packages\SampleBrowser.PDF.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfBusyIndicator">
+      <HintPath>..\packages\SampleBrowser.SfBusyIndicator.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfBusyIndicator.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBusyIndicator.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfBusyIndicator.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfBusyIndicator.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfSchedule">
+      <HintPath>..\packages\SampleBrowser.SfSchedule.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfSchedule.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSchedule.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfSchedule.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfSchedule.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.Compression.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Compression.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.Core.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Core.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.Pdf.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Pdf.Portable.dll</HintPath>
+    </Reference>
+      <Reference Include="SampleBrowser.SfPopupLayout">
+      <HintPath>..\packages\SampleBrowser.SfPopupLayout.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfPopupLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfTabView">
+      <HintPath>..\packages\SampleBrowser.SfTabView.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfTabView.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfTabView.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfTabView.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfTabView.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Primitives.4.3.0\lib\netstandard1.0\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.TypeConverter.4.3.0\lib\netstandard1.0\System.ComponentModel.TypeConverter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.282\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.282\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Platform.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.282\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SampleBrowser.SfChart">
+      <HintPath>..\packages\SampleBrowser.SfChart.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfChart.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfMaps">
+      <HintPath>..\packages\SampleBrowser.SfMaps.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfMaps.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRangeNavigator">
+      <HintPath>..\packages\SampleBrowser.SfRangeNavigator.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfRangeNavigator.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfChart.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfChart.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfChart.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfKanban.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfKanban.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfKanban.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSunburstChart.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfSunburstChart.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfSunburstChart.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfTreeMap.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfTreeMap.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfTreeMap.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.DataSource">
+      <HintPath>..\packages\SampleBrowser.DataSource.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.DataSource.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.XlsIO">
+      <HintPath>..\packages\SampleBrowser.XlsIO.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.XlsIO.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfDataGrid">
+      <HintPath>..\packages\SampleBrowser.SfDataGrid.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfDataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Data.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDataGrid.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Data.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfGridConverter.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfGridConverter.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfGridConverter.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGrid.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDataGrid.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfDataGrid.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfRangeSlider">
+      <HintPath>..\packages\SampleBrowser.SfRangeSlider.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfRangeSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfRangeSlider.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfRangeSlider.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfRangeSlider.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfPullToRefresh">
+      <HintPath>..\packages\SampleBrowser.SfPullToRefresh.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfPullToRefresh.dll</HintPath>
+    </Reference>
+     <Reference Include="Syncfusion.SfPopupLayout.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPopupLayout.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfPopupLayout.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfPullToRefresh.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfPullToRefresh.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfPullToRefresh.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfDiagram">
+      <HintPath>..\packages\SampleBrowser.SfDiagram.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfDiagram.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDiagram.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfDiagram.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfDiagram.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.Presentation">
+      <HintPath>..\packages\SampleBrowser.Presentation.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Presentation.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.Presentation.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Presentation.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfAutoComplete">
+      <HintPath>..\packages\SampleBrowser.SfAutoComplete.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfAutoComplete.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfAutoComplete.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfAutoComplete.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfAutoComplete.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfTabView.XForms">
+      <HintPath>..\packages\Syncfusion.Xamarin.SfTabView.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfTabView.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.XlsIO.Portable">
+      <HintPath>..\packages\Syncfusion.Xamarin.XlsIO.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.XlsIO.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.4.0.280\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="SampleBrowser.SfKanban">
+      <HintPath>..\packages\SampleBrowser.SfKanban.16.1.0.24\lib\portable-win+net45+wp80+win81+wpa81\SampleBrowser.SfKanban.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SB.Core\SampleBrowser.Core.csproj">
+      <Project>{E791D2A6-C148-49D9-87F1-B3CB6B195F0D}</Project>
+      <Name>SampleBrowser.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Template\DefaultControlItemTempate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\GroupingControlItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\GroupingSampleItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.270\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
+</Project>

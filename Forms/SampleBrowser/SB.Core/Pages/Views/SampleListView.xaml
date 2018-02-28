@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+          xmlns:local="clr-namespace:SampleBrowser.Core;assembly=SampleBrowser.Core"
+             
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SampleBrowser.Core.SamplesListView">
+  <Grid x:Name="grid" RowSpacing="0" BackgroundColor="White" Margin="0" ColumnSpacing="0" Padding="0" >
+        <Grid.Resources>
+            <ResourceDictionary>
+                <local:ImagePathConverter x:Key="updateTypeImage" />
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+      <RowDefinition x:Name="row" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition x:Name="imageCol" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+        <Image Source="{Binding Icon,Converter={StaticResource updateTypeImage}}" Margin="3,3,10,3" Aspect="AspectFit" Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+    <Grid x:Name="ControlsGrid" Grid.Row="0" Margin="0" ColumnSpacing="0" RowSpacing="0" Padding="0" Grid.Column="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Label x:Name="nameLabel" FontSize="15" Margin="0,2,0,0" HorizontalOptions="StartAndExpand" TextColor="Black" Text="{Binding Title}" Grid.Row="0" Grid.Column="0"
+              HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+      <Image x:Name="controlsUpdateTypeImage" HeightRequest="20" WidthRequest="60" Aspect="AspectFit"  Grid.Row="0" Grid.Column="0" HorizontalOptions="EndAndExpand" Source="{Binding UpdateType}" />
+      <Label FontSize="11" Margin="0" HorizontalOptions="FillAndExpand" LineBreakMode="WordWrap" TextColor="Black" Text="{Binding Description}" Grid.Row="1" Grid.Column="0"
+              HorizontalTextAlignment="Start" VerticalTextAlignment="Start" />
+    </Grid>
+  </Grid>
+</ContentView>
