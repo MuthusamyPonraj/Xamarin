@@ -44,7 +44,7 @@ The easiest way to use these samples without using Git is to download the zip fi
    * Before you unzip the archive, right-click it, select **Properties**, and then select **Unblock**.
    * Be sure to unzip the entire archive, and not just individual samples. The samples all depend on the SharedContent folder in the archive.  
 
-```bash
+```
 To use the Syncfusion Xamarin samples, Syncfusion license key should be registered in samples. Refer [this](https://www.syncfusion.com/kb/9002) link for more information.
 ```
 
