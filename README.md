@@ -1,3 +1,15 @@
+# Syncfusion Xamarin samples
+
+This section guides you to use the Syncfusion Xamarin samples in you applications.
+
+* [Overview](#overview)
+* [License](#license)
+* [Using the samples](#using-the-samples)
+* [Samples by category](#samples-by-category)
+* [Support and Feedback](#support-and-feedback)
+
+## <a name="overview"></a>Overview ##
+
 This repository contains the demo samples of Syncfusion Xamarin components. This is the best place to check our controls to get more insight about the APIs usage. You can also install our complete Xamarin.Forms sample browser from [play store](https://play.google.com/store/apps/details?id=com.syncfusion.samplebrowser) and [windows store](https://www.microsoft.com/en-in/p/syncfusion-essential-studio-for-xamarin/9nn069tldzf4), and browse the demo for all the controls with option to view the source code inside the application itself.
 
 **Requirements to run the demo samples**
@@ -18,7 +30,25 @@ The <b>"iOS"</b> directory includes,
 
 "SampleBrowser" folder: It contains Xamarin.iOS sample browser. Run this to see the demo samples of all the Xamarin.iOS controls in single application.
 
-**Samples**
+## <a name="license"></a>License ##
+
+Syncfusion has no liability for any damage or consequence that may arise by the use or viewing of the samples. The samples are for demonstrative purposes and if you choose to use or access the samples you agree to not hold Syncfusion liable, in any form, for any damage that is related to use, accessing or otherwise viewing the samples. By accessing, viewing, or otherwise seeing the samples you acknowledge and agree Syncfusion’s samples will not allow you to seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize or otherwise do anything with Syncfusion’s samples.
+
+## <a name="using-the-samples"></a>Using the samples ##
+
+The easiest way to use these samples without using Git is to download the zip file containing the current version (using the following link or by clicking the "Download ZIP" button on the repo page). You can then unzip the entire archive and use the samples.
+
+   [Download the samples ZIP](../../archive/master.zip)
+
+   **Notes:** 
+   * Before you unzip the archive, right-click it, select **Properties**, and then select **Unblock**.
+   * Be sure to unzip the entire archive, and not just individual samples. The samples all depend on the SharedContent folder in the archive.  
+
+To use the Syncfusion Xamarin samples, Syncfusion license key should be registered in samples. Refer [this](https://www.syncfusion.com/kb/9002) link for more information.
+
+**Reminder:** If you unzip individual samples, they will not build due to references to other portions of the ZIP file that were not unzipped. You must unzip the entire archive if you intend to build the samples.
+
+## <a name="samples-by-category"></a>Samples by category ##
 
 | Xamarin.Forms | Xamarin.Android | Xamarin.iOS |
 | ------------- | --------------- | ----------- |
@@ -78,3 +108,16 @@ The <b>"iOS"</b> directory includes,
 | <b><center>MISCELLANEOUS</center><b> | <b><center>MISCELLANEOUS</center><b> | <b><center>MISCELLANEOUS</center><b> |
 | [Calculate](Forms/Calculate) | [Calculate](Android/SampleBrowser/Samples/Calculate) | [Calculate](iOS/SampleBrowser/Samples/Calculate) |
 | [Data Source](Forms/DataSource) | [Data Source](Android/SampleBrowser/Samples/DataSource) | [Data Source](iOS/SampleBrowser/Samples/DataSource) |
+
+## <a name="support-and-feedback"></a>Support and Feedback ##
+
+* For using the Syncfusion controls, refer the following User Guide links.
+
+   * [Xamarin Forms](https://help.syncfusion.com/xamarin/introduction/overview)
+   * [Xamarin-Android](https://help.syncfusion.com/xamarin-android/introduction/overview)
+   * [Xamarin-iOS](https://help.syncfusion.com/xamarin-ios/introduction/overview)
+
+* For any other queries, reach our support team [here](https://www.syncfusion.com/support/directtrac/incidents) with your query.
+
+* To renew the subscription, click [here](https://www.syncfusion.com/sales/products) or contact our sales team at <salessupport@syncfusion.com>.
+  
