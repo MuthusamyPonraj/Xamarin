@@ -3,7 +3,7 @@
 This section guides you to use the Syncfusion Xamarin samples in your applications.
 
 * [Overview](#overview)
-* [Requirements to run the demo samples](#requirements-to-run-the-demo-samples)
+* [Requirements to run the demo](#requirements-to-run-the-demo)
 * [Repository Structure](#repository-structure)
 * [License](#license)
 * [Using the samples](#using-the-samples)
@@ -14,7 +14,7 @@ This section guides you to use the Syncfusion Xamarin samples in your applicatio
 
 This repository contains the demos of [Syncfusion Xamarin UI controls](https://www.syncfusion.com/products/xamarin). This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing the complete Xamarin.Forms sample browser from [ Google Play Store](https://play.google.com/store/apps/details?id=com.syncfusion.samplebrowser) or [Microsoft Store](https://www.microsoft.com/en-in/p/syncfusion-essential-studio-for-xamarin/9nn069tldzf4), in which you can browse the demo for all the controls and view the source code of each sample within the app itself.
 
-## <a name="requirements-to-run-the-demo-samples"></a>Requirements to run the demo samples ##
+## <a name="requirements-to-run-the-demo"></a>Requirements to run the demo ##
 
 * Visual Studio 2017 or Visual Studio for Mac.
 * Xamarin add-ons for Visual Studio.
@@ -89,7 +89,7 @@ The easiest way to use these samples without using Git is to download the zip fi
 | [Pop-up](Forms/PopupLayout) | [Pop-up](Android/SampleBrowser/Samples/PopupLayout) | [Pop-up](iOS/SampleBrowser/Samples/PopupLayout) |
 | <b><center>EDITORS</center><b> | <b><center>EDITORS</center><b> | <b><center>EDITORS</center><b> |
 | [Autocomplete](Forms/AutoComplete) | [Autocomplete](Android/SampleBrowser/Samples/Autocomplete) | [Autocomplete](iOS/SampleBrowser/Samples/Autocomplete) |
-| [Check Box (Preview)](Forms/CheckBox) | [Check Box (Preview)](Android/SampleBrowser/Samples/CheckBox) | [Check Box (Preview)](iOS/SampleBrowser/Samples/CheckBox) |
+| [CheckBox (Preview)](Forms/CheckBox) | [CheckBox (Preview)](Android/SampleBrowser/Samples/CheckBox) | [CheckBox (Preview)](iOS/SampleBrowser/Samples/CheckBox) |
 | [Combo Box (Preview)](Forms/ComboBox) | [Combo Box (Preview)](Android/SampleBrowser/Samples/ComboBox) | [Combo Box (Preview)](iOS/SampleBrowser/Samples/ComboBox) |
 | [Data Form (Preview)](Forms/DataForm) | [Data Form (Preview)](Android/SampleBrowser/Samples/DataForm) | [Data Form (Preview)](iOS/SampleBrowser/Samples/DataForm) |
 | [Masked Text Box](Forms/MaskedEdit) | [Masked Text Box](Android/SampleBrowser/Samples/SfMaskedEdit) | [Masked Text Box](iOS/SampleBrowser/Samples/MaskedEdit) |
