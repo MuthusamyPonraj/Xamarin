@@ -1,34 +1,31 @@
 # Syncfusion Xamarin samples
 
-This section guides you to use the Syncfusion Xamarin samples in you applications.
+This section guides you to use the Syncfusion Xamarin samples in your applications.
 
 * [Overview](#overview)
+* [Requirements to run the demo samples](#requirements-to-run-the-demo-samples)
+* [Repository Structure](#repository-structure)
 * [License](#license)
 * [Using the samples](#using-the-samples)
-* [Samples by category](#samples-by-category)
+* [Controls Catalog](#controls-catalog)
 * [Support and Feedback](#support-and-feedback)
 
 ## <a name="overview"></a>Overview ##
 
-This repository contains the demo samples of Syncfusion Xamarin components. This is the best place to check our controls to get more insight about the APIs usage. You can also install our complete Xamarin.Forms sample browser from [play store](https://play.google.com/store/apps/details?id=com.syncfusion.samplebrowser) and [windows store](https://www.microsoft.com/en-in/p/syncfusion-essential-studio-for-xamarin/9nn069tldzf4), and browse the demo for all the controls with option to view the source code inside the application itself.
+This repository contains the demos of [Syncfusion Xamarin UI controls](https://www.syncfusion.com/products/xamarin). This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing the complete Xamarin.Forms sample browser from [ Google Play Store](https://play.google.com/store/apps/details?id=com.syncfusion.samplebrowser) or [Microsoft Store](https://www.microsoft.com/en-in/p/syncfusion-essential-studio-for-xamarin/9nn069tldzf4), in which you can browse the demo for all the controls and view the source code of each sample within the app itself.
 
-**Requirements to run the demo samples**
+## <a name="requirements-to-run-the-demo-samples"></a>Requirements to run the demo samples ##
+
 * Visual Studio 2017 or Visual Studio for Mac.
 * Xamarin add-ons for Visual Studio.
 
-**Project Structure**
+## <a name="repository-structure"></a>Repository Structure ##
 
-The <b>"Forms"</b> directory includes,
+The <b>"Forms"</b> directory contains the demo samples for each control such as Chart, Data Grid, etc. All the samples can be deployed in Android, iOS, and UWP platforms. Additionally, Chart, DataGrid, and ListView samples can be deployed in macOS platform also. 
 
-Individual control sample folders: It contains the samples for individual controls such as SfChart, SfDataGrid etc. Since they represent the individual controls, these samples are light-weighted. You can check the samples for your required controls alone faster with minimum deployment time.
+The <b>"Android/SampleBrowser"</b> directory contains Xamarin.Android sample browser project. Run this project to see the demo samples of all the Xamarin.Android controls in single application.
 
-The <b>"Android"</b> directory includes,
-
-"SampleBrowser" folder: It contains Xamarin.Android sample browser. Run this to see the demo samples of all the Xamarin.Android controls in single application.
-
-The <b>"iOS"</b> directory includes,
-
-"SampleBrowser" folder: It contains Xamarin.iOS sample browser. Run this to see the demo samples of all the Xamarin.iOS controls in single application.
+The <b>"iOS/SampleBrowser"</b> directory contains Xamarin.iOS sample browser project. Run this project to see the demo samples of all the Xamarin.iOS controls in single application.
 
 ## <a name="license"></a>License ##
 
@@ -50,21 +47,22 @@ The easiest way to use these samples without using Git is to download the zip fi
 
 **Reminder:** If you unzip individual samples, they will not build due to references to other portions of the ZIP file that were not unzipped. You must unzip the entire archive if you intend to build the samples.
 
-## <a name="samples-by-category"></a>Samples by category ##
+
+# Controls Catalog
 
 | Xamarin.Forms | Xamarin.Android | Xamarin.iOS |
 | ------------- | --------------- | ----------- |
 | <b>GRIDS<b> | <B><center>GRIDS</center><b> | <b><center>GRIDS</center><b> |
-| [Data Grid](Forms/DataGrid) | [Data Grid](Android/SampleBrowser/Samples/DataGrid) | [Data Grid](iOS/SampleBrowser/Samples/DataGrid) |
+| [DataGrid](Forms/DataGrid) | [DataGrid](Android/SampleBrowser/Samples/DataGrid) | [DataGrid](iOS/SampleBrowser/Samples/DataGrid) |
 | <b><center>DATA VISUALIZATION</center></b> | <b><center>DATA VISUALIZATION</center></b> | <b><center>DATA VISUALIZATION</center></b> |
 | [Bar Code](Forms/BarCode) | [Bar Code](Android/SampleBrowser/Samples/BarCode) | [Bar Code](iOS/SampleBrowser/Samples/BarCode) |
-| [Chart](Forms/Chart) | [Chart](Android/SampleBrowser/Samples/Chart) | [Chart](iOS/SampleBrowser/Samples/Chart) |
+| [Charts](Forms/Chart) | [Charts](Android/SampleBrowser/Samples/Chart) | [Charts](iOS/SampleBrowser/Samples/Chart) |
 | [Circular Gauge](Forms/CircularGauge) | [Circular Gauge](Android/SampleBrowser/Samples/CircularGauge) | [Circular Gauge](iOS/SampleBrowser/Samples/CircularGauge) |
 | [Diagram](Forms/Diagram)| [Diagram](Android/SampleBrowser/Samples/Diagram) | [Diagram](iOS/SampleBrowser/Samples/Diagram) |
 | [Digital Gauge](Forms/DigitalGauge) | [Digital Gauge](Android/SampleBrowser/Samples/DigitalGauge) | [Digital Gauge](iOS/SampleBrowser/Samples/DigitalGauge) |
 | [Linear Gauge](Forms/LinearGauge) | [Linear Gauge](Android/SampleBrowser/Samples/LinearGauge) | [Linear Gauge](iOS/SampleBrowser/Samples/LinearGauge) |
 | [Maps](Forms/Maps) | [Maps](Android/SampleBrowser/Samples/Maps) | [Maps](iOS/SampleBrowser/Samples/Maps) |
-| [Range Navigator](Forms/RangeNavigator) | [Range Navigator](Android/SampleBrowser/Samples/RangeNavigator) | [Range Navigator](iOS/SampleBrowser/Samples/DRangeNavigatorataGrid) |
+| [Range Navigator](Forms/RangeNavigator) | [Range Navigator](Android/SampleBrowser/Samples/RangeNavigator) | [Range Navigator](iOS/SampleBrowser/Samples/RangeNavigator) |
 | [Sparkline](Forms/Sparkline) | [Sparkline](Android/SampleBrowser/Samples/Sparkline) | [Sparkline](iOS/SampleBrowser/Samples/Sparkline) |
 | [Sunburst Chart](Forms/SunburstChart) | [Sunburst Chart](Android/SampleBrowser/Samples/Sunburst) | [Sunburst Chart](iOS/SampleBrowser/Samples/Sunburst) |
 | [Tree Map](Forms/TreeMap) | [Tree Map](Android/SampleBrowser/Samples/TreeMap) | [Tree Map](iOS/SampleBrowser/Samples/TreeMap) |
@@ -87,21 +85,21 @@ The easiest way to use these samples without using Git is to download the zip fi
 | [TabView](Forms/TabView) | [TabView](Android/SampleBrowser/Samples/TabView) | [TabView](iOS/SampleBrowser/Samples/TabView) |
 | <b><center>LAYOUT</center><b> | <b><center>LAYOUT</center><b> | <b><center>LAYOUT</center><b> |
 | [Carousel](Forms/Carousel) | [Carousel](Android/SampleBrowser/Samples/Carousel) | [Carousel](iOS/SampleBrowser/Samples/Carousel) |
-| [List View](Forms/ListView) | - | - |
+| [ListView](Forms/ListView) | - | - |
 | [Pop-up](Forms/PopupLayout) | [Pop-up](Android/SampleBrowser/Samples/PopupLayout) | [Pop-up](iOS/SampleBrowser/Samples/PopupLayout) |
 | <b><center>EDITORS</center><b> | <b><center>EDITORS</center><b> | <b><center>EDITORS</center><b> |
 | [Autocomplete](Forms/AutoComplete) | [Autocomplete](Android/SampleBrowser/Samples/Autocomplete) | [Autocomplete](iOS/SampleBrowser/Samples/Autocomplete) |
-| [Check Box(Preview)](Forms/CheckBox) | [Check Box(Preview)](Android/SampleBrowser/Samples/CheckBox) | [Check Box(Preview)](iOS/SampleBrowser/Samples/CheckBox) |
-| [Combo Box(Preview)](Forms/ComboBox) | [Combo Box(Preview)](Android/SampleBrowser/Samples/ComboBox) | [Combo Box(Preview)](iOS/SampleBrowser/Samples/ComboBox) |
-| [Data Form(Preview)](Forms/DataForm) | [Data Form(Preview)](Android/SampleBrowser/Samples/DataForm) | [Data Form(Preview)](iOS/SampleBrowser/Samples/DataForm) |
+| [Check Box (Preview)](Forms/CheckBox) | [Check Box (Preview)](Android/SampleBrowser/Samples/CheckBox) | [Check Box (Preview)](iOS/SampleBrowser/Samples/CheckBox) |
+| [Combo Box (Preview)](Forms/ComboBox) | [Combo Box (Preview)](Android/SampleBrowser/Samples/ComboBox) | [Combo Box (Preview)](iOS/SampleBrowser/Samples/ComboBox) |
+| [Data Form (Preview)](Forms/DataForm) | [Data Form (Preview)](Android/SampleBrowser/Samples/DataForm) | [Data Form (Preview)](iOS/SampleBrowser/Samples/DataForm) |
 | [Masked Text Box](Forms/MaskedEdit) | [Masked Text Box](Android/SampleBrowser/Samples/SfMaskedEdit) | [Masked Text Box](iOS/SampleBrowser/Samples/MaskedEdit) |
 | [Numeric Text Box](Forms/NumericTextBox) | [Numeric Text Box](Android/SampleBrowser/Samples/NumericTextBox) | [Numeric Text Box](iOS/SampleBrowser/Samples/NumericTextBox) |
 | [Numeric Up-Down](Forms/NumericUpDown) | [Numeric Up-Down](Android/SampleBrowser/Samples/NumericUpDown) | [Numeric Up-Down](iOS/SampleBrowser/Samples/NumericUpDown) |
 | [Picker](Forms/Picker) | [Picker](Android/SampleBrowser/Samples/SfPicker) | [Picker](iOS/SampleBrowser/Samples/Picker) |
-| [Radio Button(Preview)](Forms/RadioButton) |-| [Radio Button(Preview)](iOS/SampleBrowser/Samples/RadioButton) |
+| [Radio Button (Preview)](Forms/RadioButton) |-| [Radio Button (Preview)](iOS/SampleBrowser/Samples/RadioButton) |
 | [Range Slider](Forms/RangeSlider) | [Range Slider](Android/SampleBrowser/Samples/RangeSlider) | [Range Slider](iOS/SampleBrowser/Samples/RangeSlider) |
 | [Rating](Forms/Rating) | [Rating](Android/SampleBrowser/Samples/Rating) | [Rating](iOS/SampleBrowser/Samples/Rating) |
-| [Segmented Control(Preview)](Forms/SegmentedControl) | [Segmented Control(Preview)](Android/SampleBrowser/Samples/SegmentedView) |[Segmented Control(Preview)](iOS/SampleBrowser/Samples/SegmentedControl) |
+| [Segmented Control (Preview)](Forms/SegmentedControl) | [Segmented Control (Preview)](Android/SampleBrowser/Samples/SegmentedView) |[Segmented Control (Preview)](iOS/SampleBrowser/Samples/SegmentedControl) |
 | <b><center>FILE FORMATS</center><b> | <b><center>FILE FORMATS</center><b> | <b><center>FILE FORMATS</center><b> |
 | [Excel](Forms/XlsIO) | [Excel](Android/SampleBrowser/Samples/XlsIO) | [Excel](iOS/SampleBrowser/Samples/XlsIO) |
 | [PDF](Forms/PDF) | [PDF](Android/SampleBrowser/Samples/PDF) | [PDF](iOS/SampleBrowser/Samples/PDF) |
