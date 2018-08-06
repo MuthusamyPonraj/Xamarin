@@ -48,6 +48,7 @@ The easiest way to use these samples without using Git is to download the zip fi
 ## Controls Catalog
 
 | Xamarin.Forms | Xamarin.Android | Xamarin.iOS |
+| ------------- | --------------- | ----------- |
 | <b>GRIDS<b> | <B><center>GRIDS</center><b> | <b><center>GRIDS</center><b> |
 | [DataGrid](Forms/DataGrid) | [DataGrid](Android/SampleBrowser/Samples/DataGrid) | [DataGrid](iOS/SampleBrowser/Samples/DataGrid) |
 | <b><center>DATA VISUALIZATION</center></b> | <b><center>DATA VISUALIZATION</center></b> | <b><center>DATA VISUALIZATION</center></b> |
