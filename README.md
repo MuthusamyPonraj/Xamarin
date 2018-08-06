@@ -18,7 +18,7 @@ This section guides you to use the Syncfusion Xamarin samples in your applicatio
 
 ## <a name="repository-structure"></a>Repository Structure ##
 
-The <b>"Forms"</b> directory contains the demo samples for each control such as Chart, Data Grid, etc. All the samples can be deployed in Android, iOS, and UWP platforms. Additionally, Chart, DataGrid, and ListView samples can be deployed in macOS platform also. 
+The <b>"Forms"</b> directory contains the demo samples for each control such as Charts, DataGrid, etc. All the samples can be deployed in Android, iOS, and UWP platforms. Additionally, Charts, DataGrid, and ListView samples can be deployed in macOS platform also. 
 
 The <b>"Android/SampleBrowser"</b> directory contains Xamarin.Android sample browser project. Run this project to see the demo samples of all the Xamarin.Android controls in single application.
 
@@ -86,17 +86,17 @@ The easiest way to use these samples without using Git is to download the zip fi
 | [Pop-up](Forms/PopupLayout) | [Pop-up](Android/SampleBrowser/Samples/PopupLayout) | [Pop-up](iOS/SampleBrowser/Samples/PopupLayout) |
 | <b><center>EDITORS</center><b> | <b><center>EDITORS</center><b> | <b><center>EDITORS</center><b> |
 | [Autocomplete](Forms/AutoComplete) | [Autocomplete](Android/SampleBrowser/Samples/Autocomplete) | [Autocomplete](iOS/SampleBrowser/Samples/Autocomplete) |
-| [CheckBox (Preview)](Forms/CheckBox) | [CheckBox (Preview)](Android/SampleBrowser/Samples/CheckBox) | [CheckBox (Preview)](iOS/SampleBrowser/Samples/CheckBox) |
-| [Combo Box (Preview)](Forms/ComboBox) | [Combo Box (Preview)](Android/SampleBrowser/Samples/ComboBox) | [Combo Box (Preview)](iOS/SampleBrowser/Samples/ComboBox) |
-| [Data Form (Preview)](Forms/DataForm) | [Data Form (Preview)](Android/SampleBrowser/Samples/DataForm) | [Data Form (Preview)](iOS/SampleBrowser/Samples/DataForm) |
+| [CheckBox](Forms/CheckBox) | [CheckBox](Android/SampleBrowser/Samples/CheckBox) | [CheckBox](iOS/SampleBrowser/Samples/CheckBox) |
+| [Combo Box](Forms/ComboBox) | [Combo Box](Android/SampleBrowser/Samples/ComboBox) | [Combo Box](iOS/SampleBrowser/Samples/ComboBox) |
+| [Data Form](Forms/DataForm) | [Data Form](Android/SampleBrowser/Samples/DataForm) | [Data Form](iOS/SampleBrowser/Samples/DataForm) |
 | [Masked Text Box](Forms/MaskedEdit) | [Masked Text Box](Android/SampleBrowser/Samples/SfMaskedEdit) | [Masked Text Box](iOS/SampleBrowser/Samples/MaskedEdit) |
 | [Numeric Text Box](Forms/NumericTextBox) | [Numeric Text Box](Android/SampleBrowser/Samples/NumericTextBox) | [Numeric Text Box](iOS/SampleBrowser/Samples/NumericTextBox) |
 | [Numeric Up-Down](Forms/NumericUpDown) | [Numeric Up-Down](Android/SampleBrowser/Samples/NumericUpDown) | [Numeric Up-Down](iOS/SampleBrowser/Samples/NumericUpDown) |
 | [Picker](Forms/Picker) | [Picker](Android/SampleBrowser/Samples/SfPicker) | [Picker](iOS/SampleBrowser/Samples/Picker) |
-| [Radio Button (Preview)](Forms/RadioButton) |-| [Radio Button (Preview)](iOS/SampleBrowser/Samples/RadioButton) |
+| [Radio Button](Forms/RadioButton) |-| [Radio Button](iOS/SampleBrowser/Samples/RadioButton) |
 | [Range Slider](Forms/RangeSlider) | [Range Slider](Android/SampleBrowser/Samples/RangeSlider) | [Range Slider](iOS/SampleBrowser/Samples/RangeSlider) |
 | [Rating](Forms/Rating) | [Rating](Android/SampleBrowser/Samples/Rating) | [Rating](iOS/SampleBrowser/Samples/Rating) |
-| [Segmented Control (Preview)](Forms/SegmentedControl) | [Segmented Control (Preview)](Android/SampleBrowser/Samples/SegmentedView) |[Segmented Control (Preview)](iOS/SampleBrowser/Samples/SegmentedControl) |
+| [Segmented Control](Forms/SegmentedControl) | [Segmented Control](Android/SampleBrowser/Samples/SegmentedView) |[Segmented Control](iOS/SampleBrowser/Samples/SegmentedControl) |
 | <b><center>FILE FORMATS</center><b> | <b><center>FILE FORMATS</center><b> | <b><center>FILE FORMATS</center><b> |
 | [Excel](Forms/XlsIO) | [Excel](Android/SampleBrowser/Samples/XlsIO) | [Excel](iOS/SampleBrowser/Samples/XlsIO) |
 | [PDF](Forms/PDF) | [PDF](Android/SampleBrowser/Samples/PDF) | [PDF](iOS/SampleBrowser/Samples/PDF) |
