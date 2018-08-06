@@ -79,7 +79,7 @@ The easiest way to use these samples without using Git is to download the zip fi
 | [Navigation Drawer](Forms/NavigationDrawer) | [Navigation Drawer](Android/SampleBrowser/Samples/NavigationDrawer) | [Navigation Drawer](iOS/SampleBrowser/Samples/NavigationDrawer) |
 | [Radial Menu](Forms/RadialMenu) | [Radial Menu](Android/SampleBrowser/Samples/RadialMenu) | [Radial Menu](iOS/SampleBrowser/Samples/RadialMenu) |
 | [Rotator](Forms/Rotator) | [Rotator](Android/SampleBrowser/Samples/Rotator) | [Rotator](iOS/SampleBrowser/Samples/Rotator) |
-| [TabView](Forms/TabView) | [TabView](Android/SampleBrowser/Samples/TabView) | [TabView](iOS/SampleBrowser/Samples/TabView) |
+| [Tabs](Forms/TabView) | [Tabs](Android/SampleBrowser/Samples/TabView) | [Tabs](iOS/SampleBrowser/Samples/TabView) |
 | <b><center>LAYOUT</center><b> | <b><center>LAYOUT</center><b> | <b><center>LAYOUT</center><b> |
 | [Carousel](Forms/Carousel) | [Carousel](Android/SampleBrowser/Samples/Carousel) | [Carousel](iOS/SampleBrowser/Samples/Carousel) |
 | [ListView](Forms/ListView) | - | - |
