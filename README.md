@@ -64,7 +64,7 @@ The easiest way to use these samples without using Git is to download the zip fi
 | [Sunburst Chart](Forms/SunburstChart) | [Sunburst Chart](Android/SampleBrowser/Samples/Sunburst) | [Sunburst Chart](iOS/SampleBrowser/Samples/Sunburst) |
 | [Tree Map](Forms/TreeMap) | [Tree Map](Android/SampleBrowser/Samples/TreeMap) | [Tree Map](iOS/SampleBrowser/Samples/TreeMap) |
 | <b><center>CALENDAR</center><b> | <b><center>CALENDAR</center><b> | <b><center>CALENDAR</center><b> |
-| [Schedule](Forms/Schedule) | [Schedule](Android/SampleBrowser/Samples/Schedule) | [Schedule](iOS/SampleBrowser/Samples/Schedule) |
+| [Scheduler](Forms/Schedule) | [Scheduler](Android/SampleBrowser/Samples/Schedule) | [Scheduler](iOS/SampleBrowser/Samples/Schedule) |
 | [Calendar](Forms/Calendar) | [Calendar](Android/SampleBrowser/Samples/Calendar) | [Calendar](iOS/SampleBrowser/Samples/Calendar) |
 | <b><center>PROJECT MANAGEMENT</center><b> | <b><center>PROJECT MANAGEMENT</center><b> | <b><center>PROJECT MANAGEMENT</center><b> |
 | [Kanban](Forms/Kanban) | [Kanban](Android/SampleBrowser/Samples/Kanban) | [Kanban](iOS/SampleBrowser/Samples/Kanban) |
