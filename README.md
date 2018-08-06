@@ -1,18 +1,15 @@
 # Syncfusion Xamarin samples
 
+This repository contains the demos of [Syncfusion Xamarin UI controls](https://www.syncfusion.com/products/xamarin). This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing the complete Xamarin.Forms sample browser from [ Google Play Store](https://play.google.com/store/apps/details?id=com.syncfusion.samplebrowser) or [Microsoft Store](https://www.microsoft.com/en-in/p/syncfusion-essential-studio-for-xamarin/9nn069tldzf4), in which you can browse the demo for all the controls and view the source code of each sample within the app itself.
+
 This section guides you to use the Syncfusion Xamarin samples in your applications.
 
-* [Overview](#overview)
 * [Requirements to run the demo](#requirements-to-run-the-demo)
 * [Repository Structure](#repository-structure)
 * [License](#license)
 * [Using the samples](#using-the-samples)
 * [Controls Catalog](#controls-catalog)
 * [Support and Feedback](#support-and-feedback)
-
-## <a name="overview"></a>Overview ##
-
-This repository contains the demos of [Syncfusion Xamarin UI controls](https://www.syncfusion.com/products/xamarin). This is the best place to check our controls to get more insight about the usage of APIs. You can also check our controls by installing the complete Xamarin.Forms sample browser from [ Google Play Store](https://play.google.com/store/apps/details?id=com.syncfusion.samplebrowser) or [Microsoft Store](https://www.microsoft.com/en-in/p/syncfusion-essential-studio-for-xamarin/9nn069tldzf4), in which you can browse the demo for all the controls and view the source code of each sample within the app itself.
 
 ## <a name="requirements-to-run-the-demo"></a>Requirements to run the demo ##
 
@@ -48,7 +45,7 @@ The easiest way to use these samples without using Git is to download the zip fi
 **Reminder:** If you unzip individual samples, they will not build due to references to other portions of the ZIP file that were not unzipped. You must unzip the entire archive if you intend to build the samples.
 
 
-# Controls Catalog
+## Controls Catalog
 
 | Xamarin.Forms | Xamarin.Android | Xamarin.iOS |
 | ------------- | --------------- | ----------- |
@@ -117,7 +114,7 @@ The easiest way to use these samples without using Git is to download the zip fi
    * [Xamarin-Android](https://help.syncfusion.com/xamarin-android/introduction/overview)
    * [Xamarin-iOS](https://help.syncfusion.com/xamarin-ios/introduction/overview)
 
-* For any other queries, reach our support team [here](https://www.syncfusion.com/support/directtrac/incidents) with your query.
+* For any other queries, reach our [Syncfusion support team](https://www.syncfusion.com/support/directtrac/incidents/newincident) or post the queries through the [community forums](https://www.syncfusion.com/forums).
 
 * To renew the subscription, click [here](https://www.syncfusion.com/sales/products) or contact our sales team at <salessupport@syncfusion.com>.
   
